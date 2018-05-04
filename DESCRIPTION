@@ -2,8 +2,10 @@ Package: scotgov
 Type: Package
 Title: Access statistics.gov.scot without SPARQL
 Version: 0.0.0.9000
-Authors@R: person("Joseph", "Adams", email = "joseph@josephadams.net",
-  role = c("aut", "cre"))
+Authors@R: as.person(c(
+    "Joseph Adams <joseph@josephadams.net> [aut, cre]", 
+    "Gordon Bryden <gordon.bryden@gov.scot> [aut, cre]"
+  ))
 Description: Access the statistics.gov.scot API without writing SPARQL queries.
 License: MIT
 Encoding: UTF-8
