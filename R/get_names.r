@@ -3,7 +3,7 @@
 # internal function for scotgov_get
 
 get_names<- function(dataset) {
-  pattern<-'[/#][A-Za-z0-9()-]+>'
+  pattern<-'[/#][%A-Za-z0-9()-]+>'
   regexpr_result<-regexpr(pattern,dataset)
   result<-substr(dataset,TEMP_reg+1,TEMP_reg+attr(TEMP_reg,"match.length")-2)
   
