@@ -21,7 +21,7 @@ scotgov_get <- function(dataset) {
   endpoint <- "http://statistics.gov.scot/sparql"
   TEMP_locations <- dataset_dimensions(dataset)
   locations <- data.frame(lapply(TEMP_locations, as.character), stringsAsFactors=FALSE)
-  dimensions <- get_names(locations[,])
+  dimensions <- gsub("[()%]", "", get_names(locations[,]))
   question_marked_dimensions <-unlist(lapply(dimensions,function(x) paste0('?',x)))
   uri_dimensions <-unlist(lapply(question_marked_dimensions,function(x) paste0(x,"URI")))
                                    
