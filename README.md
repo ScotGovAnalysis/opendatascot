@@ -3,11 +3,7 @@
 scotgov
 =======
 
-**In development - functionality may change.**
-
-Use scotgov to programmatically download data from [statistics.gov.scot](http://statistics.gov.scot/home).
-
-We intend for this package to be a useful tool when building [reproducible analytical pipelines](https://ukgovdatascience.github.io/rap_companion/). It is simple to use and follows the concept of DOTADIW: "Do One Thing and Do It Well".
+Use scotgov to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. scotgov removes the need to write SPARQL code; you simply need the URI of a dataset. scotgov can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
 
 Installation
 ------------
