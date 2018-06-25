@@ -13,7 +13,8 @@
 #'
 #' @examples
 #' scotgov_get("http://statistics.gov.scot/sparql")
-
+#'
+#' @export
 scotgov_get <- function(dataset) {
 
   require(SPARQL)
