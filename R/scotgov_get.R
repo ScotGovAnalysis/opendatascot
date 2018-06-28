@@ -17,8 +17,6 @@
 #' @export
 scotgov_get <- function(dataset) {
 
-  require(SPARQL)
-
   endpoint <- "http://statistics.gov.scot/sparql"
   TEMP_locations <- dataset_dimensions(dataset)
   locations <- data.frame(lapply(TEMP_locations, as.character), stringsAsFactors=FALSE)
