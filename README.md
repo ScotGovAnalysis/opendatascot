@@ -30,12 +30,12 @@ install.packages("your/directory/scotgov", repos = NULL,
 Example
 -------
 
-You will need the URI for your dataset. Find this on the [statistics.gov.scot](http://statistics.gov.scot/home) web page for your dataset (in the API tab):
+You will need the name of your dataset. Find this on the [statistics.gov.scot](http://statistics.gov.scot/home) web page for your dataset (in the API tab):
 
 ``` r
 library(scotgov)
 
-household_size <- scotgov_get("http://statistics.gov.scot/data/average-household-size")
+household_size <- scotgov_get("average-household-size")
 head(household_size)
 #>                 refArea refPeriod measureType value
 #> 1 Dumfries and Galloway      2003       Ratio  2.25
