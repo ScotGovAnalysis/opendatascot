@@ -7,7 +7,7 @@ dataset_dimensions <- function(dataset) {
     "PREFIX qb: <http://purl.org/linked-data/cube#>
     SELECT ?componentProperty ?componentReference
     WHERE {
-      <",dataset, "> qb:structure ?structure. #selects the structure of the dataset
+      <http://statistics.gov.scot/data/",dataset, "> qb:structure ?structure. #selects the structure of the dataset
       ?structure qb:component ?value. #exposes the components of the dataset as value
       ?value ?componentProperty ?componentReference .
       }"
