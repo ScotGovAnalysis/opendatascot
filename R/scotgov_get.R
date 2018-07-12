@@ -15,7 +15,7 @@
 #' scotgov_get("http://statistics.gov.scot/sparql")
 #'
 #' @export
-scotgov_get <- function(dataset,start=NULL,end=NULL) {
+scotgov_get <- function(dataset,start=NULL,end=NULL,geography=NULL) {
 
   endpoint <- "http://statistics.gov.scot/sparql"
   TEMP_locations <- dataset_dimensions(dataset)
@@ -61,6 +61,12 @@ scotgov_get <- function(dataset,start=NULL,end=NULL) {
         query_addition <- paste0("FILTER (refPeriod <= ",end_date,"xsd:date)")
         query <- paste(query, query_addition)
     }
+      
+   #filter based on geography if requested
+   if(!isna(geography) {
+       query_addition <- paste0("FILTER( regex(str(?refArea), ",geography," ))")
+       query <- paste(query, query_addition)
+   }
       
    #expose the measureType dimension's value as a value
    query<-paste(query, "?data ?measureTypeURI ?value. }")
