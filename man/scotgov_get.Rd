@@ -4,7 +4,7 @@
 \alias{scotgov_get}
 \title{Download data from statistics.gov.scot}
 \usage{
-scotgov_get(endpoint = "http://statistics.gov.scot/sparql")
+scotgov_get(dataset)
 }
 \arguments{
 \item{endpoint}{An API endpoint for statistics.gov.scot}
@@ -23,4 +23,5 @@ first argument.
 }
 \examples{
 scotgov_get("http://statistics.gov.scot/sparql")
+
 }
