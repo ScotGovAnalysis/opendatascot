@@ -15,7 +15,7 @@
 #' scotgov_get("http://statistics.gov.scot/sparql")
 #'
 #' @export
-scotgov_get <- function(dataset,start=NULL,end=NULL,geography=NULL) {
+scotgov_get <- function(dataset,start_date=NULL,end_date=NULL,geography=NULL) {
 
   endpoint <- "http://statistics.gov.scot/sparql"
   TEMP_locations <- dataset_dimensions(dataset)
