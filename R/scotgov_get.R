@@ -28,7 +28,7 @@ scotgov_get <- function(dataset,start_date=NULL,end_date=NULL,geography=NULL) {
   select_line <- paste(paste("select",paste(question_marked_dimensions,collapse=" ")),"?value")
   data_line <- paste0("?data qb:dataSet <http://statistics.gov.scot/data/",dataset,">.")
 
-  query<- paste("PREFIX qb: <http://purl.org/linked-data/cube#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ",
+  query<- paste("PREFIX qb: <http://purl.org/linked-data/cube#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>",
                 select_line,
                 "where {",
                 data_line)
