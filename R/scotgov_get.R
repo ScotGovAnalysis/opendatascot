@@ -62,7 +62,7 @@ scotgov_get <- function(dataset,start_date=NULL,end_date=NULL,geography=NULL) {
       
    #filter based on geography if requested
    if(!is.null(geography)) {
-       query_addition <- paste0("FILTER( regex(str(?refAreaURI), ",geography," ))")
+       query_addition <- paste0("FILTER( regex(str(?refAreaURI), '",geography,"' ))")
        query <- paste(query, query_addition)
    }
       
