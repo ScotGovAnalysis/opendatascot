@@ -10,6 +10,6 @@ Description: Access the statistics.gov.scot API without writing SPARQL queries.
 License: MIT
 Encoding: UTF-8
 LazyData: true
-Imports:
+Depends:
     SPARQL
 RoxygenNote: 6.0.1
