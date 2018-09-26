@@ -17,6 +17,14 @@
 #' @export
 scotgov_get <- function(dataset,start_date=NULL,end_date=NULL,geography=NULL) {
   
+  if(is.null(start_date) &
+     is.null(end_date) & 
+     is.null(geography)) {
+    
+    result <- read.csv(paste0("https://statistics.gov.scot/downloads/cube-table?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2F",dataset))
+    
+  } else {
+  
   endpoint <- "http://statistics.gov.scot/sparql"
   TEMP_locations <- dataset_dimensions(dataset)
   locations <- data.frame(lapply(TEMP_locations, as.character), stringsAsFactors=FALSE)
@@ -71,6 +79,8 @@ scotgov_get <- function(dataset,start_date=NULL,end_date=NULL,geography=NULL) {
   query_data <- SPARQL(endpoint,query)
   result <- query_data$results
   
+  }
+                                 
   return(result)
   
 }
