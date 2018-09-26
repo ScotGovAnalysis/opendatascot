@@ -21,6 +21,13 @@ scotgov_get <- function(dataset,start_date=NULL,end_date=NULL,geography=NULL) {
      is.null(end_date) & 
      is.null(geography)) {
     
+  if("readr" %in% rownames(installed.packages())) {
+    #download with readr if available
+    result <- readr::read_csv(paste0("https://statistics.gov.scot/downloads/cube-table?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2F",dataset))
+  } else {
+    result <- read.csv(paste0("https://statistics.gov.scot/downloads/cube-table?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2F",dataset))
+  }
+    
     result <- read.csv(paste0("https://statistics.gov.scot/downloads/cube-table?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2F",dataset))
     
   } else {
