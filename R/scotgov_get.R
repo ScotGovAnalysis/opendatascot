@@ -61,10 +61,10 @@ scotgov_get <- function(dataset,start_date=NULL,end_date=NULL,geography=NULL) {
     query_addition <- paste0("FILTER (?refPeriod >= '",start_date,"'^^xsd:date && ?refPeriod <= '",end_date,"'^^xsd:date)")
     query <- paste(query, query_addition)
   } else if(!is.null(start_date)) {
-    query_addition <- paste0("FILTER (?refPeriod >= ",start_date,"^^xsd:date)")
+    query_addition <- paste0("FILTER (?refPeriod >= '",start_date,"'^^xsd:date)")
     query <- paste(query, query_addition)
   } else if(!is.null(end_date)) {
-    query_addition <- paste0("FILTER (?refPeriod <= ",end_date,"^^xsd:date)")
+    query_addition <- paste0("FILTER (?refPeriod <= '",end_date,"'^^xsd:date)")
     query <- paste(query, query_addition)
   }
   
