@@ -76,7 +76,12 @@ scotgov_get <- function(dataset,start_date=NULL,end_date=NULL,geography=NULL) {
   
   #expose the measureType dimension's value as a value
   query<-paste(query, "?data ?measureTypeURI ?value. }")
-  query_data <- SPARQL(endpoint,query)
+    
+  query_data <- try(SPARQL(endpoint,query),silent = TRUE)
+  if( query_data[1] ==  "Error : XML content does not seem to be XML: 'Response too large'\n"){
+    stop(Error = "Dataset is too large to be downloaded like this. Try adding filters to reduce size")
+  }    
+  
   result <- query_data$results
   
   }
