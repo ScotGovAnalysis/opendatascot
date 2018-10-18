@@ -8,37 +8,40 @@
 #' the arguments \code{...} should be unnamed, and dispatch is on the
 #' first argument.
 #'
-#' @param endpoint An API endpoint for statistics.gov.scot
-#' @return A tibble of data from statistics.gov.scot
+#' @param dataset The last part of the URI for a dataset on statistics.gov.scot
+#' @param start_date Filter data points on or after this date
+#' @param end_date Filter data points after this date
+#' @param geography An S code - filter data points within this geography
+#' @return A \code{data.frame} of data from statistics.gov.scot
 #'
 #' @examples
-#' scotgov_get("http://statistics.gov.scot/sparql")
+#' scotgov_get("average-household-size")
 #'
 #' @export
 scotgov_get <- function(dataset,
-                        start_date=NULL,
-                        end_date=NULL,
-                        geography=NULL) {
+                        start_date = NULL,
+                        end_date = NULL,
+                        geography = NULL) {
 
   if (is.null(start_date) & is.null(end_date) & is.null(geography)) {
 
-  if ("readr" %in% rownames(installed.packages())) {
+  if ("readr" %in% rownames(utils::installed.packages())) {
     #download with readr if available
     result <- readr::read_csv(paste0("https://statistics.gov.scot/downloads/",
                                      "cube-table?uri=http%3A%2F%2F",
                                      "statistics.gov.scot%2Fdata%2F",
                                      dataset))
   } else {
-    result <- read.csv(paste0("https://statistics.gov.scot/downloads/",
-                              "cube-table?uri=http%3A%2F%2F",
-                              "statistics.gov.scot%2Fdata%2F",
-                              dataset))
+    result <- utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
+                                     "cube-table?uri=http%3A%2F%2F",
+                                     "statistics.gov.scot%2Fdata%2F",
+                                     dataset))
   }
 
-    result <- read.csv(paste0("https://statistics.gov.scot/downloads/",
-                              "cube-table?uri=http%3A%2F%2F",
-                              "statistics.gov.scot%2Fdata%2F",
-                              dataset))
+    result <- utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
+                                     "cube-table?uri=http%3A%2F%2F",
+                                     "statistics.gov.scot%2Fdata%2F",
+                                     dataset))
 
   } else {
 

@@ -4,13 +4,20 @@
 \alias{scotgov_get}
 \title{Download data from statistics.gov.scot}
 \usage{
-scotgov_get(dataset)
+scotgov_get(dataset, start_date = NULL, end_date = NULL,
+  geography = NULL)
 }
 \arguments{
-\item{endpoint}{An API endpoint for statistics.gov.scot}
+\item{dataset}{The last part of the URI for a dataset on statistics.gov.scot}
+
+\item{start_date}{Filter data points on or after this date}
+
+\item{end_date}{Filter data points after this date}
+
+\item{geography}{An S code - filter data points within this geography}
 }
 \value{
-A tibble of data from statistics.gov.scot
+A \code{data.frame} of data from statistics.gov.scot
 }
 \description{
 \code{scotgov_get} returns a tibble of data from statistics.gov.scot
@@ -22,6 +29,6 @@ the arguments \code{...} should be unnamed, and dispatch is on the
 first argument.
 }
 \examples{
-scotgov_get("http://statistics.gov.scot/sparql")
+scotgov_get("average-household-size")
 
 }

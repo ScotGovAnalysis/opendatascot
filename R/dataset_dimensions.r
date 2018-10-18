@@ -5,7 +5,7 @@
 #' \code{statistics.gov.scot/data/<dataset>}
 #'
 #' @examples
-#' dataset_dimensions("average-household-size")
+#' scotgov:::dataset_dimensions("average-household-size")
 
 dataset_dimensions <- function(dataset) {
   endpoint <- "http://statistics.gov.scot/sparql"

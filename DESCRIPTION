@@ -9,9 +9,11 @@ Authors@R: as.person(c(
 Description: Access the statistics.gov.scot API without writing SPARQL queries.
 URL: https://github.com/jsphdms/scotgov
 BugReports: https://github.com/jsphdms/scotgov/issues
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends:
     SPARQL
-RoxygenNote: 6.0.1
+Suggests:
+    readr
+RoxygenNote: 6.1.0

@@ -3,7 +3,7 @@
 #'
 #' @return A \code{data.frame} of all data sets available on statistics.gov.scot
 #' @examples
-#' list_sg_datasets()
+#' scotgov:::list_sg_datasets()
 
 list_sg_datasets <- function() {
 
