@@ -1,5 +1,11 @@
-# Replacement to older fuctions which will return the dimensions of the dataset
-# An internal function for scotgov_get
+#' Return the dimensions of a dataset
+#'
+#' @param dataset The last part of the URI of a dataset
+#' @return The dimensions of the dataset at
+#' \code{statistics.gov.scot/data/<dataset>}
+#'
+#' @examples
+#' dataset_dimensions("average-household-size")
 
 dataset_dimensions <- function(dataset) {
   endpoint <- "http://statistics.gov.scot/sparql"
