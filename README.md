@@ -3,45 +3,118 @@
 scotgov
 =======
 
+:construction: :construction: :construction: **Package under construction - watch this space for updates** :construction: :construction: :construction:
+
 Use scotgov to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. scotgov removes the need to write SPARQL code; you simply need the URI of a dataset. scotgov can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
 
 Installation
 ------------
 
-Install scotgov from GitHub with:
+Install from GitHub:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("jsphdms/scotgov")
 ```
 
-If the above does not work, you can install from source:
+Or you can install from source:
 
 1.  Go to the scotgov [repository](https://github.com/jsphdms/scotgov) on GitHub
 2.  Click **Clone or download** then **Download ZIP**
-3.  Save the file locally (e.g. your H drive) and Unzip
-4.  Install with install.packages()
+3.  Save the file locally (e.g. your H drive)
+4.  Unzip the file
+5.  Install with `install.packages()`
 
 ``` r
-install.packages("your/directory/scotgov-master", repos = NULL,
+install.packages("your/directory/scotgov-master/scotgov-master", repos = NULL,
                  type="source", lib = "your/R/package/library/directory")
 ```
 
-Example
--------
+Having trouble installing from source? Check you followed the steps above precisely; a small error can cause the install to fail. The best approach is to copy the code above into a text editor and carefully update the two directories. In particular, notice the repetition of **scotgov-master**.
 
-You will need the name of your dataset. Find this on the [statistics.gov.scot](http://statistics.gov.scot/home) web page for your dataset (in the API tab):
+Usage
+-----
+
+You can download an entire dataset, or filter by date and/or geography. We recommend filtering large datasets. If you require a full download of a large dataset, you may need to contact [statistics.gov.scot](http://statistics.gov.scot/home).
+
+### Without filtering
+
+You will always need the last part of the URI for your dataset. Find this on the [statistics.gov.scot](http://statistics.gov.scot/home) web page for your dataset (in the API tab). For example, the full URI for [Average Household Size](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Faverage-household-size) is:
+
+`http://statistics.gov.scot/data/average-household-size`
+
+you just need the last part:
+
+`average-household-size`
+
+Once you have the last part of the URI, set this as the `dataset` parameter for `scotgov_get()`:
 
 ``` r
 library(scotgov)
 
-household_size <- scotgov_get("average-household-size")
+household_size <- scotgov_get(dataset = "average-household-size")
 head(household_size)
-#>                 refArea refPeriod measureType value
-#> 1 Dumfries and Galloway      2003       Ratio  2.25
-#> 2         East Ayrshire      2003       Ratio  2.32
-#> 3          East Lothian      2003       Ratio  2.32
-#> 4     North Lanarkshire      2003       Ratio  2.35
-#> 5                 Angus      2003       Ratio  2.24
-#> 6           Dundee City      2003       Ratio  2.09
+#>   FeatureCode DateCode Measurement                Units Value
+#> 1   S12000039     2015       Ratio People Per Household  2.09
+#> 2   S12000039     2010       Ratio People Per Household  2.14
+#> 3   S12000039     2005       Ratio People Per Household  2.21
+#> 4   S12000039     2012       Ratio People Per Household  2.13
+#> 5   S12000039     2007       Ratio People Per Household  2.18
+#> 6   S12000039     2006       Ratio People Per Household  2.19
 ```
+
+### With filtering
+
+Filtering is useful for large data sets. The filtering parameters for `scotgov_get()` are:
+
+-   `start_date`
+-   `end_date`
+-   `geography`
+
+#### Filter by date
+
+Use either `start_date` **OR** `end_date` to filter datapoints before or after a certain date:
+
+``` r
+library(dplyr)
+
+household_size_2010_onwards <- scotgov_get(dataset = "average-household-size",
+                                           start_date = 2010) %>%
+  arrange(refPeriod)
+
+head(household_size_2010_onwards)
+#>             refArea refPeriod measureType value
+#> 1     Aberdeenshire      2010       Ratio  2.39
+#> 2          Stirling      2010       Ratio  2.28
+#> 3     Aberdeen City      2010       Ratio  2.05
+#> 4 City of Edinburgh      2010       Ratio  2.05
+#> 5   Argyll and Bute      2010       Ratio  2.13
+#> 6  Shetland Islands      2010       Ratio  2.31
+```
+
+Use `start_date` **AND** `end_date` to filter datapoints within a certain timeframe.
+
+#### Filter by geography
+
+Specify a single geography using an S code:
+
+``` r
+household_size_S12000039 <- scotgov_get(dataset = "average-household-size",
+                                           geography = "S12000039")
+
+head(household_size_S12000039)
+#>               refArea refPeriod measureType value
+#> 1 West Dunbartonshire      2016       Ratio  2.09
+#> 2 West Dunbartonshire      2013       Ratio  2.12
+#> 3 West Dunbartonshire      2015       Ratio  2.09
+#> 4 West Dunbartonshire      2002       Ratio  2.27
+#> 5 West Dunbartonshire      2014       Ratio  2.10
+#> 6 West Dunbartonshire      2012       Ratio  2.13
+```
+
+Future development
+------------------
+
+Currently `scotgov_get()` is the only function available. This package is under active development, so any further functionality will be mentioned here when it's ready. If something important is missing, feel free to contact the contributors or [add a new issue](https://github.com/jsphdms/scotgov/issues).
+
+Since this package is under active development, breaking changes may be necessary. We will make it clear once the package is reasonably stable.
