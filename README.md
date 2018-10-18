@@ -3,6 +3,8 @@
 scotgov
 =======
 
+[![Travis-CI Build Status](https://travis-ci.org/jsphdms/scotgov.svg?branch=master)](https://travis-ci.org/jsphdms/scotgov)
+
 :construction: :construction: :construction: **Package under construction - watch this space for updates** :construction: :construction: :construction:
 
 Use scotgov to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. scotgov removes the need to write SPARQL code; you simply need the URI of a dataset. scotgov can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
@@ -76,20 +78,23 @@ Filtering is useful for large data sets. The filtering parameters for `scotgov_g
 Use either `start_date` **OR** `end_date` to filter datapoints before or after a certain date:
 
 ``` r
-library(dplyr)
+# library(dplyr)
 
 household_size_2010_onwards <- scotgov_get(dataset = "average-household-size",
-                                           start_date = 2010) %>%
-  arrange(refPeriod)
+                                           start_date = 2010)
+#> Warning in if (query != "") {: the condition has length > 1 and only the
+#> first element will be used
+# %>%
+#   arrange(refPeriod)
 
 head(household_size_2010_onwards)
-#>             refArea refPeriod measureType value
-#> 1     Aberdeenshire      2010       Ratio  2.39
-#> 2          Stirling      2010       Ratio  2.28
-#> 3     Aberdeen City      2010       Ratio  2.05
-#> 4 City of Edinburgh      2010       Ratio  2.05
-#> 5   Argyll and Bute      2010       Ratio  2.13
-#> 6  Shetland Islands      2010       Ratio  2.31
+#>         refArea value
+#> 1 Aberdeenshire  2.39
+#> 2 Aberdeenshire  2.38
+#> 3 Aberdeenshire  2.34
+#> 4 Aberdeen City  2.08
+#> 5 Aberdeen City  2.09
+#> 6 Aberdeen City  2.10
 ```
 
 Use `start_date` **AND** `end_date` to filter datapoints within a certain timeframe.
@@ -101,15 +106,17 @@ Specify a single geography using an S code:
 ``` r
 household_size_S12000039 <- scotgov_get(dataset = "average-household-size",
                                            geography = "S12000039")
+#> Warning in if (query != "") {: the condition has length > 1 and only the
+#> first element will be used
 
 head(household_size_S12000039)
-#>               refArea refPeriod measureType value
-#> 1 West Dunbartonshire      2016       Ratio  2.09
-#> 2 West Dunbartonshire      2013       Ratio  2.12
-#> 3 West Dunbartonshire      2015       Ratio  2.09
-#> 4 West Dunbartonshire      2002       Ratio  2.27
-#> 5 West Dunbartonshire      2014       Ratio  2.10
-#> 6 West Dunbartonshire      2012       Ratio  2.13
+#>               refArea value
+#> 1 West Dunbartonshire  2.09
+#> 2 West Dunbartonshire  2.12
+#> 3 West Dunbartonshire  2.09
+#> 4 West Dunbartonshire  2.27
+#> 5 West Dunbartonshire  2.10
+#> 6 West Dunbartonshire  2.13
 ```
 
 Future development
