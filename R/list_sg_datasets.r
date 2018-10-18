@@ -27,7 +27,7 @@ list_sg_datasets <- function() {
   ORDER BY ?Name"
 
   # Step 2 - Use SPARQL package to submit query and save results to a data frame
-  qdata <- SPARQL(endpoint, query)
+  qdata <- SPARQL::SPARQL(endpoint, query)
 
   result <- qdata$results
 
