@@ -1,6 +1,6 @@
 Package: scotgov
 Type: Package
-Title: Access statistics.gov.scot without SPARQL
+Title: Access statistics.gov.scot Without SPARQL
 Version: 0.0.0.9000
 Authors@R: as.person(c(
     "Joseph Adams <joseph@josephadams.net> [aut, cre]", 
