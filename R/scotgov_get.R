@@ -70,7 +70,7 @@ scotgov_get <- function(dataset,
                  data_line)
 
   #iter over the dimensions, and generate a sparql line
-  for (i in 1:length(locations[, ])) {
+  for (i in seq_along(locations[, ])) {
     query_addition <- paste0("?data ",
                              locations[i, ],
                              " ",
