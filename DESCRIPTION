@@ -15,5 +15,6 @@ LazyData: true
 Depends:
     SPARQL
 Suggests:
-    readr
+    readr,
+    testthat
 RoxygenNote: 6.1.0
