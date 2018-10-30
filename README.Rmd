@@ -45,59 +45,6 @@ install.packages("your/directory/scotgov-master/scotgov-master", repos = NULL,
 Having trouble installing from source? Check you followed the steps above precisely; a small error can cause the install to fail. The best approach is to copy the code above into a text editor and carefully update the two directories. In particular, notice the repetition of **scotgov-master**.
 
 ## Usage
-You can download an entire dataset, or filter by date and/or geography. We recommend filtering large datasets. If you require a full download of a large dataset, you may need to contact [statistics.gov.scot](http://statistics.gov.scot/home).
-
-### Without filtering
-
-You will always need the last part of the URI for your dataset. Find this on the [statistics.gov.scot](http://statistics.gov.scot/home) web page for your dataset (in the API tab). For example, the full URI for [Average Household Size](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Faverage-household-size) is:
-
-`http://statistics.gov.scot/data/average-household-size`
-
-you just need the last part:
-
-`average-household-size`
-
-Once you have the last part of the URI, set this as the `dataset` parameter for `scotgov_get()`:
-
-```{r example_without_filter, message = FALSE}
-library(scotgov)
-
-household_size <- scotgov_get(dataset = "average-household-size")
-head(household_size)
-```
-
-### With filtering
-Filtering is useful for large data sets. The filtering parameters for `scotgov_get()` are:
-
-* `start_date`
-* `end_date`
-* `geography`
-
-#### Filter by date
-Use either `start_date` **OR** `end_date` to filter datapoints before or after a certain date:
-
-```{r example_with_filter_date, message = FALSE}
-# library(dplyr)
-
-household_size_2010_onwards <- scotgov_get(dataset = "average-household-size",
-                                           start_date = 2010)
-# %>%
-#   arrange(refPeriod)
-
-head(household_size_2010_onwards)
-```
-
-Use `start_date` **AND** `end_date` to filter datapoints within a certain timeframe.
-
-#### Filter by geography
-Specify a single geography using an S code:
-
-```{r example_with_filter_geography, message = FALSE}
-household_size_S12000039 <- scotgov_get(dataset = "average-household-size",
-                                           geography = "S12000039")
-
-head(household_size_S12000039)
-```
 
 ## Future development
 
