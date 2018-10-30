@@ -46,6 +46,8 @@ Having trouble installing from source? Check you followed the steps above precis
 
 ## Usage
 
+Learn more in `vignette("scotgov")` or `?scotgov_get`.
+
 ## Future development
 
 Currently `scotgov_get()` is the only function available. This package is under active development, so any further functionality will be mentioned here when it's ready. If something important is missing, feel free to contact the contributors or [add a new issue](https://github.com/jsphdms/scotgov/issues).

@@ -37,6 +37,8 @@ Having trouble installing from source? Check you followed the steps above precis
 Usage
 -----
 
+Learn more in `vignette("scotgov")` or `?scotgov_get`.
+
 Future development
 ------------------
 
