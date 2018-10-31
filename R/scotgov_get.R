@@ -60,7 +60,9 @@ scotgov_get <- function(dataset,
     )
 
   #start the sparql query
-  select_line <- paste("select", paste(question_marked_dimensions), "?value")
+  select_line <- paste("select",
+                       paste(question_marked_dimensions,collapse=" "),
+                       "?value")
   data_line <- paste0("?data qb:dataSet <http://statistics.gov.scot/data/",
                       dataset,
                       ">.")
