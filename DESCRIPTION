@@ -17,6 +17,7 @@ Depends:
 Suggests:
     readr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 RoxygenNote: 6.1.0
 VignetteBuilder: knitr
