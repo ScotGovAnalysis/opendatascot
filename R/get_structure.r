@@ -12,7 +12,7 @@
 #' @return A list of data from statistics.gov.scot
 #'
 #' @examples
-#' get_structure("household-size")
+#' get_structure("average-household-size")
 #'
 #' @export
 
