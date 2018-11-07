@@ -1,3 +1,21 @@
+#' View structure of data from statistics.gov.scot
+#'
+#' \code{get_structure} returns a list of data about a dataset from statistics.gov.scot
+#'
+#'
+#' This is a generic function: methods can be defined for it directly
+#' or via the \code{\link{Summary}} group generic. For this to work properly,
+#' the arguments \code{...} should be unnamed, and dispatch is on the
+#' first argument.
+#'
+#' @param endpoint An API endpoint for statistics.gov.scot
+#' @return A list of data from statistics.gov.scot
+#'
+#' @examples
+#' get_structure("household-size")
+#'
+#' @export
+
 get_structure <- function(dataset) {
 
   dimension_set <- dataset_dimensions(dataset)
