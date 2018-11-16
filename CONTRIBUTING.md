@@ -1,3 +1,4 @@
+
 # CONTRIBUTING #
 
 ### Fixing typos
@@ -32,6 +33,8 @@ with test cases included are easier to accept.
 current development version header describing the changes made followed by your
 GitHub username, and links to relevant issue(s)/PR(s).
 * In the title of your PR, reference the GitHub issue number it relates to.
+* Keeping your changes focussed on a single issue will help minimise the
+time it takes to review your PR.
 
 ### Code of Conduct
 
