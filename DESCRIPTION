@@ -13,7 +13,10 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends:
-    SPARQL
+    SPARQL,
+    XML,
+    RCurl,
+    bitops
 Suggests:
     readr,
     knitr,

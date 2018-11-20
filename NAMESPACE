@@ -3,3 +3,4 @@
 export(scotgov_get)
 export(get_structure)
 export(get_dataset_query)
+export(list_sg_datasets)

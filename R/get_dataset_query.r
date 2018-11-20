@@ -8,7 +8,7 @@
 #' the arguments \code{...} should be unnamed, and dispatch is on the
 #' first argument.
 #'
-#' @param 
+#' @param endpoint An API endpoint for statistics.gov.scot
 #' @return A string consisting of a valid SPARQL query
 #'
 #' @examples
