@@ -3,45 +3,45 @@
 scotgov
 =======
 
+[![Travis-CI Build Status](https://travis-ci.org/jsphdms/scotgov.svg?branch=master)](https://travis-ci.org/jsphdms/scotgov)
+
+:construction: :construction: :construction: **Package under construction - watch this space for updates** :construction: :construction: :construction:
+
 Use scotgov to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. scotgov removes the need to write SPARQL code; you simply need the URI of a dataset. scotgov can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
 
 Installation
 ------------
 
-Install scotgov from GitHub with:
+Install from GitHub:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("jsphdms/scotgov")
 ```
 
-If the above does not work, you can install from source:
+Or you can install from source:
 
 1.  Go to the scotgov [repository](https://github.com/jsphdms/scotgov) on GitHub
 2.  Click **Clone or download** then **Download ZIP**
-3.  Save the file locally (e.g. your H drive) and Unzip
-4.  Install with install.packages()
+3.  Save the file locally (e.g. your H drive)
+4.  Unzip the file
+5.  Install with `install.packages()`
 
 ``` r
-install.packages("your/directory/scotgov-master", repos = NULL,
+install.packages("your/directory/scotgov-master/scotgov-master", repos = NULL,
                  type="source", lib = "your/R/package/library/directory")
 ```
 
-Example
--------
+Having trouble installing from source? Check you followed the steps above precisely; a small error can cause the install to fail. The best approach is to copy the code above into a text editor and carefully update the two directories. In particular, notice the repetition of **scotgov-master**.
 
-You will need the name of your dataset. Find this on the [statistics.gov.scot](http://statistics.gov.scot/home) web page for your dataset (in the API tab):
+Usage
+-----
 
-``` r
-library(scotgov)
+Learn more in `vignette("scotgov")` or `?scotgov_get`.
 
-household_size <- scotgov_get("average-household-size")
-head(household_size)
-#>                 refArea refPeriod measureType value
-#> 1 Dumfries and Galloway      2003       Ratio  2.25
-#> 2         East Ayrshire      2003       Ratio  2.32
-#> 3          East Lothian      2003       Ratio  2.32
-#> 4     North Lanarkshire      2003       Ratio  2.35
-#> 5                 Angus      2003       Ratio  2.24
-#> 6           Dundee City      2003       Ratio  2.09
-```
+Future development
+------------------
+
+Currently `scotgov_get()` is the only function available. This package is under active development, so any further functionality will be mentioned here when it's ready. If something important is missing, feel free to contact the contributors or [add a new issue](https://github.com/jsphdms/scotgov/issues).
+
+Since this package is under active development, breaking changes may be necessary. We will make it clear once the package is reasonably stable.

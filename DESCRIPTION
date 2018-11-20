@@ -1,15 +1,23 @@
 Package: scotgov
 Type: Package
-Title: Access statistics.gov.scot without SPARQL
+Title: Access statistics.gov.scot Without SPARQL
 Version: 0.0.0.9000
 Authors@R: as.person(c(
     "Joseph Adams <joseph@josephadams.net> [aut, cre]", 
     "Gordon Bryden <gordon.bryden@gov.scot> [aut]"
   ))
 Description: Access the statistics.gov.scot API without writing SPARQL queries.
-License: MIT
+URL: https://github.com/jsphdms/scotgov
+BugReports: https://github.com/jsphdms/scotgov/issues
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends:
     SPARQL
-RoxygenNote: 6.0.1
+Suggests:
+    readr,
+    knitr,
+    rmarkdown,
+    testthat
+RoxygenNote: 6.1.0
+VignetteBuilder: knitr
