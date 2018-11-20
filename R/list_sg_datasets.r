@@ -42,5 +42,7 @@ list_sg_datasets <- function() {
 
   result <- qdata$results
 
+  result['dataset_name'] <- sapply(result['URI'], function(x) get_names(x))
+                                   
   return(data.frame(result))
 }
