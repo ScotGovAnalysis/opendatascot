@@ -1,3 +1,6 @@
+# SPARQL query to get all unique values of a dataset dimension
+# internal function for scotgov_get
+
 get_categories <- function(dataset,dimension) {
 
   endpoint <- "http://statistics.gov.scot/sparql"
