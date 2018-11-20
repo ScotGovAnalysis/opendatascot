@@ -19,9 +19,9 @@ dataset_dimensions <- function(dataset) {
       ?value ?componentProperty ?componentReference .
       }"
     )
-  query_data <- SPARQL::SPARQL(endpoint, query)$results
-  query_filter <- query_data[query_data$componentProperty ==
-                               "<http://purl.org/linked-data/cube#dimension>", ]
+  query_data <- SPARQL::SPARQL(endpoint,query)$results
+  query_filter <- query_data[query_data$componentProperty=='<http://purl.org/linked-data/cube#dimension>',]
+
   result <- query_filter$componentReference
   return(data.frame(result))
 }
