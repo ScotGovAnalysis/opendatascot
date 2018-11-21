@@ -8,7 +8,6 @@
 #' the arguments \code{...} should be unnamed, and dispatch is on the
 #' first argument.
 #'
-#' @param endpoint An API endpoint for statistics.gov.scot
 #' @return A list of data from statistics.gov.scot
 #'
 #' @examples
