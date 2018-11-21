@@ -2,16 +2,23 @@
 % Please edit documentation in R/list_sg_datasets.r
 \name{list_sg_datasets}
 \alias{list_sg_datasets}
-\title{Return a \code{data.frame} of all data sets available on statistics.gov.scot}
+\title{find all datasets in opendatascotland}
 \usage{
-list_sg_datasets()
+list_sg_datasets(print = TRUE)
 }
 \value{
-A \code{data.frame} of all data sets available on statistics.gov.scot
+A list of data from statistics.gov.scot
 }
 \description{
-Return a \code{data.frame} of all data sets available on statistics.gov.scot
+\code{list_sg_datasets} returns a list of all datasets from statistics.gov.scot
+}
+\details{
+This is a generic function: methods can be defined for it directly
+or via the \code{\link{Summary}} group generic. For this to work properly,
+the arguments \code{...} should be unnamed, and dispatch is on the
+first argument.
 }
 \examples{
-scotgov:::list_sg_datasets()
+list_st_datasets()
+
 }
