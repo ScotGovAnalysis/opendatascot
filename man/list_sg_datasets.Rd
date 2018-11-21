@@ -4,7 +4,7 @@
 \alias{list_sg_datasets}
 \title{find all datasets in opendatascotland}
 \usage{
-list_sg_datasets(print = TRUE)
+list_sg_datasets()
 }
 \value{
 A list of data from statistics.gov.scot
@@ -19,6 +19,6 @@ the arguments \code{...} should be unnamed, and dispatch is on the
 first argument.
 }
 \examples{
-list_st_datasets()
+list_sg_datasets()
 
 }
