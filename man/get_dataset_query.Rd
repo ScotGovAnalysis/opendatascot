@@ -8,7 +8,13 @@ get_dataset_query(dataset, start_date = NULL, end_date = NULL,
   geography = NULL)
 }
 \arguments{
-\item{endpoint}{An API endpoint for statistics.gov.scot}
+\item{dataset}{An API endpoint for statistics.gov.scot}
+
+\item{start_date}{A date}
+
+\item{end_date}{A date}
+
+\item{geography}{A string representing a valid SG geography code, or portion thereof}
 }
 \value{
 A string consisting of a valid SPARQL query
