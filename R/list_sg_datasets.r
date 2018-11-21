@@ -11,7 +11,7 @@
 #' @return A list of data from statistics.gov.scot
 #'
 #' @examples
-#' list_st_datasets()
+#' list_sg_datasets()
 #'
 #' @export
 
