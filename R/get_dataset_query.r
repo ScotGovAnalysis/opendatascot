@@ -8,7 +8,6 @@
 #' the arguments \code{...} should be unnamed, and dispatch is on the
 #' first argument.
 #'
-
 #' @param dataset The last part of the URI for a dataset on statistics.gov.scot
 #' @param start_date Filter data points on or after this date
 #' @param end_date Filter data points after this date
