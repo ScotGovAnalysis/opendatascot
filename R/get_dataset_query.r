@@ -8,7 +8,11 @@
 #' the arguments \code{...} should be unnamed, and dispatch is on the
 #' first argument.
 #'
-#' @param endpoint An API endpoint for statistics.gov.scot
+
+#' @param dataset The last part of the URI for a dataset on statistics.gov.scot
+#' @param start_date Filter data points on or after this date
+#' @param end_date Filter data points after this date
+#' @param geography An S code - filter data points within this geography
 #' @return A string consisting of a valid SPARQL query
 #'
 #' @examples
