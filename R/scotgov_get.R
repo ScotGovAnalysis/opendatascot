@@ -21,7 +21,8 @@
 scotgov_get <- function(dataset,
                         start_date = NULL,
                         end_date = NULL,
-                        geography = NULL) {
+                        geography = NULL,
+                       ...) {
 
   if (is.null(start_date) & is.null(end_date) & is.null(geography)) {
 
