@@ -15,7 +15,7 @@
 #' get_dataset_query("average-house-size")
 #'
 #' @export
-get_dataset_query <- function(dataset,start_date=NULL,end_date=NULL,geography=NULL) {
+get_dataset_query <- function(dataset,start_date=NULL,end_date=NULL,geography=NULL,...) {
   
   TEMP_locations <- dataset_dimensions(dataset)
   locations <- data.frame(lapply(TEMP_locations, as.character), stringsAsFactors=FALSE)
@@ -65,6 +65,37 @@ get_dataset_query <- function(dataset,start_date=NULL,end_date=NULL,geography=NU
     query <- paste(query, query_addition)
   }
   
+  #Build filter for additional arguements
+  #names of all the arguements
+  dimensions <- names(list(...))
+  #list of all the names and values of the arguemnts
+  values <- list(...)
+
+  #initialise query builder
+  query_addition<-""
+  
+  #builder for simple one arguemnt filter
+  for(i in 1:length(dimensions)){
+    print( length(values[[i]]) )
+    if( length(values[[i]]) == 1) {
+      query_addition<- paste0(query_addition, "filter (?", dimensions[[i]], " = ", values[[i]],") ")
+    } else {
+      
+      #builder for multiple value arguments - makes a big chain of OR statements
+      builder<-"filter ("
+      for (j in 1:length(values[[i]])){
+        print(j)
+        builder <- paste0(builder,"?", dimensions[[i]], " = '", values[[i]][[j]],"'")
+        if(j != length(values[[i]])) {
+          builder <- paste0(builder,"||")
+        }
+      }
+      query_addition<- paste0(query_addition,builder,") ")
+    }
+  }
+  
+  query <- paste(query, query_addition)  
+    
   #expose the measureType dimension's value as a value
   query<-paste(query, "?data ?measureTypeURI ?value. }")
                 
