@@ -12,7 +12,7 @@
 #' @param start_date Filter data points on or after this date
 #' @param end_date Filter data points after this date
 #' @param geography An S code - filter data points within this geography
-#` @param ...
+#' @param ... arbitrary filters requiring valid dimension = value structure
 #' @return A \code{data.frame} of data from statistics.gov.scot
 #'
 #' @examples
