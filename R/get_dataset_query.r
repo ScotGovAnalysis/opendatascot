@@ -78,7 +78,7 @@ get_dataset_query <- function(dataset,start_date=NULL,end_date=NULL,geography=NU
   #initialise query builder
   query_addition<-""
                                  
-  if( length(dimensions >= 1) {                              
+  if( length(dimensions >= 1) ) {                              
                                  
     #builder for simple one arguemnt filter
     for(i in 1:length(dimensions)){
