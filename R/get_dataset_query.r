@@ -77,22 +77,25 @@ get_dataset_query <- function(dataset,start_date=NULL,end_date=NULL,geography=NU
 
   #initialise query builder
   query_addition<-""
+                                 
+  if( length(dimensions => 1) {                              
+                                 
+    #builder for simple one arguemnt filter
+    for(i in 1:length(dimensions)){
+      if( length(values[[i]]) == 1) {
+        query_addition<- paste0(query_addition, "filter (?", dimensions[[i]], " = '", values[[i]],"'^^xsd:string) ")
+      } else {
 
-  #builder for simple one arguemnt filter
-  for(i in 1:length(dimensions)){
-    if( length(values[[i]]) == 1) {
-      query_addition<- paste0(query_addition, "filter (?", dimensions[[i]], " = '", values[[i]],"'^^xsd:string) ")
-    } else {
-
-      #builder for multiple value arguments - makes a big chain of OR statements
-      builder<-"filter ("
-      for (j in 1:length(values[[i]])){
-        builder <- paste0(builder,"?", dimensions[[i]], " = '", values[[i]][[j]],"'^^xsd:string")
-        if(j != length(values[[i]])) {
-          builder <- paste0(builder,"||")
+        #builder for multiple value arguments - makes a big chain of OR statements
+        builder<-"filter ("
+        for (j in 1:length(values[[i]])){
+         builder <- paste0(builder,"?", dimensions[[i]], " = '", values[[i]][[j]],"'^^xsd:string")
+         if(j != length(values[[i]])) {
+           builder <- paste0(builder,"||")
+         }
         }
+        query_addition<- paste0(query_addition,builder,") ")
       }
-      query_addition<- paste0(query_addition,builder,") ")
     }
   }
     
