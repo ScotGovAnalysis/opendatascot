@@ -1,0 +1,87 @@
+---
+title: "Introduction to scotgov package"
+author: "Joseph Adams"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{scotgov introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(scotgov)
+```
+
+
+## Introduction
+
+Use _scotgov_ to download data from [statistics.gov.scot](https://statistics.gov.scot) with a single line of R code. _scotgov_ removes the need to write SPARQL code; you simply need the URI of a dataset. _scotgov_ can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
+
+
+## Usage
+
+You can download an entire dataset, or filter by date and/or geography. We recommend filtering large datasets. If you require a full download of a large dataset, you may need to contact [statistics.gov.scot](https://statistics.gov.scot).  
+<br/>
+
+You will always need the last part of the URI for your dataset. Find this on the [statistics.gov.scot](https://statistics.gov.scot) web page for your dataset (in the API tab). For example, the full URI for Average Household Size is [Average Household Size](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Faverage-household-size):  
+
+
+`http://statistics.gov.scot/data/average-household-size`
+
+you just need the last part:  
+
+`average-household-size`
+
+
+### Without filtering
+
+Once you have the last part of the URI, set this as the `dataset` parameter for `scotgov_get()`:  
+
+```{r}
+household_size <- scotgov_get(dataset = "average-household-size")
+head(household_size)
+```
+
+### With filtering
+
+Filtering is useful for large data sets. The filtering parameters for `scotgov_get()` are:
+
+-   `start_date`
+-   `end_date`
+-   `geography`
+
+##### Filter by date
+
+Use either `start_date` **OR** `end_date` to filter datapoints before or after a certain date:
+
+``` {r}
+household_size_2010_onwards <- scotgov_get(dataset = "average-household-size",
+                                           start_date = 2010)
+head(household_size_2010_onwards)
+
+```
+
+Use `start_date` **AND** `end_date` to filter datapoints within a certain timeframe.
+
+##### Filter by geography
+
+
+Specify a single geography using an S code:
+
+``` {r}
+household_size_S12000039 <- scotgov_get(dataset = "average-household-size",
+                                           geography = "S12000039")
+head(household_size_S12000039)
+```
+
+-------
+
+
+```{r}
+sessionInfo()
+```
