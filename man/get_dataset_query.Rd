@@ -5,7 +5,7 @@
 \title{Generate SPARQL query to download data from statistics.gov.scot}
 \usage{
 get_dataset_query(dataset, start_date = NULL, end_date = NULL,
-  geography = NULL)
+  geography = NULL, ...)
 }
 \arguments{
 \item{dataset}{An API endpoint for statistics.gov.scot}
