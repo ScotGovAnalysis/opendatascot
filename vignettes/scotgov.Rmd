@@ -60,9 +60,9 @@ Filtering is useful for large data sets. The filtering parameters for `scotgov_g
 Use either `start_date` **OR** `end_date` to filter datapoints before or after a certain date:
 
 ``` {r}
-household_size_2010_onwards <- scotgov_get(dataset = "average-household-size",
-                                           start_date = 2010)
-head(household_size_2010_onwards)
+#household_size_2010_onwards <- scotgov_get(dataset = "average-household-size",
+#                                           start_date = 2010)
+#head(household_size_2010_onwards)
 
 ```
 
