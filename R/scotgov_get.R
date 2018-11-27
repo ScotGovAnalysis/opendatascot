@@ -12,6 +12,7 @@
 #' @param start_date Filter data points on or after this date
 #' @param end_date Filter data points after this date
 #' @param geography An S code - filter data points within this geography
+#` @param ...
 #' @return A \code{data.frame} of data from statistics.gov.scot
 #'
 #' @examples
@@ -21,7 +22,8 @@
 scotgov_get <- function(dataset,
                         start_date = NULL,
                         end_date = NULL,
-                        geography = NULL) {
+                        geography = NULL,
+                       ...) {
 
   if (is.null(start_date) & is.null(end_date) & is.null(geography)) {
 
@@ -47,7 +49,7 @@ scotgov_get <- function(dataset,
 
   endpoint <- "http://statistics.gov.scot/sparql"
     
-  query <- get_dataset_query(dataset)
+  query <- get_dataset_query(dataset,start_date=NULL,end_date=NULL,geography=NULL,...)
     
   query_data <- try(SPARQL::SPARQL(endpoint,query),silent = TRUE)
   if( query_data[1] ==  "Error : XML content does not seem to be XML: 'Response too large'\n"){
