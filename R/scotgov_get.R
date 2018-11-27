@@ -2,7 +2,6 @@
 #'
 #' \code{scotgov_get} returns a tibble of data from statistics.gov.scot
 #'
-#'
 #' This is a generic function: methods can be defined for it directly
 #' or via the \code{\link{Summary}} group generic. For this to work properly,
 #' the arguments \code{...} should be unnamed, and dispatch is on the
