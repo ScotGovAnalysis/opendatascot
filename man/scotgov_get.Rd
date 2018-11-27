@@ -5,7 +5,7 @@
 \title{Download data from statistics.gov.scot}
 \usage{
 scotgov_get(dataset, start_date = NULL, end_date = NULL,
-  geography = NULL)
+  geography = NULL, ...)
 }
 \arguments{
 \item{dataset}{The last part of the URI for a dataset on statistics.gov.scot}
