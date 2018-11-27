@@ -38,8 +38,6 @@ Usage
 
 Learn more in `vignette("scotgov")` or `?scotgov_get`.
 
-Find the name of the dataset you want using `list_sg_dataset()`
-
 Use `list_sg_dataset()` to find all datasets currently loaded onto statistics.gov.scot
 
 Use `scotgov_get()` to get the data from a dataset in statistics.gov.scot
