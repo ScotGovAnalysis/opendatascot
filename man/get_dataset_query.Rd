@@ -5,16 +5,18 @@
 \title{Generate SPARQL query to download data from statistics.gov.scot}
 \usage{
 get_dataset_query(dataset, start_date = NULL, end_date = NULL,
-  geography = NULL, ...)
+
+  geography = NULL)
 }
 \arguments{
-\item{dataset}{The last part of the URI for a dataset on statistics.gov.scot}
+\item{dataset}{An API endpoint for statistics.gov.scot}
 
-\item{start_date}{Filter data points on or after this date}
+\item{start_date}{A date}
 
-\item{end_date}{Filter data points after this date}
+\item{end_date}{A date}
 
-\item{geography}{An S code - filter data points within this geography}
+\item{geography}{A string representing a valid SG geography code, or portion thereof}
+
 }
 \value{
 A string consisting of a valid SPARQL query
