@@ -1,9 +1,8 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 scotgov
 =======
 
-[![Travis-CI Build Status](https://travis-ci.org/jsphdms/scotgov.svg?branch=master)](https://travis-ci.org/jsphdms/scotgov)
+[![Travis-CI Build Status](https://travis-ci.org/GordonBryden/scotgov.svg?branch=master)](https://travis-ci.org/GordonBryden/scotgov)
 
 :construction: :construction: :construction: **Package under construction - watch this space for updates** :construction: :construction: :construction:
 
