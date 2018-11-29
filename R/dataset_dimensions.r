@@ -2,7 +2,7 @@
 #'
 #' @param dataset The last part of the URI of a dataset
 #' @return The dimensions of the dataset at
-#' \code{statistics.gov.scot/data/<dataset>}
+#' \code{statistics.gov.scot/data/<dataset>} as a data frame
 #'
 #' @examples
 #' scotgov:::dataset_dimensions("average-household-size")
