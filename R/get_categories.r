@@ -1,5 +1,6 @@
 # SPARQL query to get all unique values of a dataset dimension
 # internal function for scotgov_get
+#' @noRd
 
 get_categories <- function(dataset,dimension) {
 

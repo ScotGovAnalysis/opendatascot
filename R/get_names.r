@@ -1,6 +1,7 @@
 # small function to transform sparql location to a simple name
 # can be removed when dataset_structure and dataset_measures return clear labels
 # internal function for scotgov_get
+#' @noRd 
 
 get_names <- function(dataset) {
 
