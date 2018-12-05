@@ -23,7 +23,8 @@ Suggests:
     readr,
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    covr
 RoxygenNote: 6.1.0
 VignetteBuilder: knitr
 Language: en-GB
