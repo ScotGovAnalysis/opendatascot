@@ -75,6 +75,8 @@ get_dataset_query <- function(dataset,start_date=NULL,end_date=NULL,geography=NU
   #list of all the names and values of the arguemnts
   values <- list(...)
 
+  if( length(dimensions >= 1) ) {                                
+                                 
   #initialise query builder
   query_addition<-""
 
@@ -97,6 +99,8 @@ get_dataset_query <- function(dataset,start_date=NULL,end_date=NULL,geography=NU
   }
 
   query <- paste(query, query_addition)
+    
+  }
 
   #expose the measureType dimension's value as a value
   query<-paste(query, "?data ?measureTypeURI ?value. }")
