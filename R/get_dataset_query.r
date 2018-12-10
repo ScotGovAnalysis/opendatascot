@@ -98,7 +98,9 @@ get_dataset_query <- function(dataset,start_date=NULL,end_date=NULL,geography=NU
       }
     }
   }
-    
+  
+  query <- paste(query, query_addition)                               
+                                 
   #expose the measureType dimension's value as a value
   query<-paste(query, "?data ?measureTypeURI ?value. }")
                 
