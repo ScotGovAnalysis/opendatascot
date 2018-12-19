@@ -29,7 +29,7 @@ get_structure <- function(dataset) {
 
 
   }
-  names(categories) <- get_names(dimension_set[,])
+  names(categories) <- gsub("[()%]", "", get_names(dimension_set[,]))
 
   result <- list(dimension_set,categories)
   names(result) <- list("dimensions","categories")
