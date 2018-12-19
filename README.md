@@ -59,7 +59,7 @@ After viewing our\_structure - we decide we only want the q-on-q data for some o
 ``` r
 filtered_data <- scotgov_get("gross-domestic-product-quarterly-output-by-industry",
                               measureType = "q-on-q",
-                              industrySector = c("Distribution, Hotels and Restaurants (Section G,I)",
+                              industrySectorsic07 = c("Distribution, Hotels and Restaurants (Section G,I)",
                                                  "Business Services and Finance (Section K-N)",
                                                  "Transport, Storage and Communication (Section H,J)",
                                                  "Government and Other Services (Section O-T)"))
