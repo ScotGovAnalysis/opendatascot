@@ -50,15 +50,20 @@ scotgov_get <- function(dataset,
   } else {
 
   endpoint <- "http://statistics.gov.scot/sparql"
-    
-  query <- get_dataset_query(dataset,start_date=NULL,end_date=NULL,geography=NULL,...)
-    
-  query_data <- try(SPARQL::SPARQL(endpoint,query),silent = TRUE)
-  if( query_data[1] ==  "Error : XML content does not seem to be XML: 'Response too large'\n"){
-    stop(Error = "Dataset is too large to be downloaded like this. Try adding filters to reduce size")
-  }    
- 
- 
+  query <- get_dataset_query(dataset,
+                             start_date = NULL,
+                             end_date = NULL,
+                             geography = NULL,
+                             ...)
+
+  query_data <- try(SPARQL::SPARQL(endpoint, query), silent = TRUE)
+  if ( query_data[1] ==  "Error :
+       XML content does not seem to be XML: 'Response too large'\n"){
+    stop(Error = "Dataset is too large to be downloaded like this.
+         Try adding filters to reduce size")
+  }
+
+
   result <- query_data$results
 
   }
