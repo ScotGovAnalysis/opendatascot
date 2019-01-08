@@ -1,10 +1,9 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 scotgov
 =======
 
 [![Travis-CI Build Status](https://travis-ci.org/jsphdms/scotgov.svg?branch=master)](https://travis-ci.org/jsphdms/scotgov)
-
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
 :construction: :construction: :construction: **Package under construction - watch this space for updates** :construction: :construction: :construction:
 
@@ -43,28 +42,23 @@ Use `list_sg_dataset()` to find all datasets currently loaded onto statistics.go
 
 Use `scotgov_get()` to get the data from a dataset in statistics.gov.scot
 
-Use `get_structure()` to find all the full sets of categories and values for a particular dataset (helpful for creating new filters for scotgov\_get!)
+Use `get_structure()` to find all the full sets of categories and values for a particular dataset (helpful for creating new filters for `scotgov_get`!)
 
-Use `get_dataset_query()` to produce the SPARQL query used by scotgov\_get().
+Use `get_dataset_query()` to produce the SPARQL query used by `scotgov_get()`.
 
 Examples
 --------
 
 Get a dataframe of all datasets on statistics.gov.scot, their uri, and publisher `all_scotgov_datasets <- list_sg_datasets()`
 
-Get the name of the ninty-seventh dataset - for use in later queries (results will change as more datasets are added) `one_dataset <- all_scotgov_datasets[97,4]`
+Discover the structure of the dataset on homelessness applications - so we can use this in a later filter `our_structure <- get_structure("homelessness-applications")`
 
-Discover the structure of this datasets - so we can use this in a later filter `our_structure <- get_structure("gross-domestic-product-quarterly-output-by-industry")`
-
-After viewing our\_structure - we decide we only want the q-on-q data for some of the sectors, so we add these to the filter.
+After viewing our\_structure - we decide we only want the data for "all applications" and for the periods "2015/2016" and "2016/2017", so we add these to the filter.
 
 ``` r
-filtered_data <- scotgov_get("gross-domestic-product-quarterly-output-by-industry",
-                              measureType = "q-on-q",
-                              industrySector = c("Distribution, Hotels and Restaurants (Section G,I)",
-                                                 "Business Services and Finance (Section K-N)",
-                                                 "Transport, Storage and Communication (Section H,J)",
-                                                 "Government and Other Services (Section O-T)"))
+filtered_data <- scotgov_get("homelessness-applications",
+                              refPeriod = c("2015/2016", "2016/2017"),
+                              applicationType = "All applications")
 ```
 
 Future development
