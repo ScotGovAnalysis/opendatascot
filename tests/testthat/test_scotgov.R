@@ -1,3 +1,4 @@
+
 context("scotgov")
 
 
@@ -35,4 +36,16 @@ test_that("scotgov_get with arbitrary filtering produces no warning", {
                             refPeriod = c("2015/2016", "2016/2017"),
                             applicationType = "All applications"))
 
+})
+
+test_that("get_structure produces no warning", {
+  
+  expect_silent(get_structure("homelessness-applications"))
+  
+})
+
+test_that("list_sg_dataeset produces no warning", {
+  
+  expect_silent(list_sg_datasets())
+  
 })
