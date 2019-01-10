@@ -17,7 +17,8 @@ Depends:
     SPARQL,
     XML,
     RCurl,
-    bitops
+    bitops,
+    curl
 Suggests:
     spelling,
     readr,
