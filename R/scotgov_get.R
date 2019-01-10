@@ -42,11 +42,6 @@ scotgov_get <- function(dataset,
                                      dataset))
   }
 
-    result <- utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
-                                     "cube-table?uri=http%3A%2F%2F",
-                                     "statistics.gov.scot%2Fdata%2F",
-                                     dataset))
-
   } else {
 
   endpoint <- "http://statistics.gov.scot/sparql"
