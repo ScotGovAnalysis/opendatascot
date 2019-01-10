@@ -1,4 +1,4 @@
-Package: scotgov
+,Package: scotgov
 Type: Package
 Title: Access statistics.gov.scot Without SPARQL
 Version: 0.0.0.9000
@@ -17,7 +17,8 @@ Depends:
     SPARQL,
     XML,
     RCurl,
-    bitops
+    bitops,
+    curl
 Suggests:
     spelling,
     readr,
