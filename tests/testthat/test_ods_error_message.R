@@ -1,4 +1,4 @@
-context("scotgov-errors")
+context("ods_error_message")
 
 test_that("non-existent dataset produces correct message", {
   skip_on_cran()
