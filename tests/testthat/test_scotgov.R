@@ -28,3 +28,11 @@ test_that("scotgov_get with date and geography filtering produces no warning", {
                             end_date = 2010, geography = "S12000039"))
 
 })
+
+test_that("scotgov_get with arbitrary filtering produces no warning", {
+
+  expect_silent(scotgov_get("homelessness-applications",
+                            refPeriod = c("2015/2016", "2016/2017"),
+                            applicationType = "All applications"))
+
+})
