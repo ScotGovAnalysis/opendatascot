@@ -2,7 +2,6 @@
 #'
 #' \code{scotgov_get} returns a tibble of data from statistics.gov.scot
 #'
-#'
 #' This is a generic function: methods can be defined for it directly
 #' or via the \code{\link{Summary}} group generic. For this to work properly,
 #' the arguments \code{...} should be unnamed, and dispatch is on the
@@ -12,6 +11,7 @@
 #' @param start_date Filter data points on or after this date
 #' @param end_date Filter data points after this date
 #' @param geography An S code - filter data points within this geography
+#' @param ... arbitrary filters requiring valid dimension = value structure
 #' @return A \code{data.frame} of data from statistics.gov.scot
 #'
 #' @examples
@@ -21,9 +21,13 @@
 scotgov_get <- function(dataset,
                         start_date = NULL,
                         end_date = NULL,
-                        geography = NULL) {
+                        geography = NULL,
+                       ...) {
 
-  if (is.null(start_date) & is.null(end_date) & is.null(geography)) {
+  if (is.null(start_date) &
+      is.null(end_date) &
+      is.null(geography)  &
+      length(list(...)) == 0) {
 
   if ("readr" %in% rownames(utils::installed.packages())) {
     #download with readr if available
@@ -46,15 +50,20 @@ scotgov_get <- function(dataset,
   } else {
 
   endpoint <- "http://statistics.gov.scot/sparql"
-    
-  query <- get_dataset_query(dataset)
-    
-  query_data <- try(SPARQL::SPARQL(endpoint,query),silent = TRUE)
-  if( query_data[1] ==  "Error : XML content does not seem to be XML: 'Response too large'\n"){
-    stop(Error = "Dataset is too large to be downloaded like this. Try adding filters to reduce size")
-  }    
- 
- 
+  query <- get_dataset_query(dataset,
+                             start_date = NULL,
+                             end_date = NULL,
+                             geography = NULL,
+                             ...)
+
+  query_data <- try(SPARQL::SPARQL(endpoint, query), silent = TRUE)
+  if ( query_data[1] ==  "Error :
+       XML content does not seem to be XML: 'Response too large'\n"){
+    stop(Error = "Dataset is too large to be downloaded like this.
+         Try adding filters to reduce size")
+  }
+
+
   result <- query_data$results
 
   }

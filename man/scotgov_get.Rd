@@ -5,7 +5,7 @@
 \title{Download data from statistics.gov.scot}
 \usage{
 scotgov_get(dataset, start_date = NULL, end_date = NULL,
-  geography = NULL)
+  geography = NULL, ...)
 }
 \arguments{
 \item{dataset}{The last part of the URI for a dataset on statistics.gov.scot}
@@ -15,6 +15,8 @@ scotgov_get(dataset, start_date = NULL, end_date = NULL,
 \item{end_date}{Filter data points after this date}
 
 \item{geography}{An S code - filter data points within this geography}
+  
+\item{...}{arbitrary filters requiring valid dimension = value structure}
 }
 \value{
 A \code{data.frame} of data from statistics.gov.scot
