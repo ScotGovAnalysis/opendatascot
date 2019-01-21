@@ -1,10 +1,10 @@
 ---
-title: "Introduction to scotgov package"
+title: "Introduction to opendatascot package"
 author: "Joseph Adams"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{scotgov introduction}
+  %\VignetteIndexEntry{opendatascot introduction}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,13 +14,13 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-library(scotgov)
+library(opendatascot)
 ```
 
 
 ## Introduction
 
-Use _scotgov_ to download data from [statistics.gov.scot](https://statistics.gov.scot) with a single line of R code. _scotgov_ removes the need to write SPARQL code; you simply need the URI of a dataset. _scotgov_ can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
+Use _opendatascot_ to download data from [statistics.gov.scot](https://statistics.gov.scot) with a single line of R code. _opendatascot_ removes the need to write SPARQL code; you simply need the URI of a dataset. _opendatascot_ can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
 
 
 ## Usage
