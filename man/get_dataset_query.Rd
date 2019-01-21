@@ -15,7 +15,7 @@ get_dataset_query(dataset, start_date = NULL, end_date = NULL,
 \item{end_date}{A date}
 
 \item{geography}{A string representing a valid SG geography code, or portion thereof}
-  
+
 \item{...}{arbitrary filters requiring valid dimension = value structure}
 }
 \value{

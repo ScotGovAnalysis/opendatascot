@@ -3,12 +3,3 @@
 language: R
 sudo: false
 cache: packages
-
-r_github_packages:
-  - jimhester/lintr
-  - r-lib/covr
-  
-after_success:
-  - R CMD INSTALL $PKG_TARBALL
-  - Rscript -e 'lintr::lint_package()'
-  - Rscript -e 'covr::codecov()'

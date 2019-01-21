@@ -15,7 +15,7 @@ scotgov_get(dataset, start_date = NULL, end_date = NULL,
 \item{end_date}{Filter data points after this date}
 
 \item{geography}{An S code - filter data points within this geography}
-  
+
 \item{...}{arbitrary filters requiring valid dimension = value structure}
 }
 \value{

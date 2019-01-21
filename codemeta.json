@@ -1,20 +1,23 @@
 {
-  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
-  "identifier": "scotgov",
+  "identifier": "opendatascot",
   "description": "Access the statistics.gov.scot API without writing SPARQL queries.",
-  "name": "scotgov: Access statistics.gov.scot Without SPARQL",
-  "codeRepository": "https://github.com/jsphdms/scotgov",
-  "issueTracker": "https://github.com/jsphdms/scotgov/issues",
+  "name": "opendatascot: Access statistics.gov.scot Without SPARQL",
+  "codeRepository": "https://github.com/jsphdms/opendatascot",
+  "issueTracker": "https://github.com/jsphdms/opendatascot/issues",
   "license": "https://spdx.org/licenses/MIT",
   "version": "0.0.0.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.5.1",
+    "version": "3.5.2",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.5.1 (2018-07-02)",
+  "runtimePlatform": "R version 3.5.2 (2018-12-20)",
   "author": [
     {
       "@type": "Person",
@@ -180,7 +183,7 @@
     }
   ],
   "readme": "https://github.com/jsphdms/scotgov/blob/master/README.md",
-  "fileSize": "8.537KB",
+  "fileSize": "13.889KB",
   "contIntegration": "https://travis-ci.org/jsphdms/scotgov",
   "developmentStatus": "https://www.repostatus.org/#wip"
 }

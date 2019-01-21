@@ -11,7 +11,7 @@ dataset_dimensions(dataset)
 }
 \value{
 The dimensions of the dataset at
-\code{statistics.gov.scot/data/<dataset>}
+\code{statistics.gov.scot/data/<dataset>} as a data frame
 }
 \description{
 Return the dimensions of a dataset
