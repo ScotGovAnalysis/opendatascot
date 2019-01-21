@@ -17,5 +17,5 @@ The dimensions of the dataset at
 Return the dimensions of a dataset
 }
 \examples{
-scotgov:::dataset_dimensions("average-household-size")
+opendatascot:::dataset_dimensions("average-household-size")
 }
