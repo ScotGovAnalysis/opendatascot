@@ -5,7 +5,7 @@
 #' \code{statistics.gov.scot/data/<dataset>} as a data frame
 #'
 #' @examples
-#' scotgov:::ods_schemes("average-household-size")
+#' opendatascot:::ods_schemes("average-household-size")
 
 ods_schemes <- function(dataset) {
   endpoint <- "http://statistics.gov.scot/sparql"

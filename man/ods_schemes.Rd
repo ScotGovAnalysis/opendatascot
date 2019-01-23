@@ -17,5 +17,5 @@ The schemes of the dataset at
 Return the schemes of a dataset
 }
 \examples{
-scotgov:::ods_schemes("average-household-size")
+opendatascot:::ods_schemes("average-household-size")
 }
