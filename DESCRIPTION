@@ -1,4 +1,4 @@
-Package: scotgov
+Package: opendatascot
 Type: Package
 Title: Access statistics.gov.scot Without SPARQL
 Version: 0.0.0.9000
@@ -8,8 +8,8 @@ Authors@R: as.person(c(
     "Thomas Crines <Thomas.Crines@gov.scot> [aut]"
   ))
 Description: Access the statistics.gov.scot API without writing SPARQL queries.
-URL: https://github.com/jsphdms/scotgov
-BugReports: https://github.com/jsphdms/scotgov/issues
+URL: https://github.com/jsphdms/opendatascot
+BugReports: https://github.com/jsphdms/opendatascot/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -26,6 +26,6 @@ Suggests:
     testthat,
     roxygen2,
     covr
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 VignetteBuilder: knitr
 Language: en-GB

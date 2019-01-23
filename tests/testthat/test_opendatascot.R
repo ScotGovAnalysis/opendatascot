@@ -1,5 +1,5 @@
 
-context("scotgov")
+context("opendatascot")
 
 
 test_that("scotgov_get with geography filtering produces no warning", {
@@ -39,13 +39,13 @@ test_that("scotgov_get with arbitrary filtering produces no warning", {
 })
 
 test_that("get_structure produces no warning", {
-  
+
   expect_silent(get_structure("homelessness-applications"))
-  
+
 })
 
 test_that("list_sg_dataeset produces no warning", {
-  
+
   expect_silent(list_sg_datasets())
-  
+
 })

@@ -1,33 +1,33 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-scotgov
-=======
+opendatascot
+============
 
-[![Travis-CI Build Status](https://travis-ci.org/jsphdms/scotgov.svg?branch=master)](https://travis-ci.org/jsphdms/scotgov)
+[![Travis-CI Build Status](https://travis-ci.org/jsphdms/opendatascot.svg?branch=master)](https://travis-ci.org/jsphdms/opendatascot)
 
 :construction: :construction: :construction: **Package under construction - watch this space for updates** :construction: :construction: :construction:
 
-Use scotgov to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. scotgov removes the need to write SPARQL code; you simply need the URI of a dataset. scotgov can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
+Use opendatascot to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. opendatascot removes the need to write SPARQL code; you simply need the URI of a dataset. opendatascot can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
 
 Installation
 ------------
 
-Install scotgov from GitHub with:
+Install opendatascot from GitHub with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("jsphdms/scotgov")
+devtools::install_github("jsphdms/opendatascot")
 ```
 
 If the above does not work, you can install from source:
 
-1.  Go to the scotgov [repository](https://github.com/jsphdms/scotgov) on GitHub
+1.  Go to the opendatascot [repository](https://github.com/jsphdms/opendatascot) on GitHub
 2.  Click **Clone or download** then **Download ZIP**
 3.  Save the file locally (e.g. your H drive) and Unzip
 4.  Install with install.packages()
 
 ``` r
-install.packages("your/directory/scotgov", repos = NULL,
+install.packages("your/directory/opendatascot", repos = NULL,
                  type="source", lib = "your/R/package/library/directory")
 ```
 
@@ -36,7 +36,7 @@ Usage
 
 Find the name of the dataset you want using `list_sg_dataset()`
 
-Learn more in `vignette("scotgov")` or `?scotgov_get`.
+Learn more in `vignette("opendatascot")` or `?scotgov_get`.
 
 Use `list_sg_dataset()` to find all datasets currently loaded onto statistics.gov.scot
 
@@ -64,6 +64,6 @@ filtered_data <- scotgov_get("homelessness-applications",
 Future development
 ------------------
 
-This package is under active development, so any further functionality will be mentioned here when it's ready. If something important is missing, feel free to contact the contributors or [add a new issue](https://github.com/jsphdms/scotgov/issues).
+This package is under active development, so any further functionality will be mentioned here when it's ready. If something important is missing, feel free to contact the contributors or [add a new issue](https://github.com/jsphdms/opendatascot/issues).
 
 Since this package is under active development, breaking changes may be necessary. We will make it clear once the package is reasonably stable.

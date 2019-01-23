@@ -7,7 +7,7 @@
 get_structure(dataset)
 }
 \arguments{
-\item{dataset}{An API endpoint for statistics.gov.scot}
+\item{dataset}{An API endpoint for statistics.gov.scot that corresponds to a dataset}
 }
 \value{
 A list of data from statistics.gov.scot

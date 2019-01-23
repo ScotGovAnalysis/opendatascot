@@ -11,11 +11,11 @@ dataset_dimensions(dataset)
 }
 \value{
 The dimensions of the dataset at
-\code{statistics.gov.scot/data/<dataset>}
+\code{statistics.gov.scot/data/<dataset>} as a data frame
 }
 \description{
 Return the dimensions of a dataset
 }
 \examples{
-scotgov:::dataset_dimensions("average-household-size")
+opendatascot:::dataset_dimensions("average-household-size")
 }
