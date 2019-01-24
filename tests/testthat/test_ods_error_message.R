@@ -2,14 +2,14 @@ context("ods_error_message")
 
 test_that("non-existent dataset produces correct message", {
   skip_on_cran()
-  expect_message(scotgov_get("made-up-dataset"),
+  expect_message(ods_dataset("made-up-dataset"),
                  "The dataset 'made-up-dataset' does not exist.",
                  "Compare with existing datasets using 'ods_all_datasets'.")
 })
 
 test_that("non-existent dataset produces correct message with filter", {
   skip_on_cran()
-  expect_message(scotgov_get("made-up-dataset", 2017),
+  expect_message(ods_dataset("made-up-dataset", 2017),
                  "There was an unknown error in the generated query; possibly an error in the dataset name provided.",
                  "The dataset name provided was: 'made-up-dataset'.",
                  "Compare with existing datasets using 'ods_all_datasets()'.")
@@ -18,7 +18,7 @@ test_that("non-existent dataset produces correct message with filter", {
 # Test passing but takes a long time to run
 test_that("large dataset produces correct message", {
   skip_on_cran()
-  expect_message(scotgov_get("working-age-claimants-of-benefits-key"),
+  expect_message(ods_dataset("working-age-claimants-of-benefits-key"),
                  "There was an unknown error in the generated query; possibly an error in the dataset name provided.",
                  "The dataset name provided was: 'working-age-claimants-of-benefits-key' does not exist.",
                  "Compare with existing datasets using 'ods_all_datasets()'.",
@@ -27,14 +27,14 @@ test_that("large dataset produces correct message", {
 
 test_that("large dataset produces correct message with filter", {
   skip_on_cran()
-  expect_message(scotgov_get("working-age-claimants-of-benefits-key", 2017),
+  expect_message(ods_dataset("working-age-claimants-of-benefits-key", 2017),
                  "Dataset 'working-age-claimants-of-benefits-key' is too large to be downloaded in its entirety.",
                  "Try adding filters to reduce size.")
 })
 
 test_that("syntax error produces correct message", {
   skip_on_cran()
-  expect_message(scotgov_get("spaces in dataset"),
+  expect_message(ods_dataset("spaces in dataset"),
                  "There was an unknown error in the generated query; possibly an error in the dataset name provided.",
                  "The dataset name provided was: 'spaces in dataset'.",
                  "Compare with existing datasets using 'ods_all_datasets()'.",
@@ -43,7 +43,7 @@ test_that("syntax error produces correct message", {
 
 test_that("syntax error produces correct message with filter", {
   skip_on_cran()
-  expect_message(scotgov_get("spaces in dataset", 2017),
+  expect_message(ods_dataset("spaces in dataset", 2017),
                  "There was an unknown error in the generated query; possibly an error in the dataset name provided.",
                  "The dataset name provided was: 'spaces in dataset'.",
                  "Compare with existing datasets using 'ods_all_datasets()'",
