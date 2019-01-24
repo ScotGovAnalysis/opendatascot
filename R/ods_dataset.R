@@ -71,7 +71,7 @@ ods_dataset <- function(dataset,
 >>>>>>> added trycatch to ods_datasets to throw errors
 
   query <- tryCatch({
-    get_dataset_query(dataset)
+    ods_print_query(dataset)
   },
   error = function(cond) {
     ods_error_message(cond, dataset)
