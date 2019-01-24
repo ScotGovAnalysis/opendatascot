@@ -14,10 +14,10 @@
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.5.2",
+    "version": "3.5.1",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.5.2 (2018-12-20)",
+  "runtimePlatform": "R version 3.5.1 (2018-07-02)",
   "author": [
     {
       "@type": "Person",
@@ -180,10 +180,22 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=bitops"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "curl",
+      "name": "curl",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=curl"
     }
   ],
-  "readme": "https://github.com/jsphdms/scotgov/blob/master/README.md",
-  "fileSize": "13.889KB",
+  "readme": "https://github.com/jsphdms/opendatascot/blob/master/README.md",
+  "fileSize": "10.497KB",
   "contIntegration": "https://travis-ci.org/jsphdms/scotgov",
   "developmentStatus": "https://www.repostatus.org/#wip"
 }
