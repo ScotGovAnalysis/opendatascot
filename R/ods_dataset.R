@@ -26,12 +26,6 @@ ods_dataset <- function(dataset,
                         geography = NULL,
                         ...) {
 
-  if (is.null(start_date) &
-      is.null(end_date) &
-      is.null(geography)  &
-      length(list(...)) == 0) {
-
-
   if ("readr" %in% rownames(utils::installed.packages())) {
     #download with readr if available
     result <- tryCatch({
