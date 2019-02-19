@@ -1,6 +1,6 @@
 #' find all datasets in opendatascotland
 #'
-#' \code{list_sg_datasets} returns a list of all datasets from statistics.gov.scot
+#' \code{ods_all_datasets} returns a list of all datasets from statistics.gov.scot
 #'
 #'
 #' This is a generic function: methods can be defined for it directly
@@ -11,11 +11,11 @@
 #' @return A list of data from statistics.gov.scot
 #'
 #' @examples
-#' list_sg_datasets()
+#' ods_all_datasets()
 #'
 #' @export
 
-list_sg_datasets <- function() {
+ods_all_datasets <- function() {
 
   endpoint <- "http://statistics.gov.scot/sparql"
 
@@ -41,6 +41,6 @@ list_sg_datasets <- function() {
 
   result <- qdata$results
 
-  result["dataset_name"] <- sapply(result["URI"], function(x) get_names(x))
+  result["dataset_name"] <- sapply(result["URI"], function(x) ods_names(x))
   return(data.frame(result))
 }

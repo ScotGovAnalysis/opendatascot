@@ -1,9 +1,9 @@
 # small function to transform sparql location to a simple name
 # can be removed when dataset_structure and dataset_measures return clear labels
-# internal function for scotgov_get
-#' @noRd 
+# internal function for ods_dataset
+#' @noRd
 
-get_names <- function(dataset) {
+ods_names <- function(dataset) {
 
   pattern <- "[/#][%A-Za-z0-9()-]+>"
 
