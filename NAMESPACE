@@ -3,4 +3,5 @@
 export(ods_all_datasets)
 export(ods_dataset)
 export(ods_print_query)
+export(ods_schemes)
 export(ods_structure)

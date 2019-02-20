@@ -2,21 +2,15 @@
 % Please edit documentation in R/ods_all_datasets.R
 \name{ods_all_datasets}
 \alias{ods_all_datasets}
-\title{find all datasets in opendatascotland}
+\title{List all datasets}
 \usage{
 ods_all_datasets()
 }
 \value{
-A list of data from statistics.gov.scot
+\code{data.frame}. Contains the URI, Name, Publisher and Dataset Name of every dataset.
 }
 \description{
-\code{ods_all_datasets} returns a list of all datasets from statistics.gov.scot
-}
-\details{
-This is a generic function: methods can be defined for it directly
-or via the \code{\link{Summary}} group generic. For this to work properly,
-the arguments \code{...} should be unnamed, and dispatch is on the
-first argument.
+\code{ods_all_datasets} returns details of all datasets available from \href{https://statistics.gov.scot/}{statistics.gov.scot}
 }
 \examples{
 ods_all_datasets()

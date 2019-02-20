@@ -2,33 +2,33 @@
 % Please edit documentation in R/ods_dataset.R
 \name{ods_dataset}
 \alias{ods_dataset}
-\title{Download data from statistics.gov.scot}
+\title{Download a dataset}
 \usage{
 ods_dataset(dataset, start_date = NULL, end_date = NULL,
   geography = NULL, ...)
 }
 \arguments{
-\item{dataset}{The last part of the URI for a dataset on statistics.gov.scot}
+\item{dataset}{\code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.}
 
-\item{start_date}{Filter data points on or after this date}
+\item{start_date}{\code{string}. Filter data points after this date.}
 
-\item{end_date}{Filter data points after this date}
+\item{end_date}{\code{string}. Filter data points before this date.}
 
-\item{geography}{An S code - filter data points within this geography}
+\item{geography}{\code{string}. A valid SG geography code, or portion thereof.}
 
-\item{...}{arbitrary filters requiring valid scheme = value structure}
+\item{...}{Arbitrary filters requiring valid scheme = value structure.}
 }
 \value{
-A \code{data.frame} of data from statistics.gov.scot
+\code{tibble}.
+When invalid arguments are used returns \code{NULL} with \code{warning} (see \code{ods_error_message}).
 }
 \description{
-\code{ods_dataset} returns a tibble of data from statistics.gov.scot
+\code{ods_dataset} returns a dataset from \href{https://statistics.gov.scot/}{statistics.gov.scot}
 }
 \details{
-This is a generic function: methods can be defined for it directly
-or via the \code{\link{Summary}} group generic. For this to work properly,
-the arguments \code{...} should be unnamed, and dispatch is on the
-first argument.
+\code{ods_dataset} returns either a complete or filtered dataset from \href{https://statistics.gov.scot/}{statistics.gov.scot}.
+The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets}.
+Other parameters can be used to filter the dataset.
 }
 \examples{
 ods_dataset("average-household-size")
