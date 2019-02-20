@@ -25,10 +25,10 @@ ods_print_query(dataset, start_date = NULL, end_date = NULL,
 \code{ods_print_query} returns a valid SPARQL query to call on the \href{https://statistics.gov.scot/}{statistics.gov.scot} API
 }
 \details{
-The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets}.
+The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}.
 Other parameters can also be used to filter the dataset.
 }
 \examples{
-ods_print_query("average-house-size")
+ods_print_query("average-household-size")
 
 }

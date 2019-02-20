@@ -16,7 +16,7 @@ ods_schemes(dataset)
 \code{ods_schemes} returns all schemes used by a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}
 }
 \details{
-The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets}.
+The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}).
 }
 \examples{
 ods_schemes("average-household-size")
