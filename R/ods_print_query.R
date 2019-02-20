@@ -2,7 +2,7 @@
 #'
 #' \code{ods_print_query} returns a valid SPARQL query to call on the \href{https://statistics.gov.scot/}{statistics.gov.scot} API
 #'
-#' The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets}.
+#' The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}.
 #' Other parameters can also be used to filter the dataset.
 #'
 #' @param dataset \code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.
@@ -14,7 +14,7 @@
 #' @return \code{string}. A valid SPARQL query.
 #'
 #' @examples
-#' ods_print_query("average-house-size")
+#' ods_print_query("average-household-size")
 #'
 #' @export
 
