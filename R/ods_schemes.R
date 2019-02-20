@@ -1,11 +1,17 @@
-#' Return the schemes of a dataset
+#' Return the schemes used by a dataset
 #'
-#' @param dataset The last part of the URI of a dataset
-#' @return The schemes of the dataset at
-#' \code{statistics.gov.scot/data/<dataset>} as a data frame
+#' \code{ods_schemes} returns all schemes used by a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}
+#'
+#' The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets}.
+#'
+#' @param dataset \code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.
+#'
+#' @return \code{data.frame}. All schemes used by the dataset named in the dataset argument.
 #'
 #' @examples
-#' opendatascot:::ods_schemes("average-household-size")
+#' ods_schemes("average-household-size")
+#'
+#' @export
 
 ods_schemes <- function(dataset) {
   endpoint <- "http://statistics.gov.scot/sparql"

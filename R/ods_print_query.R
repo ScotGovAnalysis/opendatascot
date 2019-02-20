@@ -1,24 +1,23 @@
-#' Generate SPARQL query to download data from statistics.gov.scot
+#' Generate a SPARQL query to call on API
 #'
-#' \code{ods_print_query(} returns a tibble of data from statistics.gov.scot
+#' \code{ods_print_query} returns a valid SPARQL query to call on the \href{https://statistics.gov.scot/}{statistics.gov.scot} API
 #'
+#' The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets}.
+#' Other parameters can also be used to filter the dataset.
 #'
-#' This is a generic function: methods can be defined for it directly
-#' or via the \code{\link{Summary}} group generic. For this to work properly,
-#' the arguments \code{...} should be unnamed, and dispatch is on the
-#' first argument.
+#' @param dataset \code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.
+#' @param start_date \code{string}. Filter data points after this date.
+#' @param end_date \code{string}. Filter data points before this date.
+#' @param geography \code{string}. A valid SG geography code, or portion thereof.
+#' @param ... Arbitrary filters requiring valid scheme = value structure.
 #'
-#' @param dataset An API endpoint for statistics.gov.scot
-#' @param start_date A date
-#' @param end_date A date
-#' @param geography A string representing a valid SG geography code, or portion thereof
-#' @param ... arbitrary filters requiring valid scheme = value structure
-#' @return A string consisting of a valid SPARQL query
+#' @return \code{string}. A valid SPARQL query.
 #'
 #' @examples
 #' ods_print_query("average-house-size")
 #'
 #' @export
+
 ods_print_query <- function(dataset,
                             start_date=NULL,
                             end_date=NULL,
