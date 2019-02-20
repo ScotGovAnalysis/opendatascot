@@ -2,24 +2,21 @@
 % Please edit documentation in R/ods_structure.R
 \name{ods_structure}
 \alias{ods_structure}
-\title{View structure of data from statistics.gov.scot}
+\title{Return a list of the structure of a dataset}
 \usage{
 ods_structure(dataset)
 }
 \arguments{
-\item{dataset}{An API endpoint for statistics.gov.scot that corresponds to a dataset}
+\item{dataset}{\code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.}
 }
 \value{
-A list of data from statistics.gov.scot
+\code{list}. Returns all schemes and concepts within a dataset.
 }
 \description{
-\code{ods_structure} returns a list of data about a dataset from statistics.gov.scot
+\code{ods_structure} returns a list of data about a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}
 }
 \details{
-This is a generic function: methods can be defined for it directly
-or via the \code{\link{Summary}} group generic. For this to work properly,
-the arguments \code{...} should be unnamed, and dispatch is on the
-first argument.
+The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}.
 }
 \examples{
 ods_structure("average-household-size")

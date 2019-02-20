@@ -1,15 +1,12 @@
-#' View structure of data from statistics.gov.scot
+#' Return a list of the structure of a dataset
 #'
-#' \code{ods_structure} returns a list of data about a dataset from statistics.gov.scot
+#' \code{ods_structure} returns a list of data about a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}
 #'
+#' The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}.
 #'
-#' This is a generic function: methods can be defined for it directly
-#' or via the \code{\link{Summary}} group generic. For this to work properly,
-#' the arguments \code{...} should be unnamed, and dispatch is on the
-#' first argument.
+#' @param dataset \code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.
 #'
-#' @param dataset An API endpoint for statistics.gov.scot that corresponds to a dataset
-#' @return A list of data from statistics.gov.scot
+#' @return \code{list}. Returns all schemes and concepts within a dataset.
 #'
 #' @examples
 #' ods_structure("average-household-size")

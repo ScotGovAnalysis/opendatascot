@@ -2,20 +2,23 @@
 % Please edit documentation in R/ods_schemes.R
 \name{ods_schemes}
 \alias{ods_schemes}
-\title{Return the schemes of a dataset}
+\title{Return the schemes used by a dataset}
 \usage{
 ods_schemes(dataset)
 }
 \arguments{
-\item{dataset}{The last part of the URI of a dataset}
+\item{dataset}{\code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.}
 }
 \value{
-The schemes of the dataset at
-\code{statistics.gov.scot/data/<dataset>} as a data frame
+\code{data.frame}. All schemes used by the dataset named in the dataset argument.
 }
 \description{
-Return the schemes of a dataset
+\code{ods_schemes} returns all schemes used by a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}
+}
+\details{
+The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}).
 }
 \examples{
-opendatascot:::ods_schemes("average-household-size")
+ods_schemes("average-household-size")
+
 }
