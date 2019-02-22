@@ -54,7 +54,7 @@ ods_dataset <- function(dataset,
                              ...)
 
     query_data <- try(SPARQL::SPARQL(endpoint, query), silent = TRUE)
-    if ( query_data[1] ==  "Error :
+    if (query_data[1] ==  "Error :
        XML content does not seem to be XML: 'Response too large'\n"){
       stop(Error = "Dataset is too large to be downloaded like this.
          Try adding filters to reduce size")
