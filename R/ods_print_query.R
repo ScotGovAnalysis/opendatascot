@@ -24,8 +24,8 @@ ods_print_query <- function(dataset,
                             geography=NULL,
                             ...) {
 
-  TEMP_locations <- ods_schemes(dataset)
-  locations <- data.frame(lapply(TEMP_locations,
+  temp_locations <- ods_schemes(dataset)
+  locations <- data.frame(lapply(temp_locations,
                                  as.character),
                           stringsAsFactors = FALSE)
   schemes <- gsub("[()%]", "", ods_names(locations[, ]))
@@ -107,14 +107,14 @@ ods_print_query <- function(dataset,
   #list of all the names and values of the arguemnts
   values <- list(...)
 
-  if ( length(schemes >= 1) ) {
+  if (length(schemes >= 1)) {
 
     #initialise query builder
     query_addition <- ""
 
     #builder for simple one arguemnt filter
     for (i in 1:length(schemes)){
-      if ( length(values[[i]]) == 1) {
+      if (length(values[[i]]) == 1) {
         query_addition <- paste0(query_addition,
                                  "filter (?", schemes[[i]], " = '",
                                  values[[i]], "'^^xsd:string) ")
