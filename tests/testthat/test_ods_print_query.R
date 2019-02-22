@@ -8,8 +8,8 @@ expected_return_value5 <- "select  \\?value where \\{ \\?data qb:dataSet <http:/
 
 printed_query <- ods_print_query("average-house-size")
 printed_query_with_filter <- ods_print_query(dataset = "average-house-size",
-                                             start_date=2017,
-                                             end_date=2018)
+                                             start_date = 2017,
+                                             end_date = 2018)
 
 test_that("ods_print_query produces correct query without filters", {
   skip_on_cran()
