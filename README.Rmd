@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 
 # opendatascot <img src = "man/figures/logo.svg" align = "right" height = 150/>
 
-[![Travis-CI Build Status](https://travis-ci.org/jsphdms/opendatascot.svg?branch=master)](https://travis-ci.org/jsphdms/opendatascot)
+[![Travis-CI Build Status](https://travis-ci.org/jsphdms/opendatascot.svg?branch=master)](https://travis-ci.org/jsphdms/opendatascot) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jsphdms/opendatascot?branch=master&svg=true)](https://ci.appveyor.com/project/jsphdms/opendatascot)
 
 :construction: :construction: :construction: **Package under construction - watch this space for updates** :construction: :construction: :construction:
 
