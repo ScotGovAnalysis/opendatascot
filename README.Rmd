@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# opendatascot
+# opendatascot <img src = "man/figures/logo.svg" align = "right" height = 150/>
 
 [![Travis-CI Build Status](https://travis-ci.org/jsphdms/opendatascot.svg?branch=master)](https://travis-ci.org/jsphdms/opendatascot)
 
