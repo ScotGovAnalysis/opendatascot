@@ -32,53 +32,53 @@ ods_dataset <- function(dataset,
       length(list(...)) == 0) {
 
 
-  if ("readr" %in% rownames(utils::installed.packages())) {
-    #download with readr if available
-    result <- tryCatch({
-      readr::read_csv(paste0("https://statistics.gov.scot/downloads/",
-                             "cube-table?uri=http%3A%2F%2F",
-                             "statistics.gov.scot%2Fdata%2F",
-                             dataset))
-    },
-    error = function(cond) {
-      ods_error_message(cond, dataset)
-    })
+    if ("readr" %in% rownames(utils::installed.packages())) {
+      #download with readr if available
+      result <- tryCatch({
+        readr::read_csv(paste0("https://statistics.gov.scot/downloads/",
+                               "cube-table?uri=http%3A%2F%2F",
+                               "statistics.gov.scot%2Fdata%2F",
+                               dataset))
+      },
+      error = function(cond) {
+        ods_error_message(cond, dataset)
+      })
 
+
+    } else {
+      result <- tryCatch({
+        utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
+                               "cube-table?uri=http%3A%2F%2F",
+                               "statistics.gov.scot%2Fdata%2F",
+                               dataset))
+      },
+      error = function(cond) {
+        ods_error_message(cond, dataset)
+      })
+    }
 
   } else {
-    result <- tryCatch({
-      utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
-                             "cube-table?uri=http%3A%2F%2F",
-                             "statistics.gov.scot%2Fdata%2F",
-                             dataset))
+
+    endpoint <- "http://statistics.gov.scot/sparql"
+
+    query <- tryCatch({
+      ods_print_query(dataset)
     },
     error = function(cond) {
       ods_error_message(cond, dataset)
     })
+
+    query_data <- tryCatch({
+      SPARQL::SPARQL(endpoint, query)
+    },
+    error = function(cond) {
+      ods_error_message(cond, dataset)
+    })
+
+    result <- query_data$results
+
   }
 
-} else {
-
-  endpoint <- "http://statistics.gov.scot/sparql"
-
-  query <- tryCatch({
-    ods_print_query(dataset)
-  },
-  error = function(cond) {
-    ods_error_message(cond, dataset)
-  })
-
-  query_data <- tryCatch({
-    SPARQL::SPARQL(endpoint, query)
-  },
-  error = function(cond) {
-    ods_error_message(cond, dataset)
-  })
-
-  result <- query_data$results
-
-}
-
-return(result)
+  return(result)
 
 }
