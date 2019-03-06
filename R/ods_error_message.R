@@ -1,5 +1,17 @@
-# Returns custom error message on failure for ods_dataset()
-# internal function for ods_dataset()
+# Returns custom error message on failure
+#'
+#' \code{ods_error_message} is an internal function for \code{ods_dataset} that returns a custom error message depending on failure type
+#'
+#' @param dataset \code{cond}. The original error message produced by the failure in \code{ods_dataset}.
+#' @param scheme \code{dataset}. The name of the dataset passed as a parameter to \code{ods_dataset}.
+#'
+#' @return \code{string} and \code{null}.
+#'
+#' @examples
+#' ods_error_message(cond, dataset)
+#'
+#' @keywords internal
+#'
 #' @noRd
 
 ods_error_message <- function(cond, dataset) {
