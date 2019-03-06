@@ -16,7 +16,7 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
-  # >>> Force appveyor to install devtools from github, remove when devtools working
+# >>> Force appveyor to install devtools from github, remove when devtools working
   - travis-tool.sh install_github hadley/devtools
 
   - travis-tool.sh install_deps
