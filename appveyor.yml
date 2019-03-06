@@ -16,7 +16,15 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
+
+  #Line added to test why appveyor tests failing
+  - travis-tool.sh install_github hadley/devtools
+  #
   - travis-tool.sh install_deps
+
+environment:
+  global:
+    USE_RTOOLS: true
 
 test_script:
   - travis-tool.sh run_tests
