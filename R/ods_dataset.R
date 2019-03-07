@@ -36,10 +36,13 @@ ods_dataset <- function(dataset,
                                "cube-table?uri=http%3A%2F%2F",
                                "statistics.gov.scot%2Fdata%2F",
                                dataset))
-      },
-      error = function(cond) {
-        ods_error_message(cond, dataset)
-      })
+       },
+       error = function(err) {
+         paste('err ', err, sep = "")
+       },
+       warning = function(warn) {
+         paste('warn ', warn, sep = "")
+       })
 
   } else {
 
