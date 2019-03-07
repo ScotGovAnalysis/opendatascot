@@ -21,10 +21,12 @@ build_script:
 
   - travis-tool.sh install_deps
 
-  # >>> Fix for R Tools may be possible to remove later
-  environment:
+# >>> Fix for R Tools may be possible to remove later
+environment:
   global:
     USE_RTOOLS: true
+
+    build_script:
 
 test_script:
   - travis-tool.sh run_tests
