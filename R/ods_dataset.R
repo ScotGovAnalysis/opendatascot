@@ -31,21 +31,6 @@ ods_dataset <- function(dataset,
       is.null(geography)  &
       length(list(...)) == 0) {
 
-
-    if ("readr" %in% rownames(utils::installed.packages())) {
-      #download with readr if available
-      result <- tryCatch({
-        readr::read_csv(paste0("https://statistics.gov.scot/downloads/",
-                               "cube-table?uri=http%3A%2F%2F",
-                               "statistics.gov.scot%2Fdata%2F",
-                               dataset))
-      },
-      error = function(cond) {
-        ods_error_message(cond, dataset)
-      })
-
-
-    } else {
       result <- tryCatch({
         utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
                                "cube-table?uri=http%3A%2F%2F",
@@ -55,7 +40,6 @@ ods_dataset <- function(dataset,
       error = function(cond) {
         ods_error_message(cond, dataset)
       })
-    }
 
   } else {
 

@@ -21,7 +21,6 @@ Depends:
     curl
 Suggests:
     spelling,
-    readr,
     knitr,
     rmarkdown,
     testthat,

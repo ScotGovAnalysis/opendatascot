@@ -61,18 +61,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "readr",
-      "name": "readr",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=readr"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
       "provider": {
@@ -195,7 +183,7 @@
     }
   ],
   "readme": "https://github.com/jsphdms/opendatascot/blob/master/README.md",
-  "fileSize": "10.497KB",
+  "fileSize": "50.432KB",
   "contIntegration": "https://travis-ci.org/jsphdms/scotgov",
   "developmentStatus": "https://www.repostatus.org/#wip"
 }
