@@ -16,12 +16,21 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
+<<<<<<< HEAD
 # >>> Force appveyor to install devtools from github, remove when devtools working
   - travis-tool.sh install_github hadley/devtools
 
   - travis-tool.sh install_deps
 
 # >>> Fix for R Tools may be possible to remove later
+=======
+
+  #Line added to test why appveyor tests failing
+  - travis-tool.sh install_github hadley/devtools
+  #
+  - travis-tool.sh install_deps
+
+>>>>>>> 8af14393ce15c152ba84c63ce903813d4eeb3f75
 environment:
   global:
     USE_RTOOLS: true
