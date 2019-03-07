@@ -17,7 +17,7 @@ cache:
 
 build_script:
 # >>> Force appveyor to install devtools from github, remove when devtools working
-  - travis-tool.sh install_github hadley/devtools
+#  - travis-tool.sh install_github hadley/devtools
 
   - travis-tool.sh install_deps
 
