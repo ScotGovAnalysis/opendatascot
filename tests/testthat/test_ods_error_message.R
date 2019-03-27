@@ -14,7 +14,6 @@ test_that("non-existent dataset produces correct message with filter", {
                              , fixed = TRUE))
 })
 
-# Test passing but function being tested seems to take around 12 mins to run
 test_that("large dataset produces correct message", {
   skip_on_cran()
   expect_that(ods_dataset("working-age-claimants-of-benefits-key")

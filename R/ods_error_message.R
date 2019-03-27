@@ -46,6 +46,12 @@ ods_error_message <- function(cond, dataset) {
     } else if ((grepl("Response too large", cond, fixed = TRUE) == TRUE) |
                (grepl("HTTP status was '500 Internal Server Error'"
                       , cond
+                      , fixed = TRUE) == TRUE) |
+               (grepl("TimeoutException: reached elapsed time limit"
+                      , cond
+                      , fixed = TRUE) == TRUE) |
+               (grepl("XML content does not seem to be XML: 'Request Timeout'"
+                      , cond
                       , fixed = TRUE) == TRUE)) {
       stop("The dataset '"
               , dataset

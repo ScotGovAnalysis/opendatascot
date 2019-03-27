@@ -32,10 +32,10 @@ ods_dataset <- function(dataset,
       length(list(...)) == 0) {
 
       result <- tryCatch({
-        utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
+        withTimeout(utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
                                "cube-table?uri=http%3A%2F%2F",
                                "statistics.gov.scot%2Fdata%2F",
-                               dataset))
+                               dataset)), time = 10, onTimeout = "error")
        },
        error = function(err) {
          ods_error_message(err, dataset)
@@ -49,7 +49,11 @@ ods_dataset <- function(dataset,
     endpoint <- "http://statistics.gov.scot/sparql"
 
     query <- tryCatch({
-      ods_print_query(dataset)
+      ods_print_query(dataset,
+                      start_date,
+                      end_date,
+                      geography,
+                      ...)
      },
      error = function(err) {
        ods_error_message(err, dataset)

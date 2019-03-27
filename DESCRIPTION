@@ -18,7 +18,8 @@ Depends:
     XML,
     RCurl,
     bitops,
-    curl
+    curl,
+    R.utils
 Suggests:
     spelling,
     knitr,
