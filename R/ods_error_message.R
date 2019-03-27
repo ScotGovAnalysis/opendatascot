@@ -22,22 +22,37 @@ ods_error_message <- function(cond, dataset) {
 
   } else {
 
-    paste("Original error message: ", cond, ". ", dataset, sep = "")
+    original_error <- paste("Error message: ", cond, sep = "")
 
-    # original_error <- paste("Original error message: ", cond, sep = "")
-    # unknown_error <- paste("There was an unknown error in the generated query; possibly an error in the dataset name provided.\nThe dataset name provided was: '",
-    #                        dataset,
-    #                        "'.\nCompare with existing datasets using 'ods_all_datasets()'.",
-    #                        sep = "")
-    #
-    # if (grepl("Response too large", cond, fixed = TRUE) == TRUE) {
-    #   message("Dataset '", dataset, "' is too large to be downloaded in its entirety.\nTry adding filters to reduce size.")
-    # } else if (grepl("There was a syntax error in your query", cond, fixed = TRUE) == TRUE) {
-    #   message(unknown_error)
-    # } else if (grepl("cannot open the connection", cond, fixed = TRUE) == TRUE) {
-    #   message(unknown_error)
-    # } else {
-    #   message(original_error)
-    # }
-  }
+    # Dataset does not exist
+    if ((grepl("404 Not Found", cond, fixed = TRUE) == TRUE) |
+        (grepl("'There was a syntax error in your query: Encountered \" \".\" \". \"\""
+               , cond
+               , fixed = TRUE) == TRUE)) {
+      stop("The dataset '"
+              , dataset
+              , "' does not exist.\nA full list of available datsets can be found by running 'ods_all_datasets()'.")
+
+    # Spaces in dataset
+    } else if ((grepl("HTTP status was '400 Bad Request'", cond, fixed = TRUE) == TRUE) |
+               (grepl("'There was a syntax error in your query: Encountered \" \"<\" \"< \"\""
+                      , cond
+                      , fixed = TRUE) == TRUE)) {
+      stop("The query generated from the dataset '"
+              , dataset
+              , "' produced a syntax error, possibly a result of spaces in the dataset name.\nA full list of available datsets can be found by running 'ods_all_datasets()'.")
+
+    # Response too large
+    } else if ((grepl("Response too large", cond, fixed = TRUE) == TRUE) |
+               (grepl("HTTP status was '500 Internal Server Error'"
+                      , cond
+                      , fixed = TRUE) == TRUE)) {
+      stop("The dataset '"
+              , dataset
+              , "' is too large to be downloaded directly.\nTry adding filters to reduce size or contact statistics.enquiries@gov.scot if you require the full dataset.")
+    # Handle other errors
+    } else {
+      stop("An unknown error has occurred. The original error message was: ", original_error)
+      }
+   }
 }

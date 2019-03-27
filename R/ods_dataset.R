@@ -38,10 +38,10 @@ ods_dataset <- function(dataset,
                                dataset))
        },
        error = function(err) {
-         paste('err ', err, sep = "")
+         ods_error_message(err, dataset)
        },
        warning = function(warn) {
-         paste('warn ', warn, sep = "")
+         ods_error_message(warn, dataset)
        })
 
   } else {
@@ -50,16 +50,23 @@ ods_dataset <- function(dataset,
 
     query <- tryCatch({
       ods_print_query(dataset)
-    },
-    error = function(cond) {
-      ods_error_message(cond, dataset)
-    })
+     },
+     error = function(err) {
+       ods_error_message(err, dataset)
+     },
+     warning = function(warn) {
+       ods_error_message(warn, dataset)
+
+       })
 
     query_data <- tryCatch({
       SPARQL::SPARQL(endpoint, query)
     },
-    error = function(cond) {
-      ods_error_message(cond, dataset)
+    error = function(err) {
+      ods_error_message(err, dataset)
+    },
+    warning = function(warn) {
+      ods_error_message(warn, dataset)
     })
 
     result <- query_data$results
