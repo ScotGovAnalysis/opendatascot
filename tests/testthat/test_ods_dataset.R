@@ -35,7 +35,7 @@ test_that("ods_dataset with geography filtering returns data.frame", {
   expect_is(ods_dataset(dataset = "average-household-size", geography = "S12000039"), "data.frame")
 })
 
-test_that("ods_dataset with geography filtering returns data.frame", {
+test_that("ods_dataset with geography filtering returns correct data", {
   skip_on_cran()
-  expect_equal(ods_dataset(dataset = "average-household-size", geography = "S12000039")$refArea[1], "Dumfries and Galloway")
+  expect_equal(ods_dataset(dataset = "average-household-size", geography = "S12000039")$refArea[1], "West Dunbartonshire")
 })
