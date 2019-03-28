@@ -32,7 +32,7 @@ ods_dataset <- function(dataset,
       length(list(...)) == 0) {
 
       result <- tryCatch({
-        withTimeout(utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
+        R.utils::withTimeout(utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
                                "cube-table?uri=http%3A%2F%2F",
                                "statistics.gov.scot%2Fdata%2F",
                                dataset)), time = 10, onTimeout = "error")
