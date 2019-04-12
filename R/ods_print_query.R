@@ -44,7 +44,10 @@ ods_print_query <- function(dataset,
   #start the sparql query
   select_line <- paste(
     paste(
-      "select", paste(question_marked_schemes, collapse = " ")
+      "select",
+      "(strafter(str(?refAreaURI),'http://statistics.gov.scot/id/statistical-geography/') as ?areaCode)",
+      paste(question_marked_schemes,
+            collapse = " ")
     ),
     "?value")
   data_line <- paste0("?data qb:dataSet <http://statistics.gov.scot/data/",
