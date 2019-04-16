@@ -154,10 +154,7 @@ ods_print_query <- function(dataset,
   }
 
   #expose the measureType scheme's value as a value
-  query <- paste(query, 
-                 "?data <http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure> ?unitURI.
-                 ?unitURI rdfs:label ?unit.
-                 ?data ?measureTypeURI ?value. }")
+  query <- paste(query, "?data ?measureTypeURI ?value. }")
 
   return(query)
 
