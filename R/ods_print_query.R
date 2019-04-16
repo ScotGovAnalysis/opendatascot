@@ -45,11 +45,11 @@ ods_print_query <- function(dataset,
   select_line <- paste(
     paste(
       "select",
-      "(strafter(str(?refAreaURI),'http://statistics.gov.scot/id/statistical-geography/') as ?areaCode)",
-      paste(question_marked_schemes,
+      "(strafter(str(?refAreaURI),'http://statistics.gov.scot/id/statistical-geography/') as ?refArea)",
+      paste(question_marked_schemes[-1],
             collapse = " ")
     ),
-    "?value")
+    "?unit ?value")
   data_line <- paste0("?data qb:dataSet <http://statistics.gov.scot/data/",
                       dataset,
                       ">.")
@@ -72,6 +72,15 @@ ods_print_query <- function(dataset,
                              " rdfs:label ",
                              question_marked_schemes[i],
                              ".")
+    
+    if(question_marked_schemes[i] == "?refArea") {
+      query_addition <- paste0("?data ",
+                               locations[i, ],
+                               " ",
+                               uri_schemes[i],
+                               ". ")
+
+    }
 
     query <- paste(query, query_addition)
   }
@@ -145,7 +154,10 @@ ods_print_query <- function(dataset,
   }
 
   #expose the measureType scheme's value as a value
-  query <- paste(query, "?data ?measureTypeURI ?value. }")
+  query <- paste(query, 
+                 "?data <http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure> ?unitURI.
+                 ?unitURI rdfs:label ?unit.
+                 ?data ?measureTypeURI ?value. }")
 
   return(query)
 
