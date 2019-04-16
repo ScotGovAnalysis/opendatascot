@@ -49,7 +49,7 @@ ods_print_query <- function(dataset,
       paste(question_marked_schemes[-1],
             collapse = " ")
     ),
-    "?unit ?value")
+    "?value")
   data_line <- paste0("?data qb:dataSet <http://statistics.gov.scot/data/",
                       dataset,
                       ">.")
