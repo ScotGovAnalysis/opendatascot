@@ -2,13 +2,13 @@
 #'
 #' \code{ods_error_message} is an internal function for \code{ods_dataset} that returns a custom error message depending on failure type
 #'
-#' @param dataset \code{cond}. The original error message produced by the failure in \code{ods_dataset}.
-#' @param scheme \code{dataset}. The name of the dataset passed as a parameter to \code{ods_dataset}.
+#' @param cond \code{string}. The original error message produced by the failure in \code{ods_dataset}.
+#' @param dataset \code{string}. The name of the dataset passed as a parameter to \code{ods_dataset}.
 #'
 #' @return \code{string}.
 #'
 #' @examples
-#' ods_error_message(cond, dataset)
+#' ods_error_message("HTTP status was '500 Internal Server Error'", "average-household-size")
 #'
 #' @keywords internal
 #'
@@ -33,7 +33,7 @@ ods_error_message <- function(cond, dataset) {
               , dataset
               , "' does not exist.\nA full list of available datsets can be found by running 'ods_all_datasets()'.")
 
-    # Spaces in dataset
+    # Syntax error
     } else if ((grepl("HTTP status was '400 Bad Request'", cond, fixed = TRUE) == TRUE) ||
                (grepl("'There was a syntax error in your query: Encountered \" \"<\" \"< \"\""
                       , cond
