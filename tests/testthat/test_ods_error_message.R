@@ -2,14 +2,14 @@ context("ods_error_message")
 
 test_that("non-existent dataset produces correct message", {
   skip_on_cran()
-  expect_that(ods_dataset("made-up-dataset")
+  expect_that(ods_dataset("average-household-siz")
               , throws_error("The dataset 'made-up-dataset' does not exist.\nA full list of available datsets can be found by running 'ods_all_datasets()'."
                              , fixed = TRUE))
   })
 
 test_that("non-existent dataset produces correct message with filter", {
   skip_on_cran()
-  expect_that(ods_dataset("made-up-dataset", start_date = 2017)
+  expect_that(ods_dataset("average-household-siz", start_date = 2017)
               , throws_error("The dataset 'made-up-dataset' does not exist.\nA full list of available datsets can be found by running 'ods_all_datasets()'."
                              , fixed = TRUE))
 })
@@ -30,14 +30,14 @@ test_that("large dataset produces correct message with filter", {
 
 test_that("syntax error produces correct message", {
 skip_on_cran()
-expect_that(ods_dataset("spaces in dataset")
+expect_that(ods_dataset("average household size")
             , throws_error("The query generated from the dataset 'spaces in dataset' produced a syntax error, possibly a result of spaces in the dataset name.\nA full list of available datsets can be found by running 'ods_all_datasets()'."
                            , fixed = TRUE))
 })
 
 test_that("syntax error produces correct message", {
   skip_on_cran()
-  expect_that(ods_dataset("spaces in dataset", start_date = 2017)
+  expect_that(ods_dataset("average household size", start_date = 2017)
               , throws_error("The query generated from the dataset 'spaces in dataset' produced a syntax error, possibly a result of spaces in the dataset name.\nA full list of available datsets can be found by running 'ods_all_datasets()'."
                              , fixed = TRUE))
 })
