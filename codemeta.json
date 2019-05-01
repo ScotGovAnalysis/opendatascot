@@ -168,10 +168,22 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=bitops"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "curl",
+      "name": "curl",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=curl"
     }
   ],
   "readme": "https://github.com/jsphdms/opendatascot/blob/master/README.md",
-  "fileSize": "49.572KB",
+  "fileSize": "50.554KB",
   "contIntegration": "https://travis-ci.org/jsphdms/scotgov",
   "developmentStatus": "https://www.repostatus.org/#wip",
   "contributor": {},
