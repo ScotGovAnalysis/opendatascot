@@ -27,18 +27,30 @@ ods_dataset <- function(dataset,
                         ...) {
 
     endpoint <- "http://statistics.gov.scot/sparql"
-    query <- ods_print_query(dataset,
-                             start_date,
-                             end_date,
-                             geography,
-                             ...)
 
-    query_data <- try(SPARQL::SPARQL(endpoint, query), silent = TRUE)
-    if (query_data[1] ==  "Error :
-       XML content does not seem to be XML: 'Response too large'\n"){
-      stop(Error = "Dataset is too large to be downloaded like this.
-         Try adding filters to reduce size")
-    }
+    query <- tryCatch({
+      ods_print_query(dataset,
+        start_date,
+        end_date,
+        geography,
+        ...)
+      },
+      error = function(err) {
+        ods_error_message(err, dataset)
+      },
+      warning = function(warn) {
+        ods_error_message(warn, dataset)
+      })
+
+    query_data <- tryCatch({
+      SPARQL::SPARQL(endpoint, query)
+      },
+      error = function(err) {
+        ods_error_message(err, dataset)
+      },
+      warning = function(warn) {
+        ods_error_message(warn, dataset)
+      })
 
     result <- query_data$results
 
