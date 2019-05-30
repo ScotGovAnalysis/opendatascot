@@ -26,31 +26,11 @@ ods_dataset <- function(dataset,
                         geography = NULL,
                         ...) {
 
-  if (is.null(start_date) &
-      is.null(end_date) &
-      is.null(geography)  &
-      length(list(...)) == 0) {
-
-    if ("readr" %in% rownames(utils::installed.packages())) {
-      #download with readr if available
-      result <- readr::read_csv(paste0("https://statistics.gov.scot/downloads/",
-                                       "cube-table?uri=http%3A%2F%2F",
-                                       "statistics.gov.scot%2Fdata%2F",
-                                       dataset))
-    } else {
-      result <- utils::read.csv(paste0("https://statistics.gov.scot/downloads/",
-                                       "cube-table?uri=http%3A%2F%2F",
-                                       "statistics.gov.scot%2Fdata%2F",
-                                       dataset))
-    }
-
-  } else {
-
     endpoint <- "http://statistics.gov.scot/sparql"
     query <- ods_print_query(dataset,
-                             start_date = NULL,
-                             end_date = NULL,
-                             geography = NULL,
+                             start_date,
+                             end_date,
+                             geography,
                              ...)
 
     query_data <- try(SPARQL::SPARQL(endpoint, query), silent = TRUE)
@@ -60,10 +40,7 @@ ods_dataset <- function(dataset,
          Try adding filters to reduce size")
     }
 
-
     result <- query_data$results
-
-  }
 
   return(result)
 

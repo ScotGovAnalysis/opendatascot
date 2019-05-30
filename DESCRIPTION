@@ -20,7 +20,6 @@ Depends:
     bitops
 Suggests:
     spelling,
-    readr,
     knitr,
     rmarkdown,
     testthat,
