@@ -145,7 +145,7 @@ ods_print_query <- function(dataset,
   }
 
   #expose the measureType scheme's value as a value
-  query <- paste(query, "?data ?measureTypeURI ?value. }")
+  query <- paste(query, "?data ?measureTypeURI ?value. } order by ?refPeriod ?areaCode")
 
   return(query)
 
