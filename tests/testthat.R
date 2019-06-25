@@ -1,4 +1,4 @@
 library(testthat)
-library(scotgov)
+library(opendatascot)
 
-test_check("scotgov")
+test_check("opendatascot")
