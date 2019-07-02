@@ -97,10 +97,20 @@ ods_print_query <- function(dataset,
   }
 
   #filter based on geography if requested
-  if (!is.null(geography)) {
-    query_addition <- paste0("FILTER( regex(str(?refAreaURI), '",
-                             geography,
-                             "' ))")
+  if(!is.null(geography)) {
+    
+    geography <- tolower(geography)
+    
+    geo_code <- ifelse(geography == "sc", "S92",
+                       ifelse(geography == "la", "S12",
+                              ifelse(geography == "hb", "S08",
+                                     ifelse(geography == "iz", "S02",
+                                            ifelse(geography == "dz", "S01",
+                                                   (stop('Geography code not in sc, la, hd, iz, or dz'))
+                                            )))))
+    
+    query_addition <- paste0("filter (strstarts(strafter(str(?refAreaURI),'http://statistics.gov.scot/id/statistical-geography/'),'", geo_code, "'))." )
+    
     query <- paste(query, query_addition)
   }
 
