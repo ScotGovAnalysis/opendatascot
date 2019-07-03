@@ -45,7 +45,7 @@ ods_print_query <- function(dataset,
   select_line <- paste(
     paste(
       "select",
-      "(strafter(str(?refAreaURI),'http://statistics.gov.scot/id/statistical-geography/') as ?areaCode)",
+      " ?areaCode ",
       paste(question_marked_schemes,
             collapse = " ")
     ),
@@ -114,6 +114,10 @@ ods_print_query <- function(dataset,
     query <- paste(query, query_addition)
   }
 
+  #create areaCode here for filtering
+  query_addition <- bind(strafter(str(?refAreaURI),'http://statistics.gov.scot/id/statistical-geography/') as ?areaCode).
+  query <- paste(query, query_addition)
+  
   #Build filter for additional arguements
   #names of all the arguements
   schemes <- names(list(...))
