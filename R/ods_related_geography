@@ -8,7 +8,6 @@
 #' @param geography \code{string}. A valid geography unit from \href{https://statistics.gov.scot/}{statistics.gov.scot}.
 #'
 #' @return \code{tibble}.
-#' When invalid arguments are used returns \code{NULL} with \code{warning} (see \code{ods_error_message}).
 #'
 #' @examples
 #' ods_find_lower_geographies("S02001257")
@@ -22,7 +21,6 @@ ods_find_higher_geographies <- function(geography) {
   query <- paste0("
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   
-  #Find all geographies in LOCATION
   SELECT distinct ?geography ?description
   WHERE {
     ?data <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ?geographyURI.
@@ -47,7 +45,6 @@ ods_find_lower_geographies <- function(geography) {
   query <- paste0("
                   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                   
-                  #Find all geographies in LOCATION
                   SELECT distinct ?geography ?description
                   WHERE {
                   ?data <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ?geographyURI.
