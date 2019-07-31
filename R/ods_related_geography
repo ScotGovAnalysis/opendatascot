@@ -1,4 +1,4 @@
-#' Find all geographyies that contain, or are contained by, a certain geography
+#' Find all geographies that contain, or are contained by, a certain geography
 #'
 #' \code{ods_find_higher_geographies} returns a dataset from \href{https://statistics.gov.scot/}{statistics.gov.scot} of all geographies which contain the geography provided
 #' \code{ods_find_lower_geographies} returns a dataset from \href{https://statistics.gov.scot/}{statistics.gov.scot} of all geographies which are contained by the geography provided
