@@ -164,6 +164,9 @@ ods_print_query <- function(dataset,
   #close query and order it
   query <- paste(query, "} order by ?refPeriod ?areaCode")
   
+  #remove newline characters for cleanliness
+  query <- gsub("[\n]", "", query)
+  
   return(query)
   
 }
