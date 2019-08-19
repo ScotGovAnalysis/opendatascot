@@ -23,7 +23,7 @@ ods_print_query <- function(dataset,
                             end_date=NULL,
                             geography=NULL,
                             ...) {
-
+  
   temp_locations <- ods_schemes(dataset)
   locations <- data.frame(lapply(temp_locations,
                                  as.character),
@@ -40,12 +40,12 @@ ods_print_query <- function(dataset,
       function(x) paste0(x, "URI")
     )
   )
-
+  
   #start the sparql query
   select_line <- paste(
     paste(
       "select",
-      "(strafter(str(?refAreaURI),'http://statistics.gov.scot/id/statistical-geography/') as ?areaCode)",
+      " ?areaCode ",
       paste(question_marked_schemes,
             collapse = " ")
     ),
@@ -53,14 +53,14 @@ ods_print_query <- function(dataset,
   data_line <- paste0("?data qb:dataSet <http://statistics.gov.scot/data/",
                       dataset,
                       ">.")
-
+  
   query <- paste("PREFIX qb: <http://purl.org/linked-data/cube#>
                  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>",
                  select_line,
                  "where {",
                  data_line)
-
+  
   #iter over the schemes, and generate a sparql line
   for (i in 1:length(locations[, ])) {
     query_addition <- paste0("?data ",
@@ -72,10 +72,13 @@ ods_print_query <- function(dataset,
                              " rdfs:label ",
                              question_marked_schemes[i],
                              ".")
-
+    
     query <- paste(query, query_addition)
   }
-
+  
+  #expose the measureType scheme's value as a value
+  query <- paste(query, "?data ?measureTypeURI ?value.")
+  
   #filter based on date if requested
   if (!is.null(start_date) & !is.null(end_date)){
     query_addition <- paste0("FILTER (?refPeriod >= '",
@@ -95,26 +98,40 @@ ods_print_query <- function(dataset,
                              "'^^xsd:date)")
     query <- paste(query, query_addition)
   }
-
+  
   #filter based on geography if requested
-  if (!is.null(geography)) {
-    query_addition <- paste0("FILTER( regex(str(?refAreaURI), '",
-                             geography,
-                             "' ))")
+  if(!is.null(geography)) {
+    
+    geography <- tolower(geography)
+    
+    geo_code <- ifelse(geography == "sc", "S92",
+                       ifelse(geography == "la", "S12",
+                              ifelse(geography == "hb", "S08",
+                                     ifelse(geography == "iz", "S02",
+                                            ifelse(geography == "dz", "S01",
+                                                   (stop('Geography code not in sc, la, hd, iz, or dz'))
+                                            )))))
+    
+    query_addition <- paste0("filter (strstarts(strafter(str(?refAreaURI),'http://statistics.gov.scot/id/statistical-geography/'),'", geo_code, "'))." )
+    
     query <- paste(query, query_addition)
   }
-
+  
+  #create areaCode here for filtering
+  query_addition <- "bind(strafter(str(?refAreaURI),'http://statistics.gov.scot/id/statistical-geography/') as ?areaCode)"
+  query <- paste(query, query_addition)
+  
   #Build filter for additional arguements
   #names of all the arguements
   schemes <- names(list(...))
   #list of all the names and values of the arguemnts
   values <- list(...)
-
+  
   if (length(schemes >= 1)) {
-
+    
     #initialise query builder
     query_addition <- ""
-
+    
     #builder for simple one arguemnt filter
     for (i in 1:length(schemes)){
       if (length(values[[i]]) == 1) {
@@ -122,7 +139,7 @@ ods_print_query <- function(dataset,
                                  "filter (?", schemes[[i]], " = '",
                                  values[[i]], "'^^xsd:string) ")
       } else {
-
+        
         #builder for multiple value arguments - makes a big chain of OR statements
         builder <- "filter ("
         for (j in 1:length(values[[i]])){
@@ -139,14 +156,17 @@ ods_print_query <- function(dataset,
         query_addition <- paste0(query_addition, builder, ") ")
       }
     }
-
+    
     query <- paste(query, query_addition)
-
+    
   }
-
-  #expose the measureType scheme's value as a value
-  query <- paste(query, "?data ?measureTypeURI ?value. } order by ?refPeriod ?areaCode")
-
+  
+  #close query and order it
+  query <- paste(query, "} order by ?refPeriod ?areaCode")
+  
+  #remove newline characters for cleanliness
+  query <- gsub("[\n]", "", query)
+  
   return(query)
-
+  
 }

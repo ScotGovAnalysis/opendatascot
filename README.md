@@ -80,7 +80,40 @@ filtered_data <- ods_dataset("homelessness-applications",
                               applicationType = "All applications")
 ```
 
+Only interested in a particular geographical level? Use the "geography" argument to return only specific levels.
+
+``` r
+local_authority_only <- ods_dataset("homelessness-applications",
+                              geography = "la")
+```
+
+Option for geography are:
+"dz" - returns datazones only
+"iz" - returns intermediate zones only
+"hb" - returns healthboards only
+"la" - returns local authorities only
+"sc" - returns Scotland as a whole only
+
+Geography manipulation
+----------------------
+
+If you're looking for information about what geographies are contained by, or containing, other geographies, there are two handy functions to help -
+ods_find_lower_geographies() will return a dataframe of all geographies that are contained by the geography you pass it
+ods_find_higher_geographies() will return a dataframe of all geographies that contain the geography you pass it
+
+``` r
+all_zones_in_iz <- ods_find_lower_geographies("S02000003")
+```
+
+This dataframe can then be passed to ods_dataset to get infomation about these geographies! We just need to select the vector of geography codes, and use the refArea filter option:
+
+``` r
+data_about_these_geographies <- ods_dataset("house-sales-prices",
+                                             refArea = all_zones_in_iz$geography)
+```
+
 ## Future development
+
 
 This package is under active development, so any further functionality
 will be mentioned here when it’s ready. If something important is
