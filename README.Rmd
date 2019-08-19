@@ -42,11 +42,11 @@ install.packages("your/directory/opendatascot", repos = NULL,
 Usage
 -----
 
-Find the name of the dataset you want using `list_sg_dataset()`
+Find the name of the dataset you want using `ods_all_datasets()`
 
 Learn more in `vignette("opendatascot")` or `?ods_dataset`.
 
-Use `list_sg_dataset()` to find all datasets currently loaded onto statistics.gov.scot
+Use `ods_all_datasets()` to find all datasets currently loaded onto statistics.gov.scot
 
 Use `ods_dataset()` to get the data from a dataset in statistics.gov.scot
 
