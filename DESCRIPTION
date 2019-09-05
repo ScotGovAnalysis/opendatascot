@@ -8,8 +8,8 @@ Authors@R: as.person(c(
     "Thomas Crines <Thomas.Crines@gov.scot> [aut]"
   ))
 Description: Access the statistics.gov.scot API without writing SPARQL queries.
-URL: https://github.com/jsphdms/opendatascot
-BugReports: https://github.com/jsphdms/opendatascot/issues
+URL: https://github.com/datasciencescotland/opendatascot
+BugReports: https://github.com/datasciencescotland/opendatascot/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
