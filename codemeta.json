@@ -7,8 +7,8 @@
   "identifier": "opendatascot",
   "description": "Access the statistics.gov.scot API without writing SPARQL queries.",
   "name": "opendatascot: Access statistics.gov.scot Without SPARQL",
-  "codeRepository": "https://github.com/jsphdms/opendatascot",
-  "issueTracker": "https://github.com/jsphdms/opendatascot/issues",
+  "codeRepository": "https://github.com/datasciencescotland/opendatascot",
+  "issueTracker": "https://github.com/datasciencescotland/opendatascot/issues",
   "license": "https://spdx.org/licenses/MIT",
   "version": "0.0.0.9000",
   "programmingLanguage": {
@@ -182,9 +182,9 @@
       "sameAs": "https://CRAN.R-project.org/package=curl"
     }
   ],
-  "readme": "https://github.com/jsphdms/opendatascot/blob/master/README.md",
+  "readme": "https://github.com/datasciencescotland/opendatascot/blob/master/README.md",
   "fileSize": "50.554KB",
-  "contIntegration": "https://travis-ci.org/jsphdms/scotgov",
+  "contIntegration": "https://travis-ci.org/datasciencescotland/scotgov",
   "developmentStatus": "https://www.repostatus.org/#wip",
   "contributor": {},
   "copyrightHolder": {},
