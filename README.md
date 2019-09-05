@@ -7,9 +7,9 @@
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Travis-CI Build
-Status](https://travis-ci.org/jsphdms/opendatascot.svg?branch=master)](https://travis-ci.org/jsphdms/opendatascot)
+Status](https://travis-ci.org/DataScienceScotland/opendatascot.svg?branch=master)](https://travis-ci.org/DataScienceScotland/opendatascot)
 [![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/jsphdms/opendatascot?branch=master&svg=true)](https://ci.appveyor.com/project/jsphdms/opendatascot)
+status](https://ci.appveyor.com/api/projects/status/github/DataScienceScotland/opendatascot?branch=master&svg=true)](https://ci.appveyor.com/project/DataScienceScotland/opendatascot)
 
 Use opendatascot to download data from
 [statistics.gov.scot](http://statistics.gov.scot/home) with a single
