@@ -108,7 +108,7 @@ ods_print_query <- function(dataset,
                        ifelse(geography == "la", "S12",
                               ifelse(geography == "hb", "S08",
                                      ifelse(geography == "iz", "S02",
-                                            ifelse(geography == "dz", "S01", geography == "sc"
+                                            ifelse(geography == "dz", "S01",
                                                    (stop('Geography code not in sc, la, hd, iz, or dz'))
                                             )))))
     
