@@ -3,7 +3,7 @@
 opendatascot <img src = "man/figures/logo.svg" align = "right" height = 150/>
 =============================================================================
 
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis-CI Build Status](https://travis-ci.org/jsphdms/opendatascot.svg?branch=master)](https://travis-ci.org/jsphdms/opendatascot) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jsphdms/opendatascot?branch=master&svg=true)](https://ci.appveyor.com/project/jsphdms/opendatascot)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis-CI Build Status](https://travis-ci.org/DataScienceScotland/opendatascot.svg?branch=master)](https://travis-ci.org/DataScienceScotland/opendatascot) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/DataScienceScotland/opendatascot?branch=master&svg=true)](https://ci.appveyor.com/project/DataScienceScotland/opendatascot)
 
 Use opendatascot to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. opendatascot removes the need to write SPARQL code; you simply need the URI of a dataset. opendatascot can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
 
@@ -14,12 +14,12 @@ Install opendatascot from GitHub with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("jsphdms/opendatascot")
+devtools::install_github("opendatascotland/opendatascot")
 ```
 
 If the above does not work, you can install from source:
 
-1.  Go to the opendatascot [repository](https://github.com/jsphdms/opendatascot) on GitHub
+1.  Go to the opendatascot [repository](https://github.com/DataScienceScotland/opendatascot) on GitHub
 2.  Click **Clone or download** then **Download ZIP**
 3.  Save the file locally (e.g. your H drive) and Unzip
 4.  Install with install.packages()
