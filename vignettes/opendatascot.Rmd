@@ -76,7 +76,7 @@ Specify a single geography type:
 ```{r}
 household_size_la <- ods_dataset(dataset = "average-household-size",
                                            geography = "la")
-head(headhousehold_size_la)
+head(household_size_la)
 ```
 
 -------
