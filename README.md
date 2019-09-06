@@ -61,7 +61,12 @@ local_authority_only <- ods_dataset("homelessness-applications",
                               geography = "la")
 ```
 
-Option for geography are: "dz" - returns datazones only "iz" - returns intermediate zones only "hb" - returns healthboards only "la" - returns local authorities only "sc" - returns Scotland as a whole only
+Option for geography are:
+"dz" - returns datazones only 
+"iz" - returns intermediate zones only 
+"hb" - returns healthboards only 
+"la" - returns local authorities only 
+"sc" - returns Scotland as a whole only
 
 Geography manipulation
 ----------------------
