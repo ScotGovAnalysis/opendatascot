@@ -71,12 +71,12 @@ Use `start_date` **AND** `end_date` to filter datapoints within a certain timefr
 ##### Filter by geography
 
 
-Specify a single geography using an S code:
+Specify a single geography type:
 
 ```{r}
-household_size_S12000039 <- ods_dataset(dataset = "average-household-size",
-                                           geography = "S12000039")
-head(household_size_S12000039)
+household_size_la <- ods_dataset(dataset = "average-household-size",
+                                           geography = "la")
+headhousehold_size_la)
 ```
 
 -------
