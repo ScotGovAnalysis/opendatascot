@@ -14,7 +14,7 @@ Install opendatascot from GitHub with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("jsphdms/opendatascot")
+devtools::install_github("opendatascotland/opendatascot")
 ```
 
 If the above does not work, you can install from source:
