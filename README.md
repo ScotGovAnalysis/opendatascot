@@ -55,6 +55,8 @@ Discover the structure of the dataset on homelessness applications - so we can u
 After viewing our\_structure - we decide we only want the data for “all applications” and for the periods “2015/2016” and “2016/2017”, so we add these to the filter.
 
 ``` r
+library(opendatascot)
+
 filtered_data <- ods_dataset("homelessness-applications",
                               refPeriod = c("2015/2016", "2016/2017"),
                               applicationType = "All applications")
