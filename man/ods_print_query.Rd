@@ -4,15 +4,11 @@
 \alias{ods_print_query}
 \title{Generate a SPARQL query to call on API}
 \usage{
-ods_print_query(dataset, start_date = NULL, end_date = NULL,
+ods_print_query(dataset,
   geography = NULL, ...)
 }
 \arguments{
 \item{dataset}{\code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.}
-
-\item{start_date}{\code{string}. Filter data points after this date.}
-
-\item{end_date}{\code{string}. Filter data points before this date.}
 
 \item{geography}{\code{string}. A valid SG geography code, or portion thereof.}
 
