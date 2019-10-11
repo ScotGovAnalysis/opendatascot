@@ -25,5 +25,3 @@ pre_process_data <- function(x) {
     )
   return(x)
 }
-
-}
