@@ -19,6 +19,8 @@ Depends:
     RCurl,
     bitops,
     curl
+Imports:
+    stringr
 Suggests:
     spelling,
     knitr,
