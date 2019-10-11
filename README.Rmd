@@ -44,31 +44,31 @@ install.packages("your/directory/opendatascot", repos = NULL,
 
 ## Usage
 
-Find the name of the dataset you want using `ods_all_datasets()`
+Find the name of the dataset you want using **ods_all_datasets()**
 
-Learn more in `vignette("opendatascot")` or `?ods_dataset`.
+Learn more in **vignette("opendatascot")** or **?ods_dataset**.
 
-Use `ods_all_datasets()` to find all datasets currently loaded onto
+Use **ods_all_datasets()** to find all datasets currently loaded onto
 statistics.gov.scot
 
-Use `ods_dataset()` to get the data from a dataset in
+Use **ods_dataset()** to get the data from a dataset in
 statistics.gov.scot
 
-Use `ods_structure()` to find all the full sets of categories and values
+Use **ods_structure()** to find all the full sets of categories and values
 for a particular dataset (helpful for creating new filters for
-`ods_dataset`\!)
+**ods_dataset**\!)
 
-Use `ods_print_query()` to produce the SPARQL query used by
-`ods_dataset()`.
+Use **ods_print_query()** to produce the SPARQL query used by
+**ods_dataset()**.
 
 ## Examples
 
 Get a dataframe of all datasets on statistics.gov.scot, their uri, and
-publisher `all_scotgov_datasets <- ods_all_datasets()`
+publisher **all_scotgov_datasets <- ods_all_datasets()**
 
 Discover the structure of the dataset on homelessness applications - so
-we can use this in a later filter `our_structure <-
-ods_structure("homelessness-applications")`
+we can use this in a later filter **our_structure <-
+ods_structure("homelessness-applications")**
 
 After viewing our\_structure - we decide we only want the data for “all
 applications” and for the periods “2015/2016” and “2016/2017”, so we add
@@ -92,8 +92,8 @@ Geography manipulation
 ----------------------
 
 If you're looking for information about what geographies are contained by, or containing, other geographies, there are two handy functions to help -
-ods_find_lower_geographies() will return a dataframe of all geographies that are contained by the geography you pass it
-ods_find_higher_geographies() will return a dataframe of all geographies that contain the geography you pass it
+**ods_find_lower_geographies()** will return a dataframe of all geographies that are contained by the geography you pass it
+**ods_find_higher_geographies()** will return a dataframe of all geographies that contain the geography you pass it
 
 ``` {r, eval = FALSE}
 all_zones_in_iz <- ods_find_lower_geographies("S02000003")
