@@ -19,8 +19,11 @@ pre_process_data <- function(x) {
     X = x,
     FUN = function(x) {
       u <- str_extract(x,'[^/]+$')
-      str_sub(u, 1, str_length(u)-1)
+      str_remove(u,'[>]')
+      
       }
     )
   return(x)
+}
+
 }
