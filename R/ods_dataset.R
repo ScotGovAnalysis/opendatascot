@@ -1,3 +1,4 @@
+#' Download a dataset
 #'
 #' \code{ods_dataset} returns a dataset from \href{https://statistics.gov.scot/}{statistics.gov.scot}
 #'
