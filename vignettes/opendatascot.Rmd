@@ -42,7 +42,7 @@ you just need the last part:
 
 Once you have the last part of the URI, set this as the `dataset` parameter for `ods_dataset()`:  
 
-```{r}
+```{r, eval = FALSE}
 household_size <- ods_dataset(dataset = "average-household-size")
 head(household_size)
 ```
@@ -51,32 +51,17 @@ head(household_size)
 
 Filtering is useful for large data sets. The filtering parameters for `ods_dataset()` are:
 
--   `start_date`
--   `end_date`
 -   `geography`
-
-##### Filter by date
-
-Use either `start_date` **OR** `end_date` to filter datapoints before or after a certain date:
-
-```{r}
-household_size_2010_onwards <- ods_dataset(dataset = "average-household-size",
-                                           start_date = 2010)
-head(household_size_2010_onwards)
-
-```
-
-Use `start_date` **AND** `end_date` to filter datapoints within a certain timeframe.
 
 ##### Filter by geography
 
 
-Specify a single geography using an S code:
+Specify a single geography type:
 
-```{r}
-household_size_S12000039 <- ods_dataset(dataset = "average-household-size",
-                                           geography = "S12000039")
-head(household_size_S12000039)
+```{r, eval = FALSE}
+household_size_la <- ods_dataset(dataset = "average-household-size",
+                                           geography = "la")
+head(household_size_la)
 ```
 
 -------

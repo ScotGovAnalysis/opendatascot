@@ -3,11 +3,9 @@
 opendatascot <img src = "man/figures/logo.svg" align = "right" height = 150/>
 =============================================================================
 
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis-CI Build Status](https://travis-ci.org/jsphdms/opendatascot.svg?branch=master)](https://travis-ci.org/jsphdms/opendatascot) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jsphdms/opendatascot?branch=master&svg=true)](https://ci.appveyor.com/project/jsphdms/opendatascot)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis-CI Build Status](https://travis-ci.org/DataScienceScotland/opendatascot.svg?branch=master)](https://travis-ci.org/DataScienceScotland/opendatascot) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/DataScienceScotland/opendatascot?branch=master&svg=true)](https://ci.appveyor.com/project/DataScienceScotland/opendatascot)
 
-Use opendatascot to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. opendatascot removes the need to write SPARQL code; you simply need the URI of a dataset. The package generates a SPARQL query for a given dataset with optional filters, and runs the query against the statistics.gov.scot API. opendatascot can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
-
-There are existing packages that query open data sources (such as [cbsodataR](https://CRAN.R-project.org/package=cbsodataR), [eurostat](https://CRAN.R-project.org/package=eurostat), and [helsinki](https://CRAN.R-project.org/package=helsinki)) though none that query SPARQL APIs. The structure of the statistics.gov.scot API is similar to other UK public sector statistics sites such as [Office for National Statistics](http://statistics.data.gov.uk/) and [MyNHS open data](https://opendata.nhs.uk/), so the opendatascot package could be expanded to call these APIs in future.
+Use opendatascot to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. opendatascot removes the need to write SPARQL code; you simply need the URI of a dataset. opendatascot can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
 
 Installation
 ------------
@@ -16,16 +14,17 @@ Install opendatascot from GitHub with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("jsphdms/opendatascot")
+devtools::install_github("DataScienceScotland/opendatascot")
 ```
 
 If the above does not work, you can install from source:
 
-1.  Go to the opendatascot [repository](https://github.com/jsphdms/opendatascot) on GitHub
+1.  Go to the opendatascot [repository](https://github.com/DataScienceScotland/opendatascot) on GitHub
 2.  Click **Clone or download** then **Download ZIP**
 3.  Save the file locally (e.g. your H drive) and Unzip
 4.  Install with install.packages()
 
+<!-- end list -->
 ``` r
 install.packages("your/directory/opendatascot", repos = NULL,
                  type="source", lib = "your/R/package/library/directory")
@@ -34,11 +33,11 @@ install.packages("your/directory/opendatascot", repos = NULL,
 Usage
 -----
 
-Find the name of the dataset you want using `list_sg_dataset()`
+Find the name of the dataset you want using `ods_all_datasets()`
 
 Learn more in `vignette("opendatascot")` or `?ods_dataset`.
 
-Use `list_sg_dataset()` to find all datasets currently loaded onto statistics.gov.scot
+Use `ods_all_datasets()` to find all datasets currently loaded onto statistics.gov.scot
 
 Use `ods_dataset()` to get the data from a dataset in statistics.gov.scot
 
@@ -53,17 +52,49 @@ Get a dataframe of all datasets on statistics.gov.scot, their uri, and publisher
 
 Discover the structure of the dataset on homelessness applications - so we can use this in a later filter `our_structure <- ods_structure("homelessness-applications")`
 
-After viewing our\_structure - we decide we only want the data for "all applications" and for the periods "2015/2016" and "2016/2017", so we add these to the filter.
+After viewing our\_structure - we decide we only want the data for “all applications” and for the periods “2015/2016” and “2016/2017”, so we add these to the filter.
 
 ``` r
+library(opendatascot)
+
 filtered_data <- ods_dataset("homelessness-applications",
                               refPeriod = c("2015/2016", "2016/2017"),
                               applicationType = "All applications")
 ```
 
+Only interested in a particular geographical level? Use the "geography" argument to return only specific levels.
+
+``` r
+local_authority_only <- ods_dataset("homelessness-applications",
+                              geography = "la")
+```
+
+Option for geography are:
+* "dz" - returns datazones only 
+* "iz" - returns intermediate zones only 
+* "hb" - returns healthboards only 
+* "la" - returns local authorities only 
+* "sc" - returns Scotland as a whole only
+
+Geography manipulation
+----------------------
+
+If you're looking for information about what geographies are contained by, or containing, other geographies, there are two handy functions to help - ods\_find\_lower\_geographies() will return a dataframe of all geographies that are contained by the geography you pass it ods\_find\_higher\_geographies() will return a dataframe of all geographies that contain the geography you pass it
+
+``` r
+all_zones_in_iz <- ods_find_lower_geographies("S02000003")
+```
+
+This dataframe can then be passed to ods\_dataset to get infomation about these geographies! We just need to select the vector of geography codes, and use the refArea filter option:
+
+``` r
+data_about_these_geographies <- ods_dataset("house-sales-prices",
+                                             refArea = all_zones_in_iz$geography)
+```
+
 Future development
 ------------------
 
-This package is under active development, so any further functionality will be mentioned here when it's ready. If something important is missing, feel free to contact the contributors or [add a new issue](https://github.com/jsphdms/opendatascot/issues).
+This package is under active development, so any further functionality will be mentioned here when it’s ready. If something important is missing, feel free to contact the contributors or [add a new issue](https://github.com/jsphdms/opendatascot/issues).
 
 Since this package is under active development, breaking changes may be necessary. We will make it clear once the package is reasonably stable.

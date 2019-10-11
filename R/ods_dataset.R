@@ -7,8 +7,6 @@
 #' Other parameters can be used to filter the dataset.
 #'
 #' @param dataset \code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.
-#' @param start_date \code{string}. Filter data points after this date.
-#' @param end_date \code{string}. Filter data points before this date.
 #' @param geography \code{string}. A valid SG geography code, or portion thereof.
 #' @param ... Arbitrary filters requiring valid scheme = value structure.
 #'
@@ -21,8 +19,6 @@
 #' @export
 
 ods_dataset <- function(dataset,
-                        start_date = NULL,
-                        end_date = NULL,
                         geography = NULL,
                         ...) {
 
@@ -30,8 +26,6 @@ ods_dataset <- function(dataset,
 
     query <- tryCatch({
       ods_print_query(dataset,
-        start_date,
-        end_date,
         geography,
         ...)
       },
@@ -52,7 +46,7 @@ ods_dataset <- function(dataset,
         ods_error_message(warn, dataset)
       })
 
-    result <- query_data$results
+    result <- pre_process_data(query_data$results)
 
   return(result)
 
