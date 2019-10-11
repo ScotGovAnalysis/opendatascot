@@ -5,24 +5,6 @@ test_that("ods_dataset with geography filtering produces no warning", {
   expect_silent(ods_dataset(dataset = "average-household-size", geography = "la"))
 })
 
-test_that("ods_dataset with start date filtering produces no warning", {
-  skip_on_cran()
-  expect_silent(ods_dataset(dataset = "average-household-size",
-                            start_date = 2010))
-})
-
-test_that("ods_dataset with end date filtering produces no warning", {
-  skip_on_cran()
-  expect_silent(ods_dataset(dataset = "average-household-size",
-                            end_date = 2010))
-})
-
-test_that("ods_dataset with date and geography filtering produces no warning", {
-  skip_on_cran()
-  expect_silent(ods_dataset(dataset = "average-household-size",
-                            end_date = 2010, geography = "la"))
-})
-
 test_that("ods_dataset with arbitrary filtering produces no warning", {
   skip_on_cran()
   expect_silent(ods_dataset("homelessness-applications",
