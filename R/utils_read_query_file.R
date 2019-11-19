@@ -8,7 +8,7 @@
 #'   to getting the file name the function does minor pre-processing on the file
 #'   like removing the comments.
 #'
-#' @param x Name of SPARQL file to source.
+#' @param file_name Name of SPARQL file to source.
 #'
 #' @rdname utilities
 #'
@@ -16,30 +16,39 @@
 #'
 #' @examples
 #' read_query_file(x = "find_lower_geographies")
-read_query_file <- function(x) {
+read_query_file <- function(file_name) {
   # Check that passed argument is scalar string
-  checkmate::assert_string(x = x,
-                na.ok = FALSE,
-                null.ok = FALSE)
+  checkmate::assert_string(x = file_name,
+                           na.ok = FALSE,
+                           null.ok = FALSE)
 
   if (!grepl(
-    x = x,
+    x = file_name,
     pattern = ".*sparql$",
     ignore.case = TRUE,
     perl = TRUE
   )) {
-    x <- paste0(x, ".sparql")
+    x <- paste0(file_name, ".sparql")
   }
 
   query_file <-
     system.file("sparql", x, package = "opendatascot", mustWork = TRUE)
-  qyery_text <- readLines(con = query_text, warn = FALSE, skipNul = TRUE)
+  query_text <-
+    readLines(con = query_file,
+              warn = FALSE,
+              skipNul = TRUE)
+  # Remove comments
+  query_text <-
+    query_text[grep(
+      pattern = "^#.*",
+      x = query_text,
+      perl = TRUE,
+      invert = TRUE
+    )]
 
-  # Since you already have stringr
-  # TODO:
-  # - read collapse lines,
-  # - clean commented lines
-  # qyery_text <- str_replace_all(qyery_text, "[\r\n]" , "")
+  # Collapse lines
+  query_text <- paste(query_text, collapse = " ")
 
-
+  # Return completed file
+  return(query_text)
 }

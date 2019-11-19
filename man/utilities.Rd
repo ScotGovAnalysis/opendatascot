@@ -4,7 +4,7 @@
 \alias{read_query_file}
 \title{Read SPARQL Query File}
 \usage{
-read_query_file(x)
+read_query_file(file_name)
 }
 \arguments{
 \item{x}{Name of SPARQL file to source.}
