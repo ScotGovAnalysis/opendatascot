@@ -40,7 +40,7 @@ read_query_file <- function(file_name) {
   # Remove comments
   query_text <-
     query_text[grep(
-      pattern = "^#.*",
+      pattern = "^(\\s*|)#",
       x = query_text,
       perl = TRUE,
       invert = TRUE
