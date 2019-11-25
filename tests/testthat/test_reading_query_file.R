@@ -1,6 +1,6 @@
 context("Test reding query file")
 
-test_that(desc = "Throw errors on wrong x",
+test_that(desc = "Throw errors on wrong file name",
           code = {
             expect_error(object = read_query_file(file_name = NULL),
                          regexp = "^Assertion\\son\\s\\'file_name\\'\\sfailed.*")
