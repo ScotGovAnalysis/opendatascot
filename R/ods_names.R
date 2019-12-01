@@ -5,14 +5,14 @@
 
 ods_names <- function(dataset) {
 
-  pattern <- "[/#][%A-Za-z0-9()-]+>"
+  pattern <- "[/#][%A-Za-z0-9()-]+$"
 
   regexpr_result <- regexpr(pattern, dataset)
 
   result <- substr(dataset,
                    regexpr_result + 1,
                    regexpr_result + attr(regexpr_result,
-                                         "match.length") - 2)
+                                         "match.length") - 1)
 
   return(result)
 

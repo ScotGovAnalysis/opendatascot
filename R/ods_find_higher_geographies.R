@@ -14,12 +14,12 @@
 #' @export
 
 ods_find_higher_geographies <- function(geography) {
-  
+
   endpoint <- "http://statistics.gov.scot/sparql"
-  
+
   query <- paste0("
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-  
+
   SELECT distinct ?geography ?description
   WHERE {
     ?data <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ?geographyURI.
@@ -30,9 +30,9 @@ ods_find_higher_geographies <- function(geography) {
   }
   order by ?geography
 ")
-  
-  query_data <- SPARQL::SPARQL(endpoint, query)$results
-  
+
+  query_data <- ods_query_database(endpoint, query)
+
   return(query_data)
-  
+
 }
