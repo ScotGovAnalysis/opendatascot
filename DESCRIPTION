@@ -20,6 +20,7 @@ Depends:
     bitops,
     curl
 Imports:
+    checkmate (>= 1.9.4),
     stringr
 Suggests:
     spelling,
