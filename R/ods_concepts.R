@@ -21,15 +21,14 @@ ods_concepts <- function(dataset, scheme) {
   #?spaceFill is used here as otherwise SPARQL returns an awkward datastructure
   query <- paste0("PREFIX qb: <http://purl.org/linked-data/cube#>
                   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                  select distinct ?concept ?spaceFill
+                  select distinct ?concept #?spaceFill
                   where {
                   ?data qb:dataSet <http://statistics.gov.scot/data/", dataset, ">.
-                  ?data ", scheme, " ?conceptURI. ?conceptURI rdfs:label ?concept.}")
+                  ?data <", scheme, "> ?concept.}")
 
-  query_data <- SPARQL::SPARQL(endpoint, query)
+  query_data <- ods_query_database(endpoint, query)
 
-  result <- query_data$results$concept
-
+  result <- pre_process_data(query_data)
 
   return(result)
 

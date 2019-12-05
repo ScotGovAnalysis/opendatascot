@@ -14,22 +14,19 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends:
-    SPARQL,
-    XML,
-    RCurl,
-    bitops,
-    curl
 Imports:
-    checkmate (>= 1.9.4),
-    stringr
+    httr,
+    stringr,
+    readr,
+    curl,
+    checkmate (>= 1.9.4)
 Suggests:
     spelling,
     knitr,
     rmarkdown,
     testthat,
     roxygen2,
-    covr,
-    readr
+    covr
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
 Language: en-GB
