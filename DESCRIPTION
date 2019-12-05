@@ -18,7 +18,8 @@ Imports:
     httr,
     stringr,
     readr,
-    curl
+    curl,
+    checkmate (>= 1.9.4)
 Suggests:
     spelling,
     knitr,
