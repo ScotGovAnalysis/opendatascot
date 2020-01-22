@@ -39,7 +39,7 @@ If the above does not work, you can install from source:
 
 ``` {r, eval = FALSE}
 install.packages("your/directory/opendatascot", repos = NULL,
-                 type="source", lib = "your/R/package/library/directory")
+                 type="source")
 ```
 
 ## Usage
