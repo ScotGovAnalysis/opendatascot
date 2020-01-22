@@ -37,7 +37,7 @@ ods_dataset <- function(dataset,
       })
 
     query_data <- tryCatch({
-      SPARQL::SPARQL(endpoint, query)
+      ods_query_database(endpoint, query)
       },
       error = function(err) {
         ods_error_message(err, dataset)
@@ -46,8 +46,9 @@ ods_dataset <- function(dataset,
         ods_error_message(warn, dataset)
       })
 
-    result <- pre_process_data(query_data$results)
+    result <- pre_process_data(query_data)
 
   return(result)
 
 }
+

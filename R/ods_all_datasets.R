@@ -31,10 +31,12 @@ ods_all_datasets <- function() {
   ORDER BY ?Name"
 
   # Step 2 - Use SPARQL package to submit query and save results to a data frame
-  qdata <- SPARQL::SPARQL(endpoint, query)
+  qdata <- ods_query_database(endpoint, query)
 
-  result <- qdata$results
+  #result <- qdata$results
+  result <- qdata
 
-  result["dataset_name"] <- sapply(result["URI"], function(x) ods_names(x))
-  return(data.frame(result))
+  #result["dataset_name"] <- sapply(result["URI"], function(x) ods_names(x))
+  return(result)
 }
+

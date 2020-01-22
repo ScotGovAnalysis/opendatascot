@@ -59,9 +59,9 @@ ods_print_query <- function(dataset,
 
   #iter over the schemes, and generate a sparql line
   for (i in 1:length(locations[, ])) {
-    query_addition <- paste0("?data ",
+    query_addition <- paste0("?data <",
                              locations[i, ],
-                             " ",
+                             "> ",
                              question_marked_schemes[i],
                              ".")
 
