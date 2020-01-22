@@ -13,20 +13,21 @@ BugReports: https://github.com/datasciencescotland/opendatascot/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Depends:
-Imports:
+Depends: 
+Imports: 
     httr,
     stringr,
     readr,
     curl,
     checkmate (>= 1.9.4)
-Suggests:
-    spelling,
+Suggests: 
+    covr,
+    httptest,
     knitr,
     rmarkdown,
-    testthat,
     roxygen2,
-    covr
+    spelling,
+    testthat
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
 Language: en-GB
