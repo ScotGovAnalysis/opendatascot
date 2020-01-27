@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-opendatascot <img src = "man/figures/logo.svg" align = "right" height = 150/>
+opendatascot <img src = "man/figures/logo_new.svg" align = "right" height = 150/>
 =============================================================================
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis-CI Build Status](https://travis-ci.org/datasciencescotland/opendatascot.svg?branch=master)](https://travis-ci.org/datasciencescotland/opendatascot) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/datasciencescotland/opendatascot?branch=master&svg=true)](https://ci.appveyor.com/project/datasciencescotland/opendatascot)
