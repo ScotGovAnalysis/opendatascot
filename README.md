@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# opendatascot <img src = "man/figures/logo.svg" align = "right" height = 150/>
+opendatascot <img src = "man/figures/logo_new.svg" align = "right" height = 150/>
 
 [![Project Status: WIP – Initial development is in progress, but there
 has not yet been a stable, usable release suitable for the
