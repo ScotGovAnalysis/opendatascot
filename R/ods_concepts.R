@@ -21,6 +21,8 @@ ods_concepts <- function(dataset, scheme) {
   query_text <- read_query_file("concepts")
   query <- glue::glue(query_text, dataset = dataset, scheme = scheme, .open = "[", .close = "]")
   query_data <- ods_query_database(endpoint, query)
+  result <- pre_process_data(query_data)
 
-  return(query_data)
+
+  return(result)
 }
