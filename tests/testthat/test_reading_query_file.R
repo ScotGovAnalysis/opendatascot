@@ -19,3 +19,9 @@ test_that(desc = "Lines are merged",
             object = read_query_file(file_name = "find_lower_level_geographies"),
             n = 1
           ))
+
+test_that(desc = "Correct file was read",
+          code = expect_false(
+            object = grepl(pattern = "",
+              x = read_query_file(file_name = "find_lower_level_geographies"))
+          ))
