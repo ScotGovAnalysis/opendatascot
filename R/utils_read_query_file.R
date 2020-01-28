@@ -32,7 +32,7 @@ read_query_file <- function(file_name) {
   }
 
   query_file <-
-    system.file("sparql", x, package = "opendatascot", mustWork = TRUE)
+    system.file("SPARQL", x, package = "opendatascot", mustWork = TRUE)
   query_text <-
     readLines(con = query_file,
               warn = FALSE,
