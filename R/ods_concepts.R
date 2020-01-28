@@ -14,7 +14,7 @@
 #'
 #' @noRd
 
-ods_concepts <- function(datset, scheme) {
+ods_concepts <- function(dataset, scheme) {
 
   endpoint <- "http://statistics.gov.scot/sparql"
 
