@@ -3,8 +3,8 @@ PREFIX qb: <http://purl.org/linked-data/cube#>
 SELECT ?componentProperty ?componentReference
     WHERE {
 
-      <http://statistics.gov.scot/data/[dataset]> qb:structure ?structure. #selects the structure of the dataset
-      ?structure qb:component ?value. #exposes the components of the dataset as value
+      <http://statistics.gov.scot/data/[dataset]> qb:structure ?structure.
+      ?structure qb:component ?value.
       ?value ?componentProperty ?componentReference .
 
       }
