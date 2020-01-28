@@ -17,20 +17,8 @@ ods_find_lower_geographies <- function(geography) {
 
   endpoint <- "http://statistics.gov.scot/sparql"
 
-  query <- paste0("
-                  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-                  SELECT distinct ?geography ?description
-                  WHERE {
-                  ?data <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ?geographyURI.
-                  ?geographyURI <http://publishmydata.com/def/ontology/foi/within> <http://statistics.gov.scot/id/statistical-geography/", geography, ">.
-                  ?geographyURI <http://publishmydata.com/def/ontology/foi/memberOf> ?descriptionURI.
-                  ?descriptionURI rdfs:label ?description.
-                  ?geographyURI <http://publishmydata.com/def/ontology/foi/code> ?geography.
-                  }
-                  order by ?geography
-                  ")
-
+  query_text <- read_query_file("find_lower_level_geographies")
+  query <- glue::glue(query_text, geography, .open = "[", .close = "]")
   query_data <- ods_query_database(endpoint, query)
 
   return(query_data)
