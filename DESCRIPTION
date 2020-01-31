@@ -27,7 +27,8 @@ Suggests:
     rmarkdown,
     roxygen2,
     spelling,
-    testthat
+    testthat,
+    httptest
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
 Language: en-GB
