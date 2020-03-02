@@ -23,5 +23,6 @@ The function is used internally and it's not exported. In addition
   like removing the comments.
 }
 \examples{
-read_query_file(x = "find_lower_geographies")
+read_query_file(x = "find_lower_level_geographies")
 }
+
