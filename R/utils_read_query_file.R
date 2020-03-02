@@ -15,7 +15,7 @@
 #' @return A character scalar.
 #'
 #' @examples
-#' read_query_file(x = "find_lower_geographies")
+#' read_query_file(x = "find_lower_level_geographies")
 read_query_file <- function(file_name) {
   # Check that passed argument is scalar string
   checkmate::assert_string(x = file_name,
