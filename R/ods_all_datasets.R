@@ -14,6 +14,7 @@ ods_all_datasets <- function() {
   endpoint <- "http://statistics.gov.scot/sparql"
   query <- read_query_file("all_datasets")
   result <- ods_query_database(endpoint, query)
+  result$URI <- ods_names(result$URI)
 
   return(result)
 }

@@ -14,14 +14,22 @@
 #' @export
 
 ods_schemes <- function(dataset) {
-  
-  endpoint <- "http://statistics.gov.scot/sparql"                              
-  
+
+  if(grepl(" ", dataset)) {
+    stop("Blanks space detected in requested dataset name, replace with a dash '-' for a valid dataset name")
+  }
+
+  endpoint <- "http://statistics.gov.scot/sparql"
+
   query_text <- read_query_file("schemes")
   query <- glue::glue(query_text, dataset = dataset, .open = "[", .close = "]")
   query_data <- ods_query_database(endpoint, query)
   query_filter <- query_data[query_data$componentProperty == "http://purl.org/linked-data/cube#dimension", ]
-  result <- pre_process_data(query_filter)
-  
+  result <- query_filter$componentReference
+
+  if(length(result) == 0) {
+    stop("No schemes detected for this dataset. Check dataset is spelled correctly")
+  }
+
   return(result)
 }
