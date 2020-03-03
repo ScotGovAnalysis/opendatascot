@@ -20,6 +20,7 @@ Imports:
     readr,
     curl,
     checkmate (>= 1.9.4)
+    glue
 Suggests: 
     covr,
     httptest,
