@@ -22,7 +22,4 @@ The function is used internally and it's not exported. In addition
   to getting the file name the function does minor pre-processing on the file
   like removing the comments.
 }
-\examples{
-read_query_file(x = "find_lower_level_geographies")
-}
 
