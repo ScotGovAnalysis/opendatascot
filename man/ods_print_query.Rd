@@ -23,7 +23,3 @@ ods_print_query(dataset, geography = NULL, ...)
 The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}.
 Other parameters can also be used to filter the dataset.
 }
-\examples{
-ods_print_query("average-household-size")
-
-}
