@@ -1,4 +1,4 @@
-context("Test reding query file")
+context("Test reading query file")
 
 test_that(desc = "Throw errors on wrong file name",
           code = {
@@ -21,7 +21,7 @@ test_that(desc = "Lines are merged",
           ))
 
 test_that(desc = "Correct file was read",
-          code = expect_false(
+          code = expect_true(
             object = grepl(pattern = "",
               x = read_query_file(file_name = "find_lower_level_geographies"))
           ))
