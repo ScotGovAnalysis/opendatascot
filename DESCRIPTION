@@ -19,7 +19,7 @@ Imports:
     stringr,
     readr,
     curl,
-    checkmate (>= 1.9.4)
+    checkmate (>= 1.9.4),
     glue
 Suggests: 
     covr,
