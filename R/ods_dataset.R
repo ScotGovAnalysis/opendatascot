@@ -24,30 +24,30 @@ ods_dataset <- function(dataset,
 
     endpoint <- "http://statistics.gov.scot/sparql"
 
-    query <- tryCatch({
-      ods_print_query(dataset,
-        geography,
-        ...)
-      },
-      error = function(err) {
-        ods_error_message(err, dataset)
-      },
-      warning = function(warn) {
-        ods_error_message(warn, dataset)
-      })
+    #tryCatch({
+     query <- ods_print_query(dataset, geography,
+         ...)
+     #   },
+     #   error = function(err) {
+     #     ods_error_message(err, dataset)
+     #   },
+     #   warning = function(warn) {
+     #     ods_error_message(warn, dataset)
+     #   })
+     #
+      query_data <- #tryCatch({
+      ods_query_database(endpoint, query)
+     #   },
+     #   error = function(err) {
+     #     ods_error_message(err, dataset)
+     #   },
+     #   warning = function(warn) {
+     #     ods_error_message(warn, dataset)
+     #   })
 
-    query_data <- tryCatch({
-      SPARQL::SPARQL(endpoint, query)
-      },
-      error = function(err) {
-        ods_error_message(err, dataset)
-      },
-      warning = function(warn) {
-        ods_error_message(warn, dataset)
-      })
-
-    result <- pre_process_data(query_data$results)
+    result <- pre_process_data(query_data)
 
   return(result)
 
 }
+

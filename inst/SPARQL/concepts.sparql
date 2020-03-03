@@ -1,0 +1,8 @@
+# Finds associated concepts for a dataset scheme
+
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  select distinct ?concept
+  where {
+    ?data qb:dataSet <http://statistics.gov.scot/data/[dataset]>.
+    ?data <[scheme]> ?concept.}

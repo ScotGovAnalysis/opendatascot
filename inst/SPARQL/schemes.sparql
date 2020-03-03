@@ -1,0 +1,10 @@
+PREFIX qb: <http://purl.org/linked-data/cube#>
+
+SELECT ?componentProperty ?componentReference
+    WHERE {
+
+      <http://statistics.gov.scot/data/[dataset]> qb:structure ?structure.
+      ?structure qb:component ?value.
+      ?value ?componentProperty ?componentReference .
+
+      }
