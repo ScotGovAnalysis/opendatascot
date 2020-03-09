@@ -5,7 +5,7 @@
 
 ods_names <- function(dataset) {
 
-  pattern <- "[/#][%A-Za-z0-9()-]+$"
+  pattern <- "[/#]['%A-Za-z0-9()-]+$"
 
   regexpr_result <- regexpr(pattern, dataset)
 
