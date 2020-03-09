@@ -25,7 +25,7 @@ ods_print_query <- function(dataset,
     #data.frame(lapply(temp_locations,
     #                             as.character),
     #                      stringsAsFactors = FALSE)
-  schemes <- gsub("[()%-]", "", ods_names(locations))
+  schemes <- gsub("['()%-]", "", ods_names(locations))
   question_marked_schemes <- unlist(
     lapply(schemes,
            function(x) paste0("?", x)
