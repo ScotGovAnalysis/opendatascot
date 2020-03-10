@@ -9,7 +9,7 @@ test_that("Entered a dataset with a space",
 with_mock_api(
 test_that("Mispelled dataset entered",
           expect_that(ods_schemes("busaccessibility"),
-                      throws_error("No schemes detected for this dataset. Check dataset is spelled correctly"
+                      throws_error("No schemes detected for this dataset. Dataset may not be convertable to a dataframe, or the name may be spelled incorrectly"
                                    , fixed = TRUE))
 )
 )
