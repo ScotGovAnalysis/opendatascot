@@ -28,7 +28,7 @@ ods_schemes <- function(dataset) {
   result <- query_filter$componentReference
 
   if(length(result) == 0) {
-    stop("No schemes detected for this dataset. Check dataset is spelled correctly")
+    stop("No schemes detected for this dataset. Dataset may not be convertable to a dataframe, or the name may be spelled incorrectly")
   }
 
   return(result)
