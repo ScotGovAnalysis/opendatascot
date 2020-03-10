@@ -18,7 +18,3 @@ ods_schemes(dataset)
 \details{
 The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}).
 }
-\examples{
-ods_schemes("average-household-size")
-
-}

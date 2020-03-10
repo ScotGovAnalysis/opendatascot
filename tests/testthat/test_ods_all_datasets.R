@@ -1,13 +1,15 @@
 context("ods_all_datasets")
 
-test_that("ods_all_datasets produces no warning", {
-  skip_on_cran()
-  expect_silent(ods_all_datasets())
+with_mock_api({
+  test_that("ods_all_datasets produces no warning", {
+    expect_silent(ods_all_datasets())
+  })
 })
 
 test_datasets <- ods_all_datasets()
 
-test_that("ods_all_datasets returns data.frame", {
-  skip_on_cran()
-  expect_is(test_datasets, "data.frame")
+with_mock_api({
+  testthat::test_that("data frame should be returned by ods_all_datasets", {
+    expect_is(ods_all_datasets(), "data.frame")
+  })
 })

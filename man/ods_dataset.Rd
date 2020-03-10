@@ -4,8 +4,7 @@
 \alias{ods_dataset}
 \title{Download a dataset}
 \usage{
-ods_dataset(dataset,
-  geography = NULL, ...)
+ods_dataset(dataset, geography = NULL, ...)
 }
 \arguments{
 \item{dataset}{\code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.}
@@ -25,8 +24,4 @@ When invalid arguments are used returns \code{NULL} with \code{warning} (see \co
 \code{ods_dataset} returns either a complete or filtered dataset from \href{https://statistics.gov.scot/}{statistics.gov.scot}.
 The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}.
 Other parameters can be used to filter the dataset.
-}
-\examples{
-ods_dataset("average-household-size")
-
 }
