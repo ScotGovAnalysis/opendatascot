@@ -15,21 +15,22 @@
 
 ods_structure <- function(dataset) {
 
-  scheme_set <- ods_schemes(dataset)
-  names(scheme_set) <- "schemes"
+  scheme_set <- (ods_schemes(dataset))
+  #names(scheme_set) <- "schemes"
 
   categories <- list()
 
-  for (i in 1:length(scheme_set[, ])) {
+  for (i in 1:length(scheme_set[])) {
 
-    categories[[i]] <- ods_concepts(dataset, scheme_set[i, ])
+    categories[[i]] <- ods_concepts(dataset, scheme_set[i])
 
 
   }
-  names(categories) <- gsub("[()%]", "", ods_names(scheme_set[, ]))
+  names(categories) <- gsub("[()%]", "", ods_names(scheme_set))
 
   result <- list(scheme_set, categories)
   names(result) <- list("schemes", "categories")
 
   return(result)
 }
+

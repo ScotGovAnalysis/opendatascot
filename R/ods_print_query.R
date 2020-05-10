@@ -21,10 +21,11 @@ ods_print_query <- function(dataset,
                             ...) {
 
   temp_locations <- ods_schemes(dataset)
-  locations <- data.frame(lapply(temp_locations,
-                                 as.character),
-                          stringsAsFactors = FALSE)
-  schemes <- gsub("[()%]", "", ods_names(locations[, ]))
+  locations <- temp_locations
+    #data.frame(lapply(temp_locations,
+    #                             as.character),
+    #                      stringsAsFactors = FALSE)
+  schemes <- gsub("[,&'()%-]", "", ods_names(locations))
   question_marked_schemes <- unlist(
     lapply(schemes,
            function(x) paste0("?", x)
@@ -58,10 +59,10 @@ ods_print_query <- function(dataset,
                  data_line)
 
   #iter over the schemes, and generate a sparql line
-  for (i in 1:length(locations[, ])) {
-    query_addition <- paste0("?data ",
-                             locations[i, ],
-                             " ",
+  for (i in 1:length(locations)) {
+    query_addition <- paste0("?data <",
+                             locations[i],
+                             "> ",
                              question_marked_schemes[i],
                              ".")
 

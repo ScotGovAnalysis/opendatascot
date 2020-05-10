@@ -18,9 +18,9 @@ pre_process_data <- function(x) {
   x[] <- lapply(
     X = x,
     FUN = function(x) {
-      u <- str_extract(x,'[^/]+$')
-      str_remove(u,'[>]')
-      
+      u <- stringr::str_extract(x,'[^/]+$')
+      stringr::str_remove(u,'[>]')
+
       }
     )
   return(x)

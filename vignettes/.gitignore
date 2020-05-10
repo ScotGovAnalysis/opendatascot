@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 *.html
+=======
+figure
+*.html
+*.md
+rsconnect
+>>>>>>> 1a322458c7daabde2e84feefbf618e4dbf397584
 *.R
