@@ -4,8 +4,7 @@
 \alias{ods_dataset}
 \title{Download a dataset}
 \usage{
-ods_dataset(dataset,
-  geography = NULL, ...)
+ods_dataset(dataset, geography = NULL, ...)
 }
 \arguments{
 \item{dataset}{\code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.}

@@ -18,7 +18,8 @@ Depends:
     XML,
     RCurl,
     bitops,
-    curl
+    curl,
+    R (>= 2.10)
 Imports:
     stringr
 Suggests:
@@ -29,6 +30,6 @@ Suggests:
     roxygen2,
     covr,
     readr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr
 Language: en-GB
