@@ -68,8 +68,23 @@ dta_higher_geos <- read_csv(
 )
 
 
+# Joins -------------------------------------------------------------------
 
-# geo_lookup <- dta_datazones
+# Prepare final data set to be available in the package
+dta_geo <- left_join(x = dta_datazones,
+                     y = dta_higher_geos,
+                     by = c("datazone_2011" = "DataZone"))
 
-# Embed geo_lookup data within package
-# usethis::use_data(geo_lookup, overwrite = TRUE)
+# Export ------------------------------------------------------------------
+
+# Export data to be available in the package
+geo_lookup <- dta_geo
+
+# Embed geo_lookup data within package, xz compression produces notably better
+# results, version 3 is selected for compatblity with R >= 3.5.
+usethis::use_data(
+  geo_lookup,
+  overwrite = TRUE,
+  compress = "xz",
+  version = 3
+)

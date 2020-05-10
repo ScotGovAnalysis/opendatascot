@@ -7,3 +7,7 @@
 ^\.travis\.yml$
 sessionInfoLog
 ^data-raw$
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+docs/
+.lintr
