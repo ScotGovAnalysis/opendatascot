@@ -25,3 +25,7 @@ When invalid arguments are used returns \code{NULL} with \code{warning} (see \co
 The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}.
 Other parameters can be used to filter the dataset.
 }
+\examples{
+ods_dataset("average-household-size")
+
+}

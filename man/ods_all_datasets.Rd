@@ -12,3 +12,7 @@ ods_all_datasets()
 \description{
 \code{ods_all_datasets} returns details of all datasets available from \href{https://statistics.gov.scot/}{statistics.gov.scot}
 }
+\examples{
+ods_all_datasets()
+
+}

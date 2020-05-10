@@ -17,3 +17,7 @@ When invalid arguments are used returns \code{NULL} with \code{warning} (see \co
 \code{ods_get_csv} returns a dataset from \href{https://statistics.gov.scot/}{statistics.gov.scot}
 The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}.
 }
+\examples{
+ods_get_csv("average-household-size")
+
+}
