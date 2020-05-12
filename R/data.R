@@ -9,7 +9,7 @@
 #'   availability of new census data. In order to minimise size of the data set
 #'   only the closest match of with the 2001 data zone was kept.
 #'
-#' @format A data frame with 53940 rows and 10 variables:
+#' @format A data frame with the following variables:
 #' \itemize{
 #'   \item{Datazones:}
 #'      \itemize{
