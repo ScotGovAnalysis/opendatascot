@@ -15,7 +15,8 @@ sources <-
   map(
     .x = c(
       "https://www2.gov.scot/Resource/0048/00483037.xlsx",
-      "https://www2.gov.scot/Resource/0046/00462937.csv"
+      "https://www2.gov.scot/Resource/0046/00462937.csv",
+      "https://opendata.arcgis.com/datasets/a267b55f601a4319a9955b0197e3cb81_0.csv"
     ),
     .f = function(.x) {
       t <- tempfile()
@@ -67,13 +68,23 @@ dta_higher_geos <- read_csv(
   skip = 1
 )
 
+# Import local authority names
+dta_la_names <- read_csv(
+  file = sources[[3]],
+  col_names = c("la_code", "la_name", "LAD17NMW", "FID"),
+  col_types = cols_only(la_code = col_character(),
+                        la_name = col_character()),
+  skip = 1
+)
 
 # Joins -------------------------------------------------------------------
 
 # Prepare final data set to be available in the package
 dta_geo <- left_join(x = dta_datazones,
                      y = dta_higher_geos,
-                     by = c("datazone_2011" = "DataZone"))
+                     by = c("datazone_2011" = "DataZone")) %>%
+  left_join(y = dta_la_names,
+            by = c("Council" = "la_code"))
 
 # Export ------------------------------------------------------------------
 

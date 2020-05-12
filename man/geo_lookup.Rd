@@ -5,18 +5,7 @@
 \alias{geo_lookup}
 \title{Geographic Lookup Data}
 \format{
-A data frame with 53940 rows and 10 variables:
-\itemize{
-  \item{Datazones:}
-     \itemize{
-       \item{\code{datazone_2001}}{ - 2001 data zone code}
-       \item{\code{datazone_2011}}{ - 2011 data zone code}
-  }
-  \item{Higher geographies:}
-     \itemize{
-       \item{\code{InterZone}}{ - Intermediate Geography Zone 2011}
-     }
-}
+
 }
 \source{
 \emph{Scottish Government,} 2015. \href{https://www2.gov.scot/Topics/Statistics/sns/SNSRef/DZMatchingFile}{Data Zone Matching File (Area and Pop. based 2001 - 2011)}
@@ -31,7 +20,7 @@ A simple lookup data set linking data zones to high-level
   2011 data zones.
 }
 \details{
-Data zone geographies are peridiocally revieviwed in order to
+Data zone geographies are periodically reviewed in order to
   accommodate for population flows. Usually, this is done following
   availability of new census data. In order to minimise size of the data set
   only the closest match of with the 2001 data zone was kept.
