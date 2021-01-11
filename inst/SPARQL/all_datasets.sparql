@@ -8,9 +8,10 @@
   SELECT ?URI ?Name ?Publisher
   WHERE {
   ?URI rdf:type <http://publishmydata.com/def/dataset#LinkedDataset>;
-  rdfs:label ?Name;
-  dcterms:publisher ?Pub.
+  rdfs:label ?Name.
+    OPTIONAL {
+  ?URI dcterms:publisher ?Pub.
   ?Pub rdfs:label ?Publisher.
   }
-
+  }
   ORDER BY ?Name
