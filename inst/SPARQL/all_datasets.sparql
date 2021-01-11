@@ -7,7 +7,7 @@
 
   SELECT ?URI ?Name ?Publisher
   WHERE {
-  ?URI rdf:type <http://publishmydata.com/def/dataset#Dataset>;
+  ?URI rdf:type <http://publishmydata.com/def/dataset#LinkedDataset>;
   rdfs:label ?Name;
   dcterms:publisher ?Pub.
   ?Pub rdfs:label ?Publisher.
