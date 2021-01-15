@@ -197,7 +197,8 @@ all_zones_in_iz
 #> 6 S01000001 2001 Data Zones
 #> 7 S01000006 2001 Data Zones
 ```
-This dataframe can then be passed to ods_dataset to get infomation about these geographies! We just need to select the vector of geography codes, and use the refArea filter option:
+
+This dataframe can then be passed to ods_dataset to get information about these geographies! We just need to select the vector of geography codes, and use the refArea filter option:
 
 ``` {r, eval = FALSE}
  ods_dataset("house-sales-prices",

@@ -13,12 +13,17 @@ BugReports: https://github.com/datasciencescotland/opendatascot/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Depends: 
+Depends:
+    SPARQL,
+    XML,
+    RCurl,
+    bitops,
+    curl,
+    R (>= 3.2.0)
 Imports: 
     httr,
     stringr,
     readr,
-    curl,
     checkmate (>= 1.9.4),
     glue
 Suggests: 
@@ -28,8 +33,7 @@ Suggests:
     rmarkdown,
     roxygen2,
     spelling,
-    testthat,
-    httptest
-RoxygenNote: 6.1.1
+    testthat
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr
 Language: en-GB

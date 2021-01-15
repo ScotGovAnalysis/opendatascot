@@ -1,5 +1,5 @@
-figure
+figure/
 *.html
 *.md
-rsconnect
 *.R
+rsconnect

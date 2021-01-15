@@ -18,3 +18,7 @@ ods_find_lower_geographies(geography)
 \details{
 The \code{geography} parameter must be passed a valid geography unit.
 }
+\examples{
+ods_find_lower_geographies("S02001257")
+
+}
