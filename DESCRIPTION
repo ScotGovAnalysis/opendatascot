@@ -4,7 +4,7 @@ Title: Access statistics.gov.scot Without SPARQL
 Version: 0.0.0.9000
 Authors@R: as.person(c(
     "Joseph Adams <joseph@josephadams.net> [aut, cre]", 
-    "Gordon Bryden <gordon.bryden@gov.scot> [aut]",
+    "Gordon Bryden <gordon.bryden@gmail.com> [aut]",
     "Thomas Crines <Thomas.Crines@gov.scot> [aut]"
   ))
 Description: Access the statistics.gov.scot API without writing SPARQL queries.
