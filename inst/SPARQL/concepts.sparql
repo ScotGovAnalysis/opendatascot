@@ -2,7 +2,14 @@
 
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-  select distinct ?concept
-  where {
-    ?data qb:dataSet <http://statistics.gov.scot/data/[dataset]>.
-    ?data <[scheme]> ?concept.}
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?concept WHERE {
+  BIND(<http://statistics.gov.scot/data/[dataset]> AS ?ds) 
+  BIND(<[scheme]> AS ?dim)
+       
+       ?ds qb:structure/qb:component ?compspec . 
+       ?compspec qb:dimension ?dim .
+       ?compspec qb:codeList ?codelist .
+       ?codelist skos:member/rdfs:label ?concept .
+}
