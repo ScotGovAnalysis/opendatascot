@@ -14,10 +14,17 @@
 #'
 #' @noRd
 
-ods_concepts <- function(dataset, scheme) {
+ods_concepts <- function(dataset, scheme, labelled = FALSE) {
 
   endpoint <- "http://statistics.gov.scot/sparql"
 
+    if(labelled){
+      query_file <- "concepts"
+    } else{
+      query_file <- "concepts_raw"
+    }
+    query_text <- read_query_file(query_file)
+  
   query_text <- read_query_file("concepts")
   query <- glue::glue(query_text, dataset = dataset, scheme = scheme, .open = "[", .close = "]")
   query_data <- ods_query_database(endpoint, query)
