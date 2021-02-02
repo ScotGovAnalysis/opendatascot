@@ -13,7 +13,7 @@
 #'
 #' @export
 
-ods_structure <- function(dataset) {
+ods_structure <- function(dataset, labelled = FALSE) {
 
   scheme_set <- (ods_schemes(dataset))
   #names(scheme_set) <- "schemes"
@@ -22,7 +22,7 @@ ods_structure <- function(dataset) {
 
   for (i in 1:length(scheme_set[])) {
 
-    categories[[i]] <- ods_concepts(dataset, scheme_set[i])
+    categories[[i]] <- ods_concepts(dataset, scheme_set[i], labelled)
 
 
   }
