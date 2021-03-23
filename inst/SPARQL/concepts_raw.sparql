@@ -11,5 +11,5 @@ SELECT ?concept WHERE {
        ?ds qb:structure/qb:component ?compspec . 
        ?compspec qb:dimension ?dim .
        ?compspec qb:codeList ?codelist .
-       ?codelist skos:member/rdfs:label ?concept .
+       ?codelist skos:member ?concept .
 }
