@@ -1,0 +1,7 @@
+#retreives the metadata of a dataset
+
+SELECT ?metadata ?value
+{
+  GRAPH <http://statistics.gov.scot/graph/[dataset]/metadata>
+    { ?dataset ?metadata ?value }
+}
