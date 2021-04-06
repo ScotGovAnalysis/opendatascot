@@ -3,11 +3,8 @@
 #' @noRd
 #'
 #'
-ods_query_database <- function(endpoint, query) {
-
-#endpoint <- "http://statistics.gov.scot/sparql"
-
-#tryCatch({
+ods_query_database <- function(endpoint = "http://statistics.gov.scot/sparql" , query) {
+    
 content_returned <- httr::content(
     httr::POST(
       url = endpoint,
@@ -16,8 +13,7 @@ content_returned <- httr::content(
       ),
     as = "text",
     encoding = "UTF-8"
-    )
-#})
+)
 
 if(content_returned == "Response too large") {
   stop("Requested data is too large for statistics.gov.scot to return. Either add more filters to ods_dataset(), or use get_csv().
