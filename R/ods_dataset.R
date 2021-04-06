@@ -20,6 +20,7 @@
 
 ods_dataset <- function(dataset,
                         geography = NULL,
+                        labelled = FALSE,
                         ...) {
 
     endpoint <- "http://statistics.gov.scot/sparql"
