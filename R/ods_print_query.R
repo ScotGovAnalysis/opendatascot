@@ -18,6 +18,7 @@
 
 ods_print_query <- function(dataset,
                             geography=NULL,
+                            labelled=FALSE,
                             ...) {
 
   temp_locations <- ods_schemes(dataset)
@@ -47,6 +48,12 @@ ods_print_query <- function(dataset,
             collapse = " ")
     ),
     "?value")
+
+  #if labelled == TRUE, add in refAreaLabelled
+  if(labelled == TRUE){
+    select_line <- paste(select_line, "?refAreaLabelled")
+  }
+
   data_line <- paste0("?data qb:dataSet <http://statistics.gov.scot/data/",
                       dataset,
                       ">.")
@@ -66,6 +73,12 @@ ods_print_query <- function(dataset,
                              question_marked_schemes[i],
                              ".")
 
+    query <- paste(query, query_addition)
+  }
+
+  #optionally return labelled geographies
+  if(labelled == TRUE){
+    query_addition <- "?refArea rdfs:label ?refAreaLabelled."
     query <- paste(query, query_addition)
   }
 

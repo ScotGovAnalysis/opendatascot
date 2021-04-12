@@ -20,12 +20,13 @@
 
 ods_dataset <- function(dataset,
                         geography = NULL,
+                        labelled = FALSE,
                         ...) {
 
     endpoint <- "http://statistics.gov.scot/sparql"
 
     #tryCatch({
-     query <- ods_print_query(dataset, geography,
+     query <- ods_print_query(dataset, geography, labelled,
          ...)
      #   },
      #   error = function(err) {
