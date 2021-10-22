@@ -7,6 +7,7 @@ ods_query_database <- function(endpoint = "http://statistics.gov.scot/sparql" , 
     
 content_returned <- httr::content(
     httr::POST(
+      add_headers = c("User-Agent" = "https://github.com/DataScienceScotland/opendatascot"),
       url = endpoint,
       config = httr::accept("text/csv"),
       body = list(query = query)
@@ -23,7 +24,8 @@ if(content_returned == "Response too large") {
        Check ods_structure for categories to filter on.")
 }
 
-post_data <- readr::read_csv(content_returned)
+post_data <- readr::read_csv(content_returned,
+                            show_col_types = FALSE)
 
 return(post_data)
 
