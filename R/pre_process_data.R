@@ -14,14 +14,16 @@
 #' @noRd
 
 pre_process_data <- function(x) {
-  # Keep only last elemnt of URI
+  # Keep only last element of URI
+
   x[] <- lapply(
     X = x,
     FUN = function(x) {
-      u <- stringr::str_extract(x,'[^/]+$')
-      stringr::str_remove(u,'[>]')
+      ifelse (substr(x,1,4) == "http",
+              stringr::str_remove(
+                stringr::str_extract(x,'[^/]+$'),
+                '[>]'), x)
+      })
 
-      }
-    )
   return(x)
 }
