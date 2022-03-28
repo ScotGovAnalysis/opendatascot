@@ -72,6 +72,12 @@ ods_print_query <- function(dataset,
                              "> ",
                              question_marked_schemes[i],
                              ".")
+    
+    #hack to return data for interval refPeriods
+    if(locations[i] == "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod"){
+      query_addition <- "?data <http://purl.org/linked-data/sdmx/2009/dimension#refPeriod> ?refPeriodURI.
+      ?refPeriodURI rdfs:label ?refPeriod."
+    }
 
     query <- paste(query, query_addition)
   }
