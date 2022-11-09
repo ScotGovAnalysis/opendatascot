@@ -44,7 +44,7 @@ install.packages("your/directory/opendatascot", repos = NULL,
 
 ## Usage
 
-Learn more in **vignette(“opendatascot”)** or **?ods\_dataset**.
+Learn more in **vignette("opendatascot")** or **?ods\_dataset**.
 
 **ods\_all\_datasets()** finds all datasets currently loaded onto
 statistics.gov.scot, and their publisher
@@ -121,8 +121,8 @@ opendatascot::ods_structure("homelessness-applications")
 #> [2] "assessed-as-homeless-or-threatened-with-homelessness"
 ```
 
-After viewing the structure - we decide we only want the data for “all
-applications” and for the periods “2015-2016” and “2016-2017”, so we add
+After viewing the structure - we decide we only want the data for "all
+applications" and for the periods "2015-2016" and "2016-2017", so we add
 these to the filter.
 
 ``` r
@@ -147,7 +147,7 @@ opendatascot::ods_dataset("homelessness-applications",
 ```
 
 If you’re only interested in a particular geographical level, you can
-use the “geography” argument to return only specific levels.
+use the "geography" argument to return only specific levels.
 
 ``` r
 opendatascot::ods_dataset("homelessness-applications",
@@ -169,10 +169,10 @@ opendatascot::ods_dataset("homelessness-applications",
 #> # ... with 758 more rows
 ```
 
-Option for geography are:<br/> **“dz”** - returns datazones only<br/>
-**“iz”** - returns intermediate zones only<br/> **“hb”** - returns
-healthboards only<br/> **“la”** - returns local authorities only<br/>
-**“sc”** - returns Scotland as a whole only<br/>
+Option for geography are:<br/> **"dz"** - returns datazones only<br/>
+**"iz"** - returns intermediate zones only<br/> **"hb"** - returns
+healthboards only<br/> **"la"** - returns local authorities only<br/>
+**"sc"** - returns Scotland as a whole only<br/>
 
 ## Geography manipulation
 
