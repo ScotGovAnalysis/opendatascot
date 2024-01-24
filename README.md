@@ -23,13 +23,13 @@ Install opendatascot from GitHub with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("datasciencescotland/opendatascot")
+devtools::install_github("ScotGovAnalysis/opendatascot")
 ```
 
 If the above does not work, you can install from source:
 
 1.  Go to the opendatascot
-    [repository](https://github.com/datasciencescotland/opendatascot) on
+    [repository](https://github.com/ScotGovAnalysis/opendatascot) on
     GitHub
 2.  Click **Clone or download** then **Download ZIP**
 3.  Save the file locally (e.g. your H drive) and Unzip
@@ -225,7 +225,7 @@ codes, and use the refArea filter option:
 This package is under active development, so any further functionality
 will be mentioned here when it’s ready. If something important is
 missing, feel free to contact the contributors or [add a new
-issue](https://github.com/jsphdms/opendatascot/issues).
+issue](https://github.com/ScotGovAnalysis/opendatascot/issues).
 
 Since this package is under active development, breaking changes may be
 necessary. We will make it clear once the package is reasonably stable.
