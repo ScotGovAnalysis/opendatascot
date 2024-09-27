@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
-Use opendatascot to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. opendatascot removes the need to write SPARQL code; you simply need the URI of a dataset. opendatascot can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
+Use opendatascot to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. opendatascot removes the need to write SPARQL code; you simply need the URI of a dataset. opendatascot can be used interactively, or as part of a [Reproducible Analytical Pipeline (RAP)](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/).
 
 ## Installation
 
@@ -30,7 +30,7 @@ devtools::install_github("scotgovanalysis/opendatascot")
 If the above does not work, you can install from source:
 
 1.  Go to the opendatascot
-    [repository](https://github.com/scotgovanalysis/opendatascot) on GitHub
+    [GitHub repository](https://github.com/scotgovanalysis/opendatascot)
 2.  Click **Clone or download** then **Download ZIP**
 3.  Save the file locally (e.g. your H drive) and Unzip
 4.  Install with install.packages()
