@@ -8,7 +8,6 @@ output: github_document
 knitr::opts_chunk$set(
   echo = TRUE,
   eval = TRUE,
-  collapse = TRUE,
   comment = "#>",
   fig.path = "README-"
 )
@@ -23,26 +22,26 @@ Use opendatascot to download data from [statistics.gov.scot](http://statistics.g
 
 ## Installation
 
-Install opendatascot from GitHub with:
+If you are working within the Scottish Government network, you can install opendatascot in the same way as with other R packages. The easiest way to do this is by using the [pkginstaller](https://github.com/ScotGovAnalysis/pkginstaller/tree/main) add-in. Further guidance is available on [eRDM](https://erdm.scotland.gov.uk:8443/documents/A42404229/details).
 
-``` {r, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("scotgovanalysis/opendatascot")
+Alternatively, opendatascot can be installed directly from GitHub. Note that this method requires the devtools package and may not work from within the Scottish Government network.
+
+```{r, eval = FALSE}
+devtools::install_github(
+  "ScotGovAnalysis/opendatascot",
+  upgrade = "never",
+  build_vignettes = TRUE
+)
 ```
 
-If the above does not work, you can install from source:
+Finally, opendatascot can also be installed by downloading the [zip of the repository](https://github.com/ScotGovAnalysis/opendatascot/archive/main.zip) and running the following code, replacing the section marked `<>` (including the arrows themselves) with the location of the downloaded zip:
 
-1.  Go to the opendatascot
-    [GitHub repository](https://github.com/scotgovanalysis/opendatascot)
-2.  Click **Clone or download** then **Download ZIP**
-3.  Save the file locally (e.g. your H drive) and Unzip
-4.  Install with install.packages()
-
-<!-- end list -->
-
-``` {r, eval = FALSE}
-install.packages("your/directory/opendatascot", repos = NULL,
-                 type="source")
+```{r, eval = FALSE}
+devtools::install_local(
+  "<FILEPATH OF ZIPPED FILE>/opendatascot-main.zip",
+  upgrade = "never",
+  build_vignettes = TRUE
+)
 ```
 
 
