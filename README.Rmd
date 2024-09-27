@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 
 Use opendatascot to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. opendatascot removes the need to write SPARQL code; you simply need the URI of a dataset. opendatascot can be used interactively, or as part of a [Reproducible Analytical Pipeline (RAP)](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/).
 
+
 ## Installation
 
 Install opendatascot from GitHub with:
@@ -43,6 +44,7 @@ install.packages("your/directory/opendatascot", repos = NULL,
 
 ```
 
+
 ## Usage
 
 Learn more in **vignette("opendatascot")** or **?ods_dataset**.
@@ -59,6 +61,7 @@ for a particular dataset (helpful for creating new filters for
 **ods_print_query()** produces the SPARQL query used by **ods_dataset()**.
 
 **ods_find_higher_geography()** and **ods_find_higher_geography()** will find all geographical areas with contain, or are contained by a specified geography.
+
 
 ## Examples
 
@@ -120,8 +123,8 @@ opendatascot::ods_structure("homelessness-applications")
 #> [2] "assessed-as-homeless-or-threatened-with-homelessness"
 ```
 
-After viewing the structure - we decide we only want the data for “all
-applications” and for the periods “2015-2016” and “2016-2017”, so we add
+After viewing the structure - we decide we only want the data for "all
+applications" and for the periods "2015-2016" and "2016-2017", so we add
 these to the filter.
 
 ``` {r, eval = FALSE, echo = TRUE}
@@ -175,8 +178,8 @@ Option for geography are:<br/>
 **"la"** - returns local authorities only<br/>
 **"sc"** - returns Scotland as a whole only<br/>
 
-Geography manipulation
-----------------------
+
+## Geography manipulation
 
 If you're looking for information about what geographies are contained by, or containing, other geographies, there are two handy functions to help -
 **ods_find_lower_geographies()** will return a dataframe of all geographies that are contained by the geography you pass it
@@ -217,8 +220,8 @@ This dataframe can then be passed to ods_dataset to get information about these 
 #> 7 S01000024 2013      mean        324571
 ```
 
-## Future development
 
+## Future development
 
 This package is under active development, so any further functionality
 will be mentioned here when it’s ready. If something important is
