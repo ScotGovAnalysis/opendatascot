@@ -1,13 +1,14 @@
-^appveyor\.yml$
-^codemeta\.json$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
 ^README-.*\.png$
-^\.travis\.yml$
 sessionInfoLog
 ^data-raw$
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
 docs/
 .lintr
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$

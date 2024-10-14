@@ -4,10 +4,10 @@
 #'
 #'
 ods_query_database <- function(endpoint = "http://statistics.gov.scot/sparql" , query) {
-    
+
 content_returned <- httr::content(
     httr::POST(
-      add_headers = c("User-Agent" = "https://github.com/DataScienceScotland/opendatascot"),
+      add_headers = c("User-Agent" = "https://github.com/ScotGovAnalysis/opendatascot"),
       url = endpoint,
       config = httr::accept("text/csv"),
       body = list(query = query)

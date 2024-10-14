@@ -1,0 +1,13 @@
+url: https://scotgovanalysis.github.io/opendatascot
+
+template:
+  bootstrap: 5
+  bslib:
+    base_font: {google: "Roboto"}
+
+development:
+  mode: auto
+
+figures:
+  dev: "svg"
+  fig.ext: svg

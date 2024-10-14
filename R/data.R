@@ -22,7 +22,7 @@
 #'        \item{\code{MMWard}}{ -  Multi-Member Ward}
 #'        \item{\code{Council}}{ - Local Authority Code}
 #'        \item{\code{SPConst}}{ - Scottish Parliament Constituency}
-#'        \item{\code{CHP}{ - Community Health Partnership}
+#'        \item{\code{CHP}}{ - Community Health Partnership}
 #'        \item{\code{HBCode}}{ - Health Board Area}
 #'        \item{\code{la_name}}{ - Local Authority Name}
 #'      }

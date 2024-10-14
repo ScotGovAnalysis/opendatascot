@@ -5,6 +5,7 @@
 #' The \code{dataset} parameter must be passed a valid dataset name (a full list can be obtained by calling \code{ods_all_datasets()}.
 #'
 #' @param dataset \code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.
+#' @inheritParams ods_print_query
 #'
 #' @return \code{list}. Returns all schemes and concepts within a dataset.
 #'

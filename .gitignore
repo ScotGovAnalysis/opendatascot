@@ -6,6 +6,7 @@
 .DS_Store
 inst/doc
 sessionInfoLog
+docs/
 
 # R sesson info
 sessionInfoLog

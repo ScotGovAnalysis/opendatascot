@@ -19,8 +19,8 @@ bug, create an associated issue and illustrate the bug with a minimal
 ### Making pull requests
 
 *  We recommend that you create a Git branch for each pull request (PR).
-*  Look at the Travis and AppVeyor build status before and after making changes.
-The `README` should contain badges for any continuous integration services used
+*  Look at the package build status before and after making changes.
+The `README` should contain badges for GitHub Actions used
 by the package.
 *  We recommend the tidyverse [style guide](http://style.tidyverse.org).
 You can use the [styler](https://CRAN.R-project.org/package=styler) package to

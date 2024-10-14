@@ -4,10 +4,12 @@
 \alias{ods_structure}
 \title{Return a list of the structure of a dataset}
 \usage{
-ods_structure(dataset)
+ods_structure(dataset, labelled = FALSE)
 }
 \arguments{
 \item{dataset}{\code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.}
+
+\item{labelled}{\code{logical}. To indicate whether to include `refAreaLabelled` column.}
 }
 \value{
 \code{list}. Returns all schemes and concepts within a dataset.

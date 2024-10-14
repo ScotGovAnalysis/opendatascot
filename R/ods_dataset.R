@@ -9,6 +9,7 @@
 #' @param dataset \code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.
 #' @param geography \code{string}. A valid SG geography code, or portion thereof.
 #' @param ... Arbitrary filters requiring valid scheme = value structure.
+#' @inheritParams ods_print_query
 #'
 #' @return \code{tibble}.
 #' When invalid arguments are used returns \code{NULL} with \code{warning} (see \code{ods_error_message}).

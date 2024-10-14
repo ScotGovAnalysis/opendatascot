@@ -4,12 +4,14 @@
 \alias{ods_dataset}
 \title{Download a dataset}
 \usage{
-ods_dataset(dataset, geography = NULL, ...)
+ods_dataset(dataset, geography = NULL, labelled = FALSE, ...)
 }
 \arguments{
 \item{dataset}{\code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.}
 
 \item{geography}{\code{string}. A valid SG geography code, or portion thereof.}
+
+\item{labelled}{\code{logical}. To indicate whether to include `refAreaLabelled` column.}
 
 \item{...}{Arbitrary filters requiring valid scheme = value structure.}
 }
