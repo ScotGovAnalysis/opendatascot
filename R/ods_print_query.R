@@ -7,6 +7,7 @@
 #'
 #' @param dataset \code{string}. The identifying final part of a URI for a dataset on \href{https://statistics.gov.scot/}{statistics.gov.scot}.
 #' @param geography \code{string}. A valid SG geography code, or portion thereof.
+#' @param labelled \code{logical}. To indicate whether to include `refAreaLabelled` column.
 #' @param ... Arbitrary filters requiring valid scheme = value structure.
 #'
 #' @return \code{string}. A valid SPARQL query.
@@ -72,7 +73,7 @@ ods_print_query <- function(dataset,
                              "> ",
                              question_marked_schemes[i],
                              ".")
-    
+
     #hack to return data for interval refPeriods
     if(locations[i] == "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod"){
       query_addition <- "?data <http://purl.org/linked-data/sdmx/2009/dimension#refPeriod> ?refPeriodURI.

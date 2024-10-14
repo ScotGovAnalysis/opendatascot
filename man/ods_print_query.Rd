@@ -11,6 +11,8 @@ ods_print_query(dataset, geography = NULL, labelled = FALSE, ...)
 
 \item{geography}{\code{string}. A valid SG geography code, or portion thereof.}
 
+\item{labelled}{\code{logical}. To indicate whether to include `refAreaLabelled` column.}
+
 \item{...}{Arbitrary filters requiring valid scheme = value structure.}
 }
 \value{
