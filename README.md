@@ -3,9 +3,13 @@
 
 # opendatascot <img src = "man/figures/logo.svg" alt = "opendatascot logo" align = "right" height = 150/>
 
+<!-- badges: start -->
+
 [![Project Status: WIP – Initial development is in progress, but there
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+
+<!-- badges: end -->
 
 Use opendatascot to download data from
 [statistics.gov.scot](http://statistics.gov.scot/home) with a single

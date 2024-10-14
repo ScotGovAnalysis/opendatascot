@@ -15,7 +15,11 @@ knitr::opts_chunk$set(
 
 # opendatascot <img src = "man/figures/logo.svg" alt = "opendatascot logo" align = "right" height = 150/>
 
+<!-- badges: start -->
+
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+
+<!-- badges: end -->
 
 Use opendatascot to download data from [statistics.gov.scot](http://statistics.gov.scot/home) with a single line of R code. opendatascot removes the need to write SPARQL code; you simply need the URI of a dataset. opendatascot can be used interactively, or as part of a [Reproducible Analytical Pipeline (RAP)](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/).
 
