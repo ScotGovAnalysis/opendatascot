@@ -5,7 +5,24 @@
 \alias{geo_lookup}
 \title{Geographic Lookup Data}
 \format{
-
+A data frame with the following variables:
+\itemize{
+  \item{Datazones:}
+     \itemize{
+       \item{\code{datazone_2001}}{ - 2001 data zone code}
+       \item{\code{datazone_2011}}{ - 2011 data zone code}
+  }
+  \item{Higher geographies:}
+     \itemize{
+       \item{\code{InterZone}}{ - Intermediate Geography Zone 2011}
+       \item{\code{MMWard}}{ -  Multi-Member Ward}
+       \item{\code{Council}}{ - Local Authority Code}
+       \item{\code{SPConst}}{ - Scottish Parliament Constituency}
+       \item{\code{CHP}}{ - Community Health Partnership}
+       \item{\code{HBCode}}{ - Health Board Area}
+       \item{\code{la_name}}{ - Local Authority Name}
+     }
+}
 }
 \source{
 \emph{Scottish Government,} 2015. \href{https://www2.gov.scot/Topics/Statistics/sns/SNSRef/DZMatchingFile}{Data Zone Matching File (Area and Pop. based 2001 - 2011)}
