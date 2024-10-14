@@ -9,8 +9,8 @@ Authors@R: as.person(c(
     "Alice Hannah <alice.hannah@gov.scot> [ctb]"
   ))
 Description: Access the statistics.gov.scot API without writing SPARQL queries.
-URL: https://github.com/datasciencescotland/opendatascot
-BugReports: https://github.com/datasciencescotland/opendatascot/issues
+URL: https://github.com/scotgovanalysis/opendatascot
+BugReports: https://github.com/scotgovanalysis/opendatascot/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
