@@ -1,10 +1,8 @@
 ---
 title: "Introduction to opendatascot package"
-author: "Joseph Adams"
-date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{opendatascot introduction}
+  %\VignetteIndexEntry{Introduction to opendatascot package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
