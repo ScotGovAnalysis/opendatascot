@@ -11,3 +11,6 @@ CODE_OF_CONDUCT.md
 CONTRIBUTING.md
 docs/
 .lintr
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
