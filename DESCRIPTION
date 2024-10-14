@@ -5,7 +5,8 @@ Version: 0.0.0.9000
 Authors@R: as.person(c(
     "Joseph Adams <joseph@josephadams.net> [aut, cre]", 
     "Gordon Bryden <gordon.bryden@gmail.com> [aut]",
-    "Thomas Crines <Thomas.Crines@gov.scot> [aut]"
+    "Thomas Crines <Thomas.Crines@gov.scot> [aut]",
+    "Alice Hannah <alice.hannah@gov.scot> [ctb]"
   ))
 Description: Access the statistics.gov.scot API without writing SPARQL queries.
 URL: https://github.com/datasciencescotland/opendatascot
@@ -19,7 +20,8 @@ Imports:
     stringr,
     readr,
     checkmate (>= 1.9.4),
-    glue
+    glue,
+    curl
 Suggests: 
     covr,
     httptest,
@@ -28,6 +30,5 @@ Suggests:
     roxygen2,
     spelling,
     testthat
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.1
 VignetteBuilder: knitr
-Language: en-GB
