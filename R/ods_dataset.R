@@ -21,7 +21,7 @@
 
 ods_dataset <- function(dataset,
                         geography = NULL,
-                        labelled = FALSE,
+                        labelled = TRUE,
                         ...) {
 
     endpoint <- "http://statistics.gov.scot/sparql"
@@ -46,10 +46,12 @@ ods_dataset <- function(dataset,
      #   warning = function(warn) {
      #     ods_error_message(warn, dataset)
      #   })
-
-    result <- pre_process_data(query_data)
+if(labelled){
+ result <- ods_label_dataset(query_data)
+} else {
+ result <- pre_process_data(query_data)
+}
 
   return(result)
 
 }
-

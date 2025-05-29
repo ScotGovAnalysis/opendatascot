@@ -51,9 +51,9 @@ ods_print_query <- function(dataset,
     "?value")
 
   #if labelled == TRUE, add in refAreaLabelled
-  if(labelled == TRUE){
-    select_line <- paste(select_line, "?refAreaLabelled")
-  }
+  #if(labelled == TRUE){
+  #  select_line <- paste(select_line, "?refAreaLabelled")
+  #}
 
   data_line <- paste0("?data qb:dataSet <http://statistics.gov.scot/data/",
                       dataset,
@@ -75,19 +75,19 @@ ods_print_query <- function(dataset,
                              ".")
 
     #hack to return data for interval refPeriods
-    if(locations[i] == "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod"){
-      query_addition <- "?data <http://purl.org/linked-data/sdmx/2009/dimension#refPeriod> ?refPeriodURI.
-      ?refPeriodURI rdfs:label ?refPeriod."
-    }
+    #if(locations[i] == "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod"){
+    #  query_addition <- "?data <http://purl.org/linked-data/sdmx/2009/dimension#refPeriod> ?refPeriodURI.
+    #  ?refPeriodURI rdfs:label ?refPeriod."
+    #}
 
     query <- paste(query, query_addition)
   }
 
   #optionally return labelled geographies
-  if(labelled == TRUE){
-    query_addition <- "?refArea rdfs:label ?refAreaLabelled."
-    query <- paste(query, query_addition)
-  }
+  #if(labelled == TRUE){
+  #  query_addition <- "?refArea rdfs:label ?refAreaLabelled."
+  #  query <- paste(query, query_addition)
+  #}
 
   #expose the measureType scheme's value as a value
   query <- paste(query, "?data ?measureType ?value.")
@@ -125,7 +125,7 @@ ods_print_query <- function(dataset,
     #initialise query builder
     query_addition <- ""
 
-    #builder for simple one arguemnt filter
+    #builder for simple one argument filter
     for (i in 1:length(schemes)){
       if (length(values[[i]]) == 1) {
         query_addition <- paste0(query_addition,
