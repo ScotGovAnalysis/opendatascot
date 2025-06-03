@@ -25,4 +25,3 @@ ods_get_geoshape <- function(geography) {
   return(query_data$map)
 
 }
-query_text <- paste(query_text, collapse = " ")
