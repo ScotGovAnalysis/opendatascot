@@ -1,0 +1,12 @@
+# Returns polygon of statistical geography
+
+PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+
+SELECT ?geocode ?map
+WHERE {
+  BIND (geosparql:hasGeometry as ?predicate)
+  BIND (<http://statistics.gov.scot/id/statistical-geography/[geography]> as ?geocode)
+  ?geocode ?predicate ?bnode .
+  ?bnode ?p_blank ?map .
+  FILTER (?p_blank = geosparql:asWKT).
+}
