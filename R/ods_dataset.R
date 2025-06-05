@@ -29,6 +29,23 @@ ods_dataset <- function(dataset,
     #tryCatch({
      query <- ods_print_query(dataset, geography, labelled,
          ...)
+
+    offset <- 0
+    paginated_query <- paste(query, " LIMIT 10000 OFFSET", format(offset, scientific=FALSE))
+    query_data <- ods_query_database(endpoint, paginated_query)
+
+    if(nrow(query_data == 10000)) {
+      print("large dataset, return may take a while")
+      returned_data <- query_data
+      while (nrow(returned_data) == 10000) {
+          offset <- offset + 10000
+          #print(paste("iter:", offset/10000))
+          if (offset > 10000000) { break }# Exit the loop if suspected infinite
+          paginated_query <- paste(query, " LIMIT 10000 OFFSET", format(offset, scientific=FALSE))
+          returned_data <- ods_query_database(query = paginated_query)
+          query_data <- rbind(query_data, returned_data)
+        }
+      }
      #   },
      #   error = function(err) {
      #     ods_error_message(err, dataset)
@@ -37,8 +54,6 @@ ods_dataset <- function(dataset,
      #     ods_error_message(warn, dataset)
      #   })
      #
-      query_data <- #tryCatch({
-      ods_query_database(endpoint, query)
      #   },
      #   error = function(err) {
      #     ods_error_message(err, dataset)
