@@ -159,6 +159,8 @@ opendatascot::ods_dataset("homelessness-applications",
                           geography = "la")
 ```
 
+    #> [1] "large dataset, return may take a while"
+
     #>                                           applicationType measureType refPeriod
     #> 1                                        All applications       Count 2007/2008
     #> 2                                        All applications       Count 2010/2011
@@ -2378,6 +2380,8 @@ opendatascot::ods_dataset("house-sales-prices",
                           measureType = "mean",
                           refPeriod = "2013")
 ```
+
+    #> [1] "large dataset, return may take a while"
 
     #>   measureType refPeriod   refArea  value
     #> 1        Mean      2013 S01000001 175003
