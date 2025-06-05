@@ -1,4 +1,8 @@
-
+#' functions to label a dataset full of uri
+#'
+#' \code{ods_create_label_lookup} returns a dataset that is then used as a lookup
+#'
+#' @return \code{tibble}.
 
 ods_create_label_lookup <- function(uri_list) {
 
@@ -17,6 +21,14 @@ ods_create_label_lookup <- function(uri_list) {
   return(ods_query_database(query = query))
 
 }
+
+#' Find all geographies that contain, or are contained by, a certain geography
+#'
+#' \code{ods_label_uri} labels a dataset that comprises of uri
+#'
+#' @return \code{tibble}.
+#'
+#' @export
 
 ods_label_uri <- function(dataset, uri) {
 
