@@ -57,7 +57,7 @@ ods_print_query <- function(dataset,
 
   data_line <- paste0("?data qb:dataSet <http://statistics.gov.scot/data/",
                       dataset,
-                      ">;")
+                      ">.")
 
   query <- paste("PREFIX qb: <http://purl.org/linked-data/cube#>
                  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -68,11 +68,11 @@ ods_print_query <- function(dataset,
 
   #iter over the schemes, and generate a sparql line
   for (i in 1:length(locations)) {
-    query_addition <- paste0("<",
+    query_addition <- paste0("?data <",
                              locations[i],
                              "> ",
                              question_marked_schemes[i],
-                             ";")
+                             ".")
 
     #hack to return data for interval refPeriods
     #if(locations[i] == "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod"){
@@ -90,7 +90,7 @@ ods_print_query <- function(dataset,
   #}
 
   #expose the measureType scheme's value as a value
-  query <- paste(query, "?measureType ?value.")
+  query <- paste(query, "?data ?measureType ?value.")
 
   #filter based on geography if requested
   if(!is.null(geography)) {
